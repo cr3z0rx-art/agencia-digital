@@ -59,11 +59,12 @@ from ghl_client import (
 )
 
 # ── Config ─────────────────────────────────────────────────
-RETELL_SECRET      = os.getenv("RETELL_WEBHOOK_SECRET", "")
-RETELL_API_KEY     = os.getenv("RETELL_API_KEY", "")
-RETELL_AGENT_ID    = os.getenv("RETELL_AGENT_ID", "")
-RETELL_FROM_NUMBER = os.getenv("RETELL_NUMBER", "")
-GHL_CALLBACK_NUMBER = os.getenv("GHL_PHONE_NUMBER", "")
+RETELL_SECRET           = os.getenv("RETELL_WEBHOOK_SECRET", "")
+RETELL_API_KEY          = os.getenv("RETELL_API_KEY", "")
+RETELL_AGENT_ID         = os.getenv("RETELL_AGENT_ID", "")          # Agente OUTBOUND (formulario web)
+RETELL_INBOUND_AGENT_ID = os.getenv("RETELL_INBOUND_AGENT_ID", "")  # Agente INBOUND (número de teléfono)
+RETELL_FROM_NUMBER      = os.getenv("RETELL_NUMBER", "")
+GHL_CALLBACK_NUMBER     = os.getenv("GHL_PHONE_NUMBER", "")
 HOT_STAGE_NAME      = "HOT Lead"
 PIPELINE_NAME       = "Contratistas Latinos"
 NEW_LEAD_STAGE_NAME = os.getenv("GHL_NEW_LEAD_STAGE", "Nuevo Lead")
@@ -515,18 +516,18 @@ def web_lead_trigger():
         logging.error("web-lead-trigger: faltan credenciales Retell en .env")
         return _cors(jsonify({"error": "Retell no configurado"}))
 
-    # ── 3. Saludo estático acordado — sin variables {{}} ────────
-    # El Global Prompt de Retell ya no usa {{first_name}} ni {{last_name}}.
-    # Toda la personalización va en begin_message como texto plano.
+    # ── 3. Saludo OUTBOUND — Layla se presenta por nombre ──────
+    # El agente OUTBOUND usa este begin_message personalizado.
+    # Sin variables {{}} — el Global Prompt de Retell las leía literalmente.
     if language == "en":
         begin_message = (
-            "Hi! This is the MultiVenza Digital team calling. "
+            "Hi! I'm Layla with MultiVenza Digital, calling from Minnesota. "
             "We're reaching out because you requested a free demo on our website a moment ago. "
             "Am I speaking with the business owner?"
         )
     else:
         begin_message = (
-            "¡Hola! Le llamamos del equipo de MultiVenza Digital. "
+            "¡Hola! Soy Layla de MultiVenza Digital, llamando desde Minnesota. "
             "Le contactamos porque solicitó una demo gratuita en nuestra página hace un momento. "
             "¿Hablo con el dueño del negocio?"
         )
@@ -577,6 +578,8 @@ if __name__ == "__main__":
     port = int(os.getenv("PORT", 5050))
     logging.info(f"Retell Webhook Server iniciando en http://0.0.0.0:{port}")
     logging.info(f"  POST /retell-webhook     <- eventos de llamada de Retell AI")
-    logging.info(f"  POST /web-lead-trigger   <- dispara llamada desde formulario web GHL")
+    logging.info(f"  POST /web-lead-trigger   <- dispara llamada OUTBOUND desde formulario web")
+    logging.info(f"  Agente OUTBOUND: {RETELL_AGENT_ID or 'NO CONFIGURADO'}")
+    logging.info(f"  Agente INBOUND:  {RETELL_INBOUND_AGENT_ID or 'NO CONFIGURADO — configurar en Retell dashboard'}")
     logging.info(f"  Pipeline: {PIPELINE_NAME} -> '{HOT_STAGE_NAME}' (sentimiento positivo)")
     app.run(host="0.0.0.0", port=port, debug=False)
