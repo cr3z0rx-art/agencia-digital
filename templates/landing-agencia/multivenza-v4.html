@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiVenza Digital — AI Automation for Local Business</title>
+  <meta name="description" content="Stop losing customers because no one answered the phone. MultiVenza Digital installs AI that answers, qualifies, and books appointments 24/7." />
+  <link rel="canonical" href="https://www.multivenzadigital.com/" />
+
+  <!-- Favicon inline SVG — rayo MultiVenza -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230D1420'/%3E%3Cpolygon points='18,4 10,18 16,18 14,28 22,14 16,14' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300D4E8'/%3E%3Cstop offset='100%25' stop-color='%232563EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            cyan:   { DEFAULT: '#00D4E8', dark: '#00A3B5' },
+            blue:   { brand: '#2563EB', dark: '#1D4ED8' },
+            dark:   { DEFAULT: '#080D14', 2: '#0D1420', 3: '#111B2A', card: 'rgba(13,20,32,0.8)' },
+          },
+          backgroundImage: {
+            'grad-text': 'linear-gradient(135deg, #00D4E8 0%, #2563EB 100%)',
+            'grad-btn':  'linear-gradient(135deg, #00D4E8 0%, #2563EB 100%)',
+            'grad-hero': 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,232,0.15) 0%, transparent 70%)',
+            'grad-card': 'linear-gradient(135deg, rgba(0,212,232,0.08) 0%, rgba(37,99,235,0.06) 100%)',
+          },
+          boxShadow: {
+            glow:    '0 0 30px rgba(0,212,232,0.4), 0 0 60px rgba(37,99,235,0.2)',
+            'glow-sm':'0 0 15px rgba(0,212,232,0.3)',
+            glass:   '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)',
+            card:    '0 4px 24px rgba(0,0,0,0.3)',
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
+            'float':      'float 6s ease-in-out infinite',
+            'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            float:     { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+            glowPulse: { '0%,100%': { boxShadow: '0 0 20px rgba(0,212,232,0.3)' }, '50%': { boxShadow: '0 0 40px rgba(0,212,232,0.6), 0 0 80px rgba(37,99,235,0.3)' } },
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #080D14; color: #F0F4FF; overflow-x: hidden; }
+
+    /* Language toggle */
+    .lang-es .en { display: none !important; }
+    .lang-en .es { display: none !important; }
+
+    /* Gradient text utility */
+    .text-gradient {
+      background: linear-gradient(135deg, #00D4E8 0%, #2563EB 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glass card */
+    .glass {
+      background: rgba(13, 20, 32, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 212, 232, 0.12);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    /* Glow button */
+    .btn-glow {
+      background: linear-gradient(135deg, #00D4E8 0%, #2563EB 100%);
+      box-shadow: 0 0 20px rgba(0,212,232,0.4), 0 0 40px rgba(37,99,235,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 35px rgba(0,212,232,0.6), 0 0 70px rgba(37,99,235,0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Grid background */
+    .grid-bg {
+      background-image: linear-gradient(rgba(0,212,232,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0,212,232,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Noise texture */
+    .noise::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #080D14; }
+    ::-webkit-scrollbar-thumb { background: #00D4E8; border-radius: 2px; }
+
+    /* Form inputs */
+    .input-glass {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,212,232,0.2);
+      color: #F0F4FF;
+      transition: all 0.3s ease;
+    }
+    .input-glass:focus {
+      outline: none;
+      border-color: #00D4E8;
+      box-shadow: 0 0 0 3px rgba(0,212,232,0.1);
+      background: rgba(0,212,232,0.05);
+    }
+    .input-glass::placeholder { color: rgba(240,244,255,0.35); }
+
+    /* Layla orb */
+    .layla-orb {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00D4E8, #2563EB);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      animation: glowPulse 3s ease-in-out infinite;
+      box-shadow: 0 0 40px rgba(0,212,232,0.5), 0 0 80px rgba(37,99,235,0.3);
+    }
+    @keyframes glowPulse {
+      0%,100% { box-shadow: 0 0 30px rgba(0,212,232,0.4), 0 0 60px rgba(37,99,235,0.2); }
+      50%      { box-shadow: 0 0 60px rgba(0,212,232,0.7), 0 0 120px rgba(37,99,235,0.4); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+    .float { animation: float 6s ease-in-out infinite; }
+
+    /* Stat counter */
+    .stat-number {
+      background: linear-gradient(135deg, #00D4E8 0%, #2563EB 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+    }
+
+    /* Navbar glass */
+    #navbar {
+      background: rgba(8,13,20,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,212,232,0.08);
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* Section divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,232,0.3), transparent);
+    }
+  </style>
+</head>
+
+<body class="lang-en">
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2">
+      <svg width="36" height="36" viewBox="0 0 38 38" fill="none">
+        <polygon points="19,4 34,30 4,30" fill="#FF8200" opacity=".9"/>
+        <polygon points="19,12 29,28 9,28" fill="#00A3AD"/>
+      </svg>
+      <div class="leading-none">
+        <div class="font-extrabold text-lg tracking-tight"><span style="color:#00A3AD">Multi</span><span style="color:#FF8200">Venza</span></div>
+        <div class="text-xs tracking-widest uppercase" style="color:#8A9BAE;margin-top:-2px">Digital</div>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-sm text-gray-400 hover:text-white transition-colors en">Services</a>
+      <a href="#services" class="text-sm text-gray-400 hover:text-white transition-colors es">Servicios</a>
+      <a href="#layla" class="text-sm text-gray-400 hover:text-white transition-colors en">AI Assistant</a>
+      <a href="#layla" class="text-sm text-gray-400 hover:text-white transition-colors es">Asistente IA</a>
+      <a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors en">Contact</a>
+      <a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors es">Contacto</a>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-3">
+      <!-- Lang toggle -->
+      <div class="flex items-center glass rounded-full p-1 gap-1">
+        <button id="btn-en" onclick="setLang('en')" class="text-xs px-3 py-1 rounded-full font-medium transition-all active:bg-cyan-500/20">EN</button>
+        <button id="btn-es" onclick="setLang('es')" class="text-xs px-3 py-1 rounded-full font-medium transition-all active:bg-cyan-500/20">ES</button>
+      </div>
+      <a href="#contact" class="hidden md:inline-flex btn-glow text-white text-sm font-semibold px-5 py-2 rounded-full en">Get Started</a>
+      <a href="#contact" class="hidden md:inline-flex btn-glow text-white text-sm font-semibold px-5 py-2 rounded-full es">Comenzar</a>
+      <!-- Hamburger -->
+      <button id="hamburger" onclick="toggleMenu()" class="md:hidden text-gray-400 hover:text-white p-1">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h16M3 12h16M3 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden glass border-t border-cyan-500/10 px-6 py-4 space-y-4">
+    <a href="#services" onclick="toggleMenu()" class="block text-gray-300 hover:text-white py-1 en">Services</a>
+    <a href="#services" onclick="toggleMenu()" class="block text-gray-300 hover:text-white py-1 es">Servicios</a>
+    <a href="#layla" onclick="toggleMenu()" class="block text-gray-300 hover:text-white py-1 en">AI Assistant</a>
+    <a href="#layla" onclick="toggleMenu()" class="block text-gray-300 hover:text-white py-1 es">Asistente IA</a>
+    <a href="#contact" onclick="toggleMenu()" class="block text-gray-300 hover:text-white py-1 en">Contact</a>
+    <a href="#contact" onclick="toggleMenu()" class="block text-gray-300 hover:text-white py-1 es">Contacto</a>
+    <a href="#contact" onclick="toggleMenu()" class="inline-flex btn-glow text-white text-sm font-semibold px-5 py-2 rounded-full en">Get Started</a>
+    <a href="#contact" onclick="toggleMenu()" class="inline-flex btn-glow text-white text-sm font-semibold px-5 py-2 rounded-full es">Comenzar</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center pt-16 grid-bg overflow-hidden">
+
+  <!-- Background glow orbs -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 py-24 w-full">
+    <div class="max-w-3xl">
+
+      <!-- Badge -->
+      <div data-aos="fade-down" data-aos-duration="600"
+           class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8">
+        <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse-slow"></span>
+        <span class="text-xs text-cyan-300 font-medium en">AI-Powered Business Automation · Minnesota</span>
+        <span class="text-xs text-cyan-300 font-medium es">Automatización con IA para Negocios · Minnesota</span>
+      </div>
+
+      <!-- Headline EN -->
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
+          class="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6 en">
+        Stop Losing<br/>
+        <span class="text-gradient">Customers</span><br/>
+        to Missed Calls.
+      </h1>
+
+      <!-- Headline ES -->
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100"
+          class="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6 es">
+        Deja de Perder<br/>
+        <span class="text-gradient">Clientes</span><br/>
+        por No Contestar.
+      </h1>
+
+      <!-- Subheadline -->
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"
+         class="text-xl text-gray-400 leading-relaxed mb-10 max-w-xl en">
+        We install AI that answers your phone 24/7, qualifies leads, and books appointments — automatically. Never miss a job again.
+      </p>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"
+         class="text-xl text-gray-400 leading-relaxed mb-10 max-w-xl es">
+        Instalamos una IA que contesta tu teléfono 24/7, califica clientes y agenda citas — automáticamente. Ningún trabajo se pierde.
+      </p>
+
+      <!-- CTAs -->
+      <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="300"
+           class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact"
+           class="btn-glow inline-flex items-center justify-center gap-2 text-white font-bold text-lg px-8 py-4 rounded-2xl en">
+          Get Free Demo
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact"
+           class="btn-glow inline-flex items-center justify-center gap-2 text-white font-bold text-lg px-8 py-4 rounded-2xl es">
+          Demo Gratis
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services"
+           class="inline-flex items-center justify-center gap-2 glass text-gray-300 hover:text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all en">
+          See How It Works
+        </a>
+        <a href="#services"
+           class="inline-flex items-center justify-center gap-2 glass text-gray-300 hover:text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all es">
+          Cómo Funciona
+        </a>
+      </div>
+
+      <!-- Social proof -->
+      <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="400"
+           class="flex items-center gap-4 mt-10">
+        <div class="flex -space-x-2">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 border-2 border-dark flex items-center justify-center text-xs font-bold">JR</div>
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-blue-600 border-2 border-dark flex items-center justify-center text-xs font-bold">MG</div>
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-red-500 border-2 border-dark flex items-center justify-center text-xs font-bold">CP</div>
+        </div>
+        <div>
+          <div class="flex gap-0.5 text-yellow-400 text-sm">★★★★★</div>
+          <p class="text-xs text-gray-500 en">Trusted by contractors across the US</p>
+          <p class="text-xs text-gray-500 es">Confiado por contratistas en todo el país</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+    <span class="text-xs text-gray-600 en">Scroll</span>
+    <span class="text-xs text-gray-600 es">Bajar</span>
+    <svg width="16" height="16" fill="none" stroke="#4B5563" stroke-width="2"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     STATS
+═══════════════════════════════════════════════════════ -->
+<section class="py-20 bg-dark-2">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div data-aos="fade-up" data-aos-delay="0" class="text-center">
+        <div class="stat-number">24/7</div>
+        <p class="text-gray-500 text-sm mt-1 en">Always Available</p>
+        <p class="text-gray-500 text-sm mt-1 es">Siempre Disponible</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100" class="text-center">
+        <div class="stat-number">30s</div>
+        <p class="text-gray-500 text-sm mt-1 en">Response Time</p>
+        <p class="text-gray-500 text-sm mt-1 es">Tiempo de Respuesta</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="text-center">
+        <div class="stat-number">$499</div>
+        <p class="text-gray-500 text-sm mt-1 en">Per Month, All-in</p>
+        <p class="text-gray-500 text-sm mt-1 es">Al Mes, Todo Incluido</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300" class="text-center">
+        <div class="stat-number">7d</div>
+        <p class="text-gray-500 text-sm mt-1 en">Setup & Live</p>
+        <p class="text-gray-500 text-sm mt-1 es">Configuración y En Vivo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PLAN TODO-EN-UNO
+═══════════════════════════════════════════════════════ -->
+<section id="services" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grad-hero pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 en">One Plan. Everything Included.</p>
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 es">Un Solo Plan. Todo Incluido.</p>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl md:text-5xl font-black en">
+        The <span class="text-gradient">All-in-One Plan</span><br/>for Local Business.
+      </h2>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl md:text-5xl font-black es">
+        El <span class="text-gradient">Plan Todo-en-Uno</span><br/>para tu Negocio.
+      </h2>
+    </div>
+
+    <!-- Single plan card -->
+    <div data-aos="fade-up" data-aos-delay="150"
+         class="glass rounded-3xl p-10 relative overflow-hidden border-cyan-500/25"
+         style="box-shadow: 0 0 60px rgba(0,212,232,0.12)">
+
+      <div class="absolute top-6 right-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full en">Most Complete</div>
+      <div class="absolute top-6 right-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full es">Más Completo</div>
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-600/5 pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <!-- Pricing -->
+        <div class="flex flex-col md:flex-row md:items-end gap-4 mb-10">
+          <div>
+            <p class="text-gray-500 text-sm mb-1 en">One-time setup</p>
+            <p class="text-gray-500 text-sm mb-1 es">Setup único</p>
+            <span class="text-5xl font-black text-white">$1,500</span>
+          </div>
+          <div class="text-gray-500 text-2xl font-light mb-1 hidden md:block">+</div>
+          <div>
+            <p class="text-gray-500 text-sm mb-1 en">Monthly subscription</p>
+            <p class="text-gray-500 text-sm mb-1 es">Suscripción mensual</p>
+            <span class="text-5xl font-black text-gradient">$499<span class="text-2xl text-gray-400 font-normal en">/mo</span><span class="text-2xl text-gray-400 font-normal es">/mes</span></span>
+          </div>
+        </div>
+
+        <!-- What's included -->
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+          <div class="glass rounded-2xl p-6 border border-cyan-500/10">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+              <svg width="22" height="22" fill="none" stroke="#00D4E8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M11 3a8 8 0 0 1 0 16M11 3a12 12 0 0 1 3 8 12 12 0 0 1-3 8M11 3a12 12 0 0 0-3 8 12 12 0 0 0 3 8M3 11h16"/></svg>
+            </div>
+            <h4 class="font-bold text-white mb-2 en">Professional Website</h4>
+            <h4 class="font-bold text-white mb-2 es">Página Web Profesional</h4>
+            <p class="text-gray-500 text-sm en">Custom site for your niche. Google-optimized. Live in 7 days or money back.</p>
+            <p class="text-gray-500 text-sm es">Sitio personalizado para tu nicho. Optimizado para Google. Listo en 7 días o te devolvemos el dinero.</p>
+          </div>
+
+          <div class="glass rounded-2xl p-6 border border-cyan-500/20" style="box-shadow:0 0 20px rgba(0,212,232,0.07)">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-400/30 flex items-center justify-center mb-4">
+              <svg width="22" height="22" fill="none" stroke="#00D4E8" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h4 class="font-bold text-white mb-2 en">AI Receptionist 24/7</h4>
+            <h4 class="font-bold text-white mb-2 es">Recepcionista IA 24/7</h4>
+            <p class="text-gray-500 text-sm en">Answers every call, qualifies the lead, and books appointments automatically. Bilingual.</p>
+            <p class="text-gray-500 text-sm es">Contesta cada llamada, califica al cliente y agenda citas automáticamente. Bilingüe.</p>
+          </div>
+
+          <div class="glass rounded-2xl p-6 border border-cyan-500/10">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+              <svg width="22" height="22" fill="none" stroke="#00D4E8" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h4 class="font-bold text-white mb-2 en">CRM + Automation</h4>
+            <h4 class="font-bold text-white mb-2 es">CRM + Automatización</h4>
+            <p class="text-gray-500 text-sm en">Full pipeline, follow-up sequences, and lead tracking — all running without you.</p>
+            <p class="text-gray-500 text-sm es">Pipeline completo, secuencias de seguimiento y rastreo de leads — todo corre solo.</p>
+          </div>
+        </div>
+
+        <!-- Guarantees -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <div class="flex items-center gap-2 text-sm text-gray-400 en"><span class="text-green-400 font-bold">✓</span> 7-day setup guarantee</div>
+          <div class="flex items-center gap-2 text-sm text-gray-400 es"><span class="text-green-400 font-bold">✓</span> Garantía de setup en 7 días</div>
+          <div class="flex items-center gap-2 text-sm text-gray-400 en"><span class="text-green-400 font-bold">✓</span> Month-to-month, no contracts</div>
+          <div class="flex items-center gap-2 text-sm text-gray-400 es"><span class="text-green-400 font-bold">✓</span> Mes a mes, sin contratos</div>
+          <div class="flex items-center gap-2 text-sm text-gray-400 en"><span class="text-green-400 font-bold">✓</span> Cancel anytime</div>
+          <div class="flex items-center gap-2 text-sm text-gray-400 es"><span class="text-green-400 font-bold">✓</span> Cancela cuando quieras</div>
+        </div>
+
+        <a href="#contact" class="btn-glow inline-flex items-center gap-2 text-white font-bold text-lg px-10 py-4 rounded-2xl en">
+          Get This Plan Free Demo
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-glow inline-flex items-center gap-2 text-white font-bold text-lg px-10 py-4 rounded-2xl es">
+          Ver Demo Gratis de Este Plan
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════════ -->
+<section class="py-24 bg-dark-2">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 en">The Process</p>
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 es">El Proceso</p>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl font-black en">Simple. Fast. <span class="text-gradient">Automated.</span></h2>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl font-black es">Simple. Rápido. <span class="text-gradient">Automático.</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <div data-aos="fade-up" data-aos-delay="0" class="text-center">
+        <div class="w-12 h-12 rounded-2xl btn-glow mx-auto flex items-center justify-center text-white font-black text-lg mb-4">1</div>
+        <h4 class="font-bold text-white mb-2 en">We Set Up</h4>
+        <h4 class="font-bold text-white mb-2 es">Configuramos</h4>
+        <p class="text-gray-500 text-sm en">Website, AI, CRM — all configured for your business in 7 days.</p>
+        <p class="text-gray-500 text-sm es">Web, IA, CRM — todo configurado para tu negocio en 7 días.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100" class="text-center">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 mx-auto flex items-center justify-center text-cyan-400 font-black text-lg mb-4">2</div>
+        <h4 class="font-bold text-white mb-2 en">Customer Calls</h4>
+        <h4 class="font-bold text-white mb-2 es">El Cliente Llama</h4>
+        <p class="text-gray-500 text-sm en">Your AI Assistant answers in under 30 seconds, 24/7, in English or Spanish.</p>
+        <p class="text-gray-500 text-sm es">Tu Asistente IA contesta en menos de 30 segundos, 24/7, en inglés o español.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="text-center">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 mx-auto flex items-center justify-center text-cyan-400 font-black text-lg mb-4">3</div>
+        <h4 class="font-bold text-white mb-2 en">AI Qualifies</h4>
+        <h4 class="font-bold text-white mb-2 es">La IA Califica</h4>
+        <p class="text-gray-500 text-sm en">Collects info, scores the lead, and books the appointment automatically.</p>
+        <p class="text-gray-500 text-sm es">Recoge información, califica al lead y agenda la cita automáticamente.</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300" class="text-center">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 mx-auto flex items-center justify-center text-cyan-400 font-black text-lg mb-4">4</div>
+        <h4 class="font-bold text-white mb-2 en">You Get Paid</h4>
+        <h4 class="font-bold text-white mb-2 es">Tú Cobras</h4>
+        <p class="text-gray-500 text-sm en">Show up for the job. The system handled the rest.</p>
+        <p class="text-gray-500 text-sm es">Apareces al trabajo. El sistema hizo el resto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     AI ASSISTANT SECTION
+═══════════════════════════════════════════════════════ -->
+<section id="layla" class="py-24 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full bg-grad-hero pointer-events-none opacity-50"></div>
+  <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left — AI visual -->
+      <div data-aos="fade-right" class="flex flex-col items-center md:items-start gap-8">
+        <div class="relative">
+          <div class="layla-orb float text-5xl">🤖</div>
+          <div class="absolute inset-0 border border-cyan-500/20 rounded-full animate-spin" style="animation-duration:10s;width:144px;height:144px;left:-12px;top:-12px;"></div>
+          <div class="absolute inset-0 border border-blue-500/15 rounded-full animate-spin" style="animation-duration:15s;animation-direction:reverse;width:180px;height:180px;left:-30px;top:-30px;"></div>
+        </div>
+
+        <!-- Live indicator -->
+        <div class="glass rounded-2xl px-6 py-4 flex items-center gap-3">
+          <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+          <span class="text-sm font-semibold text-green-400 en">AI Assistant is live — available 24/7</span>
+          <span class="text-sm font-semibold text-green-400 es">Asistente IA activo — disponible 24/7</span>
+        </div>
+
+        <!-- Capabilities -->
+        <div class="space-y-3 w-full max-w-xs">
+          <div class="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <span class="text-cyan-400 text-lg">🌐</span>
+            <span class="text-sm text-gray-300 en">Bilingual English / Spanish</span>
+            <span class="text-sm text-gray-300 es">Bilingüe Inglés / Español</span>
+          </div>
+          <div class="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <span class="text-cyan-400 text-lg">📅</span>
+            <span class="text-sm text-gray-300 en">Books appointments automatically</span>
+            <span class="text-sm text-gray-300 es">Agenda citas automáticamente</span>
+          </div>
+          <div class="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <span class="text-cyan-400 text-lg">⚡</span>
+            <span class="text-sm text-gray-300 en">Responds in under 30 seconds</span>
+            <span class="text-sm text-gray-300 es">Responde en menos de 30 segundos</span>
+          </div>
+          <div class="glass rounded-xl px-4 py-3 flex items-center gap-3">
+            <span class="text-cyan-400 text-lg">🧠</span>
+            <span class="text-sm text-gray-300 en">Powered by advanced AI</span>
+            <span class="text-sm text-gray-300 es">Impulsada por IA avanzada</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — Copy -->
+      <div data-aos="fade-left" data-aos-delay="150">
+        <p class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-4 en">Your AI Receptionist</p>
+        <p class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-4 es">Tu Recepcionista IA</p>
+
+        <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6 en">
+          Your <span class="text-gradient">AI Assistant</span><br/>
+          Never Misses<br/>a Call.
+        </h2>
+        <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6 es">
+          Tu <span class="text-gradient">Asistente IA 24/7</span><br/>
+          Nunca Pierde<br/>una Llamada.
+        </h2>
+
+        <p class="text-gray-400 leading-relaxed mb-6 en">
+          MultiVenza Digital's bilingual AI receptionist answers every call in under 30 seconds, figures out what the customer needs, and books the appointment — all without any intervention from you.
+        </p>
+        <p class="text-gray-400 leading-relaxed mb-6 es">
+          La recepcionista IA bilingüe de MultiVenza Digital contesta cada llamada en menos de 30 segundos, entiende lo que el cliente necesita y agenda la cita — todo sin que tengas que hacer nada.
+        </p>
+
+        <div class="glass rounded-2xl p-6 mb-8 border-l-4 border-cyan-500">
+          <p class="text-gray-300 italic text-sm leading-relaxed en">"Hi! This is MultiVenza Digital calling from Minnesota. We're reaching out because you requested a free demo on our website. Am I speaking with the business owner?"</p>
+          <p class="text-gray-300 italic text-sm leading-relaxed es">"¡Hola! Le llamamos de MultiVenza Digital desde Minnesota. Le contactamos porque solicitó una demo gratuita en nuestra página. ¿Hablo con el dueño del negocio?"</p>
+          <p class="text-cyan-400 text-xs mt-3 font-medium">— Tu Asistente IA 24/7 · MultiVenza Digital</p>
+        </div>
+
+        <a href="#contact" class="btn-glow inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-2xl en">
+          Activate My AI Assistant
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h10M11 8l4 4-4 4"/></svg>
+        </a>
+        <a href="#contact" class="btn-glow inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-2xl es">
+          Activar Mi Asistente IA
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h10M11 8l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════ -->
+<section id="testimonials" class="py-24 bg-dark-2">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 en">What Our Clients Say</p>
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 es">Lo Que Dicen Nuestros Clientes</p>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl font-black en">Real Results from <span class="text-gradient">Real Businesses.</span></h2>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl font-black es">Resultados Reales de <span class="text-gradient">Negocios Reales.</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Testimonial 1 -->
+      <div data-aos="fade-up" data-aos-delay="0" class="glass rounded-3xl p-7 flex flex-col gap-5">
+        <div class="flex gap-1 text-yellow-400 text-sm">★★★★★</div>
+        <p class="text-gray-300 leading-relaxed text-sm en">"Before MultiVenza, I was losing 5-6 calls a day just because I was on a job. Now our AI handles everything. Last month I picked up 3 new roofing contracts I would have missed."</p>
+        <p class="text-gray-300 leading-relaxed text-sm es">"Antes de MultiVenza perdía 5 o 6 llamadas al día por estar en obra. Ahora la IA lo maneja todo. El mes pasado conseguí 3 contratos nuevos de techos que me habría perdido."</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">JR</div>
+          <div>
+            <p class="font-semibold text-white text-sm">José R.</p>
+            <p class="text-gray-500 text-xs en">Roofing Contractor · Minneapolis, MN</p>
+            <p class="text-gray-500 text-xs es">Contratista de Techos · Minneapolis, MN</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div data-aos="fade-up" data-aos-delay="100" class="glass rounded-3xl p-7 flex flex-col gap-5 border-cyan-500/20" style="box-shadow:0 0 30px rgba(0,212,232,0.06)">
+        <div class="flex gap-1 text-yellow-400 text-sm">★★★★★</div>
+        <p class="text-gray-300 leading-relaxed text-sm en">"The setup was done in less than a week. My website looks incredible and the AI actually speaks Spanish with my customers. Worth every penny at $499/month."</p>
+        <p class="text-gray-300 leading-relaxed text-sm es">"La configuración estuvo lista en menos de una semana. Mi página se ve increíble y la IA habla español con mis clientes. Vale cada centavo de los $499 al mes."</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">MG</div>
+          <div>
+            <p class="font-semibold text-white text-sm">Miguel G.</p>
+            <p class="text-gray-500 text-xs en">HVAC Business Owner · Chicago, IL</p>
+            <p class="text-gray-500 text-xs es">Dueño de Negocio HVAC · Chicago, IL</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div data-aos="fade-up" data-aos-delay="200" class="glass rounded-3xl p-7 flex flex-col gap-5">
+        <div class="flex gap-1 text-yellow-400 text-sm">★★★★★</div>
+        <p class="text-gray-300 leading-relaxed text-sm en">"I was skeptical about AI but the demo convinced me. Within 2 weeks we were on the first page of Google Maps and our phone hasn't stopped ringing. Highly recommend."</p>
+        <p class="text-gray-300 leading-relaxed text-sm es">"Era escéptico sobre la IA pero la demo me convenció. En 2 semanas estábamos en la primera página de Google Maps y el teléfono no para de sonar. Lo recomiendo ampliamente."</p>
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">CP</div>
+          <div>
+            <p class="font-semibold text-white text-sm">Carlos P.</p>
+            <p class="text-gray-500 text-xs en">Remodeling Contractor · Houston, TX</p>
+            <p class="text-gray-500 text-xs es">Contratista de Remodelación · Houston, TX</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT / FORM
+═══════════════════════════════════════════════════════ -->
+<section id="contact" class="py-24 bg-dark-2 relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-lg mx-auto px-6 relative z-10">
+    <div class="text-center mb-10">
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 en">Get Started Free</p>
+      <p data-aos="fade-up" class="text-cyan-400 font-semibold text-sm tracking-widest uppercase mb-3 es">Empieza Gratis</p>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl font-black en">Book Your Free<br/><span class="text-gradient">15-Min Demo</span></h2>
+      <h2 data-aos="fade-up" data-aos-delay="100" class="text-4xl font-black es">Agenda Tu Demo<br/><span class="text-gradient">Gratuita de 15 Min</span></h2>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-gray-500 mt-4 text-sm en">Fill out the form and our AI will call you right away.</p>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-gray-500 mt-4 text-sm es">Llena el formulario y nuestra IA te llama de inmediato.</p>
+    </div>
+
+    <!-- Form card -->
+    <div data-aos="fade-up" data-aos-delay="200"
+         class="glass rounded-3xl p-8" style="box-shadow: 0 0 60px rgba(0,212,232,0.08);">
+      <form id="mv-form" onsubmit="mvSubmitLead(event)" class="space-y-5">
+
+        <div>
+          <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block en">Full Name</label>
+          <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block es">Nombre Completo</label>
+          <input id="mv-nombre" type="text" required
+                 class="input-glass w-full px-4 py-3.5 rounded-xl text-sm"
+                 placeholder="John Smith / Juan García" />
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block en">Phone Number</label>
+          <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block es">Número de Teléfono</label>
+          <input id="mv-phone" type="tel" required
+                 class="input-glass w-full px-4 py-3.5 rounded-xl text-sm"
+                 placeholder="+1 (612) 555-0000" />
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block en">Email (optional)</label>
+          <label class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 block es">Correo (opcional)</label>
+          <input id="mv-email" type="email"
+                 class="input-glass w-full px-4 py-3.5 rounded-xl text-sm"
+                 placeholder="john@yourbusiness.com" />
+        </div>
+
+        <!-- Submit -->
+        <button id="mv-submit-btn" type="submit"
+                class="btn-glow w-full text-white font-bold text-lg py-4 rounded-2xl flex items-center justify-center gap-2 mt-2">
+          <span class="en">Get My Free Demo Call</span>
+          <span class="es">Quiero Mi Demo Gratis</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- Trust note -->
+        <p class="text-center text-gray-600 text-xs en">No commitment. Our AI calls you in minutes.</p>
+        <p class="text-center text-gray-600 text-xs es">Sin compromiso. Nuestra IA te llama en minutos.</p>
+      </form>
+
+      <!-- Success state -->
+      <div id="mv-success" class="hidden text-center py-8">
+        <div class="w-16 h-16 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto mb-4 text-3xl">✅</div>
+        <h3 class="text-xl font-bold text-white mb-2 en">Call on its way!</h3>
+        <h3 class="text-xl font-bold text-white mb-2 es">¡Llamada en camino!</h3>
+        <p class="text-gray-400 text-sm en">Our AI will call you in the next few minutes. Answer your phone!</p>
+        <p class="text-gray-400 text-sm es">Nuestra IA te llamará en los próximos minutos. ¡Contesta el teléfono!</p>
+      </div>
+
+      <!-- Error state -->
+      <div id="mv-error" class="hidden mt-4 glass border border-red-500/30 rounded-xl px-4 py-3 text-center">
+        <p class="text-red-400 text-sm en">Something went wrong. Please call us at +1 (612) 688-5066</p>
+        <p class="text-red-400 text-sm es">Algo salió mal. Por favor llámanos al +1 (612) 688-5066</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="py-16 bg-dark">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="36" height="36" viewBox="0 0 38 38" fill="none">
+            <polygon points="19,4 34,30 4,30" fill="#FF8200" opacity=".9"/>
+            <polygon points="19,12 29,28 9,28" fill="#00A3AD"/>
+          </svg>
+          <div class="leading-none">
+            <div class="font-extrabold text-lg tracking-tight"><span style="color:#00A3AD">Multi</span><span style="color:#FF8200">Venza</span></div>
+            <div class="text-xs tracking-widest uppercase" style="color:#8A9BAE;margin-top:-2px">Digital</div>
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed en">AI-powered automation for local businesses across the US. Based in Minnesota.</p>
+        <p class="text-gray-500 text-sm leading-relaxed es">Automatización con IA para negocios locales en todo Estados Unidos. Con base en Minnesota.</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider en">Services</h4>
+        <h4 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider es">Servicios</h4>
+        <ul class="space-y-2 text-gray-500 text-sm">
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors en">AI Receptionist</a><a href="#services" class="hover:text-cyan-400 transition-colors es">Recepcionista IA</a></li>
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors en">Professional Website</a><a href="#services" class="hover:text-cyan-400 transition-colors es">Página Web Profesional</a></li>
+          <li><a href="#services" class="hover:text-cyan-400 transition-colors en">Local SEO</a><a href="#services" class="hover:text-cyan-400 transition-colors es">SEO Local</a></li>
+          <li><a href="#contact" class="hover:text-cyan-400 transition-colors en">Free Demo</a><a href="#contact" class="hover:text-cyan-400 transition-colors es">Demo Gratis</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact + Social -->
+      <div>
+        <h4 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider en">Contact</h4>
+        <h4 class="font-semibold text-white mb-4 text-sm uppercase tracking-wider es">Contacto</h4>
+        <ul class="space-y-2 text-gray-500 text-sm mb-6">
+          <li><a href="mailto:hello@multivenzadigital.com" class="hover:text-cyan-400 transition-colors">hello@multivenzadigital.com</a></li>
+          <li><a href="tel:+16126885066" class="hover:text-cyan-400 transition-colors">+1 (612) 688-5066</a></li>
+          <li class="text-gray-600">Minnesota, USA</li>
+        </ul>
+        <!-- Social icons -->
+        <div class="flex gap-3">
+          <a href="#" class="glass w-9 h-9 rounded-xl flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="glass w-9 h-9 rounded-xl flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="glass w-9 h-9 rounded-xl flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider mb-8"></div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-gray-600 text-xs">
+      <p>© 2026 MultiVenza Digital · Minnesota, USA · All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gray-400 transition-colors en">Privacy Policy</a>
+        <a href="#" class="hover:text-gray-400 transition-colors es">Política de Privacidad</a>
+        <a href="#" class="hover:text-gray-400 transition-colors en">Terms of Service</a>
+        <a href="#" class="hover:text-gray-400 transition-colors es">Términos de Servicio</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════ -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // ── AOS init ──────────────────────────────────────────
+  AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+  // ── Language toggle ───────────────────────────────────
+  function setLang(l) {
+    document.body.className = document.body.className
+      .replace(/lang-en|lang-es/g, '').trim() + ' lang-' + l;
+    document.getElementById('html-root').lang = l;
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-es').classList.toggle('active', l === 'es');
+    localStorage.setItem('mvd-lang', l);
+  }
+  setLang(localStorage.getItem('mvd-lang') || 'en');
+
+  // Active lang button style
+  const style = document.createElement('style');
+  style.textContent = '#btn-en.active,#btn-es.active{background:linear-gradient(135deg,#00D4E8,#2563EB);color:#fff;}';
+  document.head.appendChild(style);
+
+  // ── Mobile menu ───────────────────────────────────────
+  function toggleMenu() {
+    const m = document.getElementById('mobile-menu');
+    m.classList.toggle('open');
+  }
+
+  // ── Smooth scroll con offset para navbar fijo ────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = 72; // altura del navbar
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      // cerrar menú mobile si está abierto
+      document.getElementById('mobile-menu').classList.remove('open');
+    });
+  });
+
+  // ── Navbar shadow on scroll ───────────────────────────
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.borderBottomColor = window.scrollY > 20
+      ? 'rgba(0,212,232,0.15)' : 'rgba(0,212,232,0.08)';
+  });
+
+  // ── Webhook URL ───────────────────────────────────────
+  const WEBHOOK_URL = "https://agencia-digital.onrender.com/web-lead-trigger";
+
+  function mvNormalizePhone(raw) {
+    let digits = raw.replace(/[^\d]/g, "");
+    if (digits.length === 10) return "+1" + digits;
+    if (digits.length === 11 && digits[0] === "1") return "+" + digits;
+    if (raw.trim().startsWith("+")) return "+" + digits;
+    return "+" + digits;
+  }
+
+  async function mvSubmitLead(e) {
+    e.preventDefault();
+    const btn    = document.getElementById("mv-submit-btn");
+    const nombre = document.getElementById("mv-nombre").value.trim();
+    const phone  = mvNormalizePhone(document.getElementById("mv-phone").value.trim());
+    const email  = document.getElementById("mv-email").value.trim();
+    const lang   = document.body.classList.contains("lang-es") ? "es" : "en";
+
+    btn.disabled = true;
+    btn.innerHTML = lang === "es"
+      ? '<span>⏳ Conectando con la IA...</span>'
+      : '<span>⏳ Connecting to AI...</span>';
+
+    try {
+      const resp = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, phone, email, language: lang }),
+      });
+
+      if (resp.ok) {
+        document.getElementById("mv-form").style.display = "none";
+        document.getElementById("mv-success").classList.remove("hidden");
+      } else {
+        throw new Error("Server error");
+      }
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = lang === "es"
+        ? '<span class="es">Quiero Mi Demo Gratis</span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
+        : '<span class="en">Get My Free Demo Call</span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      document.getElementById("mv-error").classList.remove("hidden");
+    }
+  }
+</script>
+
+</body>
+</html>
