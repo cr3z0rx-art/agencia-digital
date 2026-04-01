@@ -1,0 +1,16 @@
+2026-03-26 22:54:55,809  INFO      CSV: 4007 total | 5 seleccionados para esta tanda
+2026-03-26 22:54:55,810  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:56,233  INFO        contact_id encontrado: S1WjsRbXOUIlcMqjphYy
+2026-03-26 22:54:56,233  INFO        [DRY RUN] Llamaria a: Brothers Heating & Cooling Inc. & Brothers Perfect Construction LLC | Chicago, IL | +17733877394 | id: S1WjsRbXOUIlcMqjphYy
+2026-03-26 22:54:56,238  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:56,663  INFO        contact_id encontrado: smmaRVbAkCVg4VTVwEgi
+2026-03-26 22:54:56,663  INFO        [DRY RUN] Llamaria a: Hermanos HVAC | Chicago, IL | +17733680896 | id: smmaRVbAkCVg4VTVwEgi
+2026-03-26 22:54:56,663  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:57,083  INFO        contact_id encontrado: 2XpkCoycGSqbTIEf9m3s
+2026-03-26 22:54:57,083  INFO        [DRY RUN] Llamaria a: CENTRO TECNICO LATINO USA | Houston, TX | +18328979711 | id: 2XpkCoycGSqbTIEf9m3s
+2026-03-26 22:54:57,083  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:57,503  INFO        contact_id encontrado: u80itIHMWde0fi6DKElw
+2026-03-26 22:54:57,503  INFO        [DRY RUN] Llamaria a: Latino's Ready Mix Concrete, LLC | Dallas, TX | +12147528553 | id: u80itIHMWde0fi6DKElw
+2026-03-26 22:54:57,503  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:57,926  INFO        contact_id encontrado: kQcHAhTqouoGIQpcg0iT
+2026-03-26 22:54:57,927  INFO        [DRY RUN] Llamaria a: ENCUENTRO HISPANO | Los Angeles, CA | +12139098095 | id: kQcHAhTqouoGIQpcg0iT

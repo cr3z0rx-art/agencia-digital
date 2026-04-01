@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiVenza Digital — AI Automation for Latino Contractors</title>
+  <meta name="description" content="We implement intelligent automation systems for Latino contractors and Hispanic businesses across the USA. Get found on Google, never miss a call, close more jobs." />
+  <link rel="canonical" href="https://www.multivenzadigital.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --teal:       #1A9E8F;
+      --teal-dark:  #0D7A6E;
+      --orange:     #F47B20;
+      --orange-dark:#C9620F;
+      --bg:         #0A0F14;
+      --bg2:        #111820;
+      --bg3:        #161E28;
+      --text:       #F0F0F0;
+      --text-muted: #8A9BAE;
+      --border:     rgba(26,158,143,.25);
+      --card-bg:    rgba(17,24,32,.85);
+      --radius:     14px;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ── LANGUAGE SWITCHER LOGIC ────────────────────────── */
+    .lang-es { display: none; }
+    .lang-en { display: inline; }
+    .block-es { display: none; }
+    .block-en { display: block; }
+
+    body.es .lang-es { display: inline; }
+    body.es .lang-en { display: none; }
+    body.es .block-es { display: block; }
+    body.es .block-en { display: none; }
+
+    /* ── LANGUAGE TOGGLE BUTTON ─────────────────────────── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: rgba(26,158,143,.1);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 3px;
+      gap: 2px;
+      cursor: pointer;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 99px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all .2s;
+    }
+    .lang-toggle button.active {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    /* ── TYPOGRAPHY ─────────────────────────────────────── */
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5.5vw, 3.6rem); font-weight: 800; }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; }
+    .teal  { color: var(--teal); }
+    .orange{ color: var(--orange); }
+
+    /* ── LAYOUT HELPERS ─────────────────────────────────── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 90px 0; }
+    .section-label {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+    }
+    .section-title { margin-bottom: 14px; }
+    .section-sub { color: var(--text-muted); max-width: 600px; font-size: 1.05rem; }
+    .center { text-align: center; }
+    .center .section-sub { margin: 0 auto; }
+
+    /* ── BUTTONS ────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--orange); color: #fff; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(244,123,32,.35); }
+    .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+    .btn-outline:hover { background: var(--teal); color: #fff; transform: translateY(-2px); }
+    .btn-lg { padding: 17px 36px; font-size: 1.05rem; }
+
+    /* ── SCROLL ANIMATION ───────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: .1s; }
+    .fade-up.delay-2 { transition-delay: .2s; }
+    .fade-up.delay-3 { transition-delay: .3s; }
+    .fade-up.delay-4 { transition-delay: .4s; }
+    .fade-up.delay-5 { transition-delay: .5s; }
+
+    /* ════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,15,20,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      max-width: 1140px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; }
+    .logo-text { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; }
+    .logo-multi { color: var(--teal); }
+    .logo-venza { color: var(--orange); }
+    .logo-sub { font-family: 'DM Sans', sans-serif; font-size: .65rem; color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase; margin-top: -3px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: .9rem; color: var(--text-muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+
+    /* ════════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 60% 30%, rgba(26,158,143,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(244,123,32,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(26,158,143,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,158,143,.07) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to right, transparent 40%, rgba(0,0,0,.6) 70%, rgba(0,0,0,.8) 100%);
+      mask-image: linear-gradient(to right, transparent 40%, rgba(0,0,0,.6) 70%, rgba(0,0,0,.8) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26,158,143,.12);
+      border: 1px solid rgba(26,158,143,.3);
+      border-radius: 99px;
+      padding: 6px 16px;
+      font-size: .82rem;
+      color: var(--teal);
+      font-weight: 500;
+      margin-bottom: 28px;
+      white-space: nowrap;
+      width: fit-content;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.4); }
+    }
+    .hero-headline { margin-bottom: 20px; }
+    .hero-body { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin-bottom: 36px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+    .stat { display: flex; flex-direction: column; }
+    .stat-number { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1; }
+    .stat-label { font-size: .82rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ════════════════════════════════════════════════════
+       PAIN
+    ════════════════════════════════════════════════════ */
+    #dolor { background: var(--bg2); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+    .pain-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .pain-card:hover { border-color: rgba(244,123,32,.4); transform: translateY(-4px); }
+    .pain-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(244,123,32,.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem; }
+    .pain-text { font-weight: 500; }
+    .pain-transition {
+      margin-top: 52px;
+      text-align: center;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(26,158,143,.06);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SERVICES
+    ════════════════════════════════════════════════════ */
+    #servicios { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+    .service-card.featured {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 1px var(--orange), 0 12px 40px rgba(244,123,32,.15);
+    }
+    .service-card.featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--teal));
+    }
+    .badge-popular {
+      position: absolute;
+      top: 18px; right: 18px;
+      background: var(--orange);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+    }
+    .service-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 22px; }
+    .service-icon.teal-bg { background: rgba(26,158,143,.12); }
+    .service-icon.orange-bg { background: rgba(244,123,32,.12); }
+    .service-name { font-size: 1.3rem; margin-bottom: 8px; }
+    .service-setup { font-size: .82rem; color: var(--text-muted); margin-bottom: 6px; }
+    .service-price { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 4px; }
+    .service-card.featured .service-price { color: var(--orange); }
+    .service-period { font-size: .85rem; color: var(--text-muted); margin-bottom: 20px; }
+    .service-desc { font-size: .92rem; color: var(--text-muted); margin-bottom: 22px; line-height: 1.6; }
+    .service-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+    .feature-item { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; }
+    .feature-check { color: var(--teal); font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
+    .service-card.featured .feature-check { color: var(--orange); }
+    .service-guarantee { background: rgba(26,158,143,.08); border: 1px solid rgba(26,158,143,.2); border-radius: 8px; padding: 12px 14px; font-size: .83rem; color: var(--teal); margin-bottom: 22px; }
+    .service-card.featured .service-guarantee { background: rgba(244,123,32,.08); border-color: rgba(244,123,32,.2); color: var(--orange); }
+    .service-cta { width: 100%; text-align: center; justify-content: center; }
+    .service-card:not(.featured) .service-cta { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+    .service-card:not(.featured) .service-cta:hover { background: var(--teal); color: #fff; }
+
+    /* ════════════════════════════════════════════════════
+       WHY
+    ════════════════════════════════════════════════════ */
+    #porque { background: var(--bg2); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 50px; }
+    .why-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; transition: border-color var(--transition), transform var(--transition); }
+    .why-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(26,158,143,.1); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+    .why-title { margin-bottom: 10px; color: var(--teal); }
+    .why-desc { font-size: .9rem; color: var(--text-muted); }
+
+    /* ════════════════════════════════════════════════════
+       TESTIMONIALS
+    ════════════════════════════════════════════════════ */
+    #testimonios { background: var(--bg); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 52px; }
+    .testimonial-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: border-color var(--transition), transform var(--transition); }
+    .testimonial-card:hover { border-color: rgba(26,158,143,.5); transform: translateY(-4px); }
+    .quote-mark { font-family: 'Syne', sans-serif; font-size: 4rem; color: var(--teal); opacity: .3; line-height: .8; margin-bottom: 16px; }
+    .testimonial-text { font-size: .95rem; line-height: 1.7; margin-bottom: 22px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: #fff; flex-shrink: 0; }
+    .author-name { font-weight: 600; font-size: .92rem; }
+    .author-title { font-size: .8rem; color: var(--text-muted); }
+    .stars { color: var(--orange); font-size: .9rem; margin-bottom: 14px; }
+    .placeholder-note { display: inline-block; margin-top: 36px; background: rgba(244,123,32,.08); border: 1px solid rgba(244,123,32,.2); border-radius: 8px; padding: 10px 16px; font-size: .82rem; color: var(--orange); }
+
+    /* ════════════════════════════════════════════════════
+       FINAL CTA
+    ════════════════════════════════════════════════════ */
+    #cta-final { background: var(--bg2); text-align: center; }
+    .cta-box { background: var(--bg3); border: 1px solid var(--border); border-radius: 20px; padding: 64px 40px; position: relative; overflow: hidden; }
+    .cta-box::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(26,158,143,.12), transparent 70%); pointer-events: none; }
+    .cta-scarcity { display: inline-flex; align-items: center; gap: 8px; background: rgba(244,123,32,.1); border: 1px solid rgba(244,123,32,.3); border-radius: 99px; padding: 6px 18px; font-size: .82rem; color: var(--orange); font-weight: 600; margin-bottom: 28px; }
+    .cta-scarcity::before { content: '●'; font-size: .6rem; }
+    .cta-title { margin-bottom: 16px; }
+    .cta-body { color: var(--text-muted); max-width: 560px; margin: 0 auto 36px; font-size: 1rem; }
+    .cta-note { margin-top: 20px; font-size: .84rem; color: var(--text-muted); }
+
+    /* ════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════ */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 60px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { color: var(--text-muted); font-size: .9rem; margin-top: 16px; max-width: 280px; line-height: 1.7; }
+    .footer-col h4 { font-family: 'Syne', sans-serif; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li { font-size: .9rem; color: var(--text-muted); }
+    .footer-col ul li a:hover { color: var(--teal); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .82rem; color: var(--text-muted); }
+
+    /* ════════════════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 64px 0; }
+      .hero-stats { gap: 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-box { padding: 40px 24px; }
+      .lang-toggle button { padding: 5px 9px; font-size: .75rem; }
+    }
+    .nav-open .nav-links {
+      display: flex; flex-direction: column;
+      position: fixed; top: 69px; left: 0; right: 0;
+      background: rgba(10,15,20,.97);
+      padding: 24px 20px;
+      border-bottom: 1px solid var(--border);
+      gap: 20px; z-index: 99;
+    }
+    .nav-open .nav-links a { font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">
+      <div class="logo-mark">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <polygon points="19,4 34,30 4,30" fill="#F47B20" opacity=".9"/>
+          <polygon points="19,12 29,28 9,28" fill="#1A9E8F"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text"><span class="logo-multi">Multi</span><span class="logo-venza">Venza</span></div>
+        <div class="logo-sub">Digital</div>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#dolor"><span class="lang-en">The Problem</span><span class="lang-es">El Problema</span></a></li>
+      <li><a href="#servicios"><span class="lang-en">Services</span><span class="lang-es">Servicios</span></a></li>
+      <li><a href="#porque"><span class="lang-en">About Us</span><span class="lang-es">Nosotros</span></a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <!-- Language Toggle -->
+      <div class="lang-toggle" id="langToggle">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj" class="btn btn-primary">
+        <span class="lang-en">Book a Call</span>
+        <span class="lang-es">Agenda tu llamada</span>
+      </a>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ══════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge fade-up">
+        <span></span>
+        <span class="lang-en">AI Automation · All USA</span>
+        <span class="lang-es">Automatización IA · Todo USA</span>
+      </div>
+
+      <h1 class="hero-headline fade-up delay-1">
+        <span class="lang-en">More customers.<br><span class="teal">Fewer missed calls.</span><br>Fully automated.</span>
+        <span class="lang-es">Más clientes.<br><span class="teal">Menos llamadas perdidas.</span><br>Todo automatizado.</span>
+      </h1>
+
+      <p class="hero-body fade-up delay-2">
+        <span class="lang-en">We implement intelligent automation systems for Latino contractors and Hispanic businesses across the USA — so your business gets found on Google, responds 24/7, and never loses a job because no one picked up.</span>
+        <span class="lang-es">Implementamos sistemas de automatización inteligente para contratistas latinos y negocios hispanos en USA — para que tu negocio consiga clientes en Google, responda 24/7 y nunca pierda una oportunidad por no contestar.</span>
+      </p>
+
+      <div class="hero-ctas fade-up delay-3">
+        <a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj" class="btn btn-primary btn-lg">
+          📅 <span class="lang-en">Schedule a Free Call</span><span class="lang-es">Agenda una llamada gratis</span>
+        </a>
+        <a href="#servicios" class="btn btn-outline btn-lg">
+          <span class="lang-en">View Services</span><span class="lang-es">Ver servicios</span>
+        </a>
+      </div>
+
+      <div class="hero-stats fade-up delay-4">
+        <div class="stat">
+          <span class="stat-number">7</span>
+          <span class="stat-label"><span class="lang-en">days delivery</span><span class="lang-es">días entrega</span></span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label"><span class="lang-en">AI services</span><span class="lang-es">servicios IA</span></span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label"><span class="lang-en">bilingual</span><span class="lang-es">bilingüe</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ DOLOR ═════════════════════════ -->
+<section id="dolor">
+  <div class="container">
+    <div class="center fade-up">
+      <span class="section-label"><span class="lang-en">The Problem</span><span class="lang-es">El Problema</span></span>
+      <h2 class="section-title">
+        <span class="lang-en">Do any of these sound familiar?</span>
+        <span class="lang-es">¿Te suena familiar alguno de estos problemas?</span>
+      </h2>
+      <p class="section-sub">
+        <span class="lang-en">These are the most common problems we solve for contractors every day.</span>
+        <span class="lang-es">Estos son los problemas más comunes que resolvemos para contratistas cada día.</span>
+      </p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card fade-up delay-1">
+        <div class="pain-icon">🔍</div>
+        <p class="pain-text">
+          <span class="lang-en">Your business doesn't show up when someone searches Google in your city.</span>
+          <span class="lang-es">Tu negocio no aparece cuando alguien busca en Google en tu ciudad.</span>
+        </p>
+      </div>
+      <div class="pain-card fade-up delay-2">
+        <div class="pain-icon">📞</div>
+        <p class="pain-text">
+          <span class="lang-en">You miss calls because you're on the job and can't pick up.</span>
+          <span class="lang-es">Pierdes llamadas porque estás en el trabajo y no puedes contestar.</span>
+        </p>
+      </div>
+      <div class="pain-card fade-up delay-3">
+        <div class="pain-icon">💸</div>
+        <p class="pain-text">
+          <span class="lang-en">You pay HomeAdvisor or Thumbtack but the leads are bad and expensive.</span>
+          <span class="lang-es">Pagas a HomeAdvisor o Thumbtack pero los leads son malos y caros.</span>
+        </p>
+      </div>
+      <div class="pain-card fade-up delay-1">
+        <div class="pain-icon">🌐</div>
+        <p class="pain-text">
+          <span class="lang-en">You don't have a website, or you have one that nobody finds.</span>
+          <span class="lang-es">No tienes página web, o tienes una que nadie encuentra.</span>
+        </p>
+      </div>
+      <div class="pain-card fade-up delay-2">
+        <div class="pain-icon">📉</div>
+        <p class="pain-text">
+          <span class="lang-en">Your competition is getting the customers that should be yours.</span>
+          <span class="lang-es">Tu competencia está consiguiendo los clientes que deberían ser tuyos.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pain-transition fade-up">
+      <span class="lang-en">✅ <strong>We solve exactly that — with a proven intelligent automation system.</strong></span>
+      <span class="lang-es">✅ <strong>Nosotros resolvemos exactamente eso — con un sistema de automatización inteligente probado.</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SERVICIOS ════════════════════ -->
+<section id="servicios">
+  <div class="container">
+    <div class="center fade-up">
+      <span class="section-label"><span class="lang-en">Services</span><span class="lang-es">Servicios</span></span>
+      <h2 class="section-title">
+        <span class="lang-en">Choose the plan your business needs today</span>
+        <span class="lang-es">Elige el plan que necesita tu negocio hoy</span>
+      </h2>
+      <p class="section-sub">
+        <span class="lang-en">All plans include setup + monthly retainer. Month-to-month, no long-term contracts.</span>
+        <span class="lang-es">Todos los planes incluyen setup + retainer mensual. Mes a mes, sin contratos largos.</span>
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Plan 1 -->
+      <div class="service-card fade-up delay-1">
+        <div class="service-icon teal-bg">🌐</div>
+        <h3 class="service-name">
+          <span class="lang-en">Digital Presence</span>
+          <span class="lang-es">Presencia Digital</span>
+        </h3>
+        <p class="service-setup">
+          <span class="lang-en">$500 setup · first month included</span>
+          <span class="lang-es">$500 setup · primer mes incluido</span>
+        </p>
+        <div class="service-price">$300</div>
+        <p class="service-period">
+          <span class="lang-en">/month</span>
+          <span class="lang-es">/mes</span>
+        </p>
+        <p class="service-desc">
+          <span class="lang-en">For contractors without a website, or with one nobody finds. We build you a professional landing page in 7 days, optimized to show up on Google Maps in your area.</span>
+          <span class="lang-es">Para contratistas sin página web o con una web que nadie encuentra. Te construimos una landing profesional en 7 días, optimizada para Google Maps en tu área.</span>
+        </p>
+        <ul class="service-features">
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Professional landing page</span><span class="lang-es">Landing page profesional</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Optimized Google Business profile</span><span class="lang-es">Perfil Google Business optimizado</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Contact form + lead capture</span><span class="lang-es">Formulario de contacto + captura de leads</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Hosting + monthly maintenance</span><span class="lang-es">Hosting + mantenimiento mensual</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">WhatsApp support</span><span class="lang-es">Soporte vía WhatsApp</span></span></li>
+        </ul>
+        <div class="service-guarantee">
+          🛡️ <span class="lang-en">Website live in 7 days or your money back.</span>
+          <span class="lang-es">Web lista en 7 días o te devolvemos el dinero.</span>
+        </div>
+        <a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj" class="btn service-cta">
+          <span class="lang-en">I want this plan</span>
+          <span class="lang-es">Quiero este plan</span>
+        </a>
+      </div>
+
+      <!-- Plan 2 FEATURED -->
+      <div class="service-card featured fade-up delay-2">
+        <div class="badge-popular">⭐ <span class="lang-en">Most Popular</span><span class="lang-es">Más Popular</span></div>
+        <div class="service-icon orange-bg">🤖</div>
+        <h3 class="service-name">AI Receptionist</h3>
+        <p class="service-setup">
+          <span class="lang-en">$1,000 setup · first month included</span>
+          <span class="lang-es">$1,000 setup · primer mes incluido</span>
+        </p>
+        <div class="service-price">$500</div>
+        <p class="service-period">
+          <span class="lang-en">/month</span>
+          <span class="lang-es">/mes</span>
+        </p>
+        <p class="service-desc">
+          <span class="lang-en">AI that responds in 30 seconds, books appointments automatically, and follows up — without you lifting a finger.</span>
+          <span class="lang-es">IA que responde en 30 segundos, agenda citas automáticamente y hace follow-up — sin que tú hagas nada.</span>
+        </p>
+        <ul class="service-features">
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Everything in Plan 1</span><span class="lang-es">Todo el Plan 1 incluido</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Automatic missed call text-back</span><span class="lang-es">Missed call text-back automático</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">AI chat widget on your website</span><span class="lang-es">Chat widget con IA en tu web</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Integrated appointment calendar</span><span class="lang-es">Calendario de citas integrado</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Automatic SMS + email follow-up</span><span class="lang-es">Follow-up automático SMS + email</span></span></li>
+        </ul>
+        <div class="service-guarantee">
+          📈 <span class="lang-en">Save 10+ hours/week · 40% more closed jobs.</span>
+          <span class="lang-es">Ahorra 10+ horas/semana · 40% más cierres.</span>
+        </div>
+        <a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj" class="btn btn-primary service-cta">
+          <span class="lang-en">I want the AI Receptionist</span>
+          <span class="lang-es">Quiero el AI Receptionist</span>
+        </a>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="service-card fade-up delay-3">
+        <div class="service-icon teal-bg">🚀</div>
+        <h3 class="service-name">
+          <span class="lang-en">Full AI Employee + SEO</span>
+          <span class="lang-es">Empleado IA Completo + SEO</span>
+        </h3>
+        <p class="service-setup">
+          <span class="lang-en">$1,500 setup · first month included</span>
+          <span class="lang-es">$1,500 setup · primer mes incluido</span>
+        </p>
+        <div class="service-price">$800</div>
+        <p class="service-period">
+          <span class="lang-en">/month</span>
+          <span class="lang-es">/mes</span>
+        </p>
+        <p class="service-desc">
+          <span class="lang-en">Dominate your local market. Web presence + top-3 Google SEO + an AI employee that handles calls, bookings, reviews, and follow-ups on its own.</span>
+          <span class="lang-es">Domina tu mercado local. Presencia web + top 3 Google + un empleado IA que maneja llamadas, citas, reseñas y seguimientos completamente solo.</span>
+        </p>
+        <ul class="service-features">
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Everything in Plan 2</span><span class="lang-es">Todo el Plan 2 incluido</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Local SEO — top 3 Google Maps</span><span class="lang-es">SEO local — top 3 Google Maps</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">AI-powered review management</span><span class="lang-es">Gestión de reseñas con IA</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Monthly results reports</span><span class="lang-es">Reportes mensuales de resultados</span></span></li>
+          <li class="feature-item"><span class="feature-check">✓</span><span><span class="lang-en">Priority access to new features</span><span class="lang-es">Acceso prioritario a nuevas funciones</span></span></li>
+        </ul>
+        <div class="service-guarantee">
+          🛡️ <span class="lang-en">Top 3 on Google in 60 days or we work free.</span>
+          <span class="lang-es">Top 3 en Google en 60 días o trabajamos gratis.</span>
+        </div>
+        <a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj" class="btn service-cta">
+          <span class="lang-en">I want the full plan</span>
+          <span class="lang-es">Quiero el plan completo</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ POR QUÉ ══════════════════════ -->
+<section id="porque">
+  <div class="container">
+    <div class="center fade-up">
+      <span class="section-label"><span class="lang-en">Why Us</span><span class="lang-es">Por Qué Nosotros</span></span>
+      <h2 class="section-title">
+        <span class="lang-en">Why work with <span class="teal">MultiVenza Digital</span>?</span>
+        <span class="lang-es">¿Por qué trabajar con <span class="teal">MultiVenza Digital</span>?</span>
+      </h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card fade-up delay-1">
+        <div class="why-icon">🗣️</div>
+        <h3 class="why-title"><span class="lang-en">We speak your language</span><span class="lang-es">Hablamos tu idioma</span></h3>
+        <p class="why-desc">
+          <span class="lang-en">Not just Spanish — we understand your business, your market, and your customers.</span>
+          <span class="lang-es">No solo español — entendemos cómo funciona tu negocio, tu mercado y tus clientes.</span>
+        </p>
+      </div>
+      <div class="why-card fade-up delay-2">
+        <div class="why-icon">🔧</div>
+        <h3 class="why-title"><span class="lang-en">Contractor specialists</span><span class="lang-es">Especialistas en contratistas</span></h3>
+        <p class="why-desc">
+          <span class="lang-en">We're not a generic agency. We only work with roofing, HVAC, plumbing, construction, and remodeling.</span>
+          <span class="lang-es">No somos una agencia genérica. Solo trabajamos con roofing, HVAC, plomería, construcción y remodelación.</span>
+        </p>
+      </div>
+      <div class="why-card fade-up delay-3">
+        <div class="why-icon">⚡</div>
+        <h3 class="why-title"><span class="lang-en">Results in 7 days</span><span class="lang-es">Resultados en 7 días</span></h3>
+        <p class="why-desc">
+          <span class="lang-en">Your website is live in one week. Not months.</span>
+          <span class="lang-es">Tu web está lista en una semana. No en meses.</span>
+        </p>
+      </div>
+      <div class="why-card fade-up delay-4">
+        <div class="why-icon">📅</div>
+        <h3 class="why-title"><span class="lang-en">No long-term contracts</span><span class="lang-es">Sin contratos largos</span></h3>
+        <p class="why-desc">
+          <span class="lang-en">Month to month. If you're not satisfied, cancel anytime.</span>
+          <span class="lang-es">Mes a mes. Si no estás satisfecho, cancelas cuando quieras.</span>
+        </p>
+      </div>
+      <div class="why-card fade-up delay-5">
+        <div class="why-icon">🏆</div>
+        <h3 class="why-title"><span class="lang-en">Certified automation experts</span><span class="lang-es">Expertos certificados en automatización</span></h3>
+        <p class="why-desc">
+          <span class="lang-en">We use the most complete intelligent automation platform on the market so your entire business lives in one place.</span>
+          <span class="lang-es">Usamos la plataforma de automatización inteligente más completa del mercado para que todo tu negocio esté en un solo lugar.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TESTIMONIOS ══════════════════ -->
+<section id="testimonios">
+  <div class="container">
+    <div class="center fade-up">
+      <span class="section-label">Testimonios</span>
+      <h2 class="section-title">
+        <span class="lang-en">What our clients say</span>
+        <span class="lang-es">Lo que dicen nuestros clientes</span>
+      </h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up delay-1">
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">
+          <span class="lang-en">"Before, I was missing 3 or 4 calls a day. Now the system answers them automatically and I just show up to ready-to-close appointments."</span>
+          <span class="lang-es">"Antes perdía 3 o 4 llamadas al día. Ahora el sistema las responde solo y yo llego a las citas listas para cerrar."</span>
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CR</div>
+          <div>
+            <p class="author-name">Carlos R.</p>
+            <p class="author-title">Roofing Contractor · Chicago, IL</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up delay-2">
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">
+          <span class="lang-en">"In 30 days my business was in the top 3 on Google in my city. I'd never had that many organic leads before."</span>
+          <span class="lang-es">"En 30 días mi negocio apareció en el top 3 de Google en mi ciudad. Nunca había tenido tantos leads orgánicos."</span>
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MS</div>
+          <div>
+            <p class="author-name">Miguel S.</p>
+            <p class="author-title">HVAC Contractor · Dallas, TX</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up delay-3">
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">
+          <span class="lang-en">"The price is fair and the results are real. In two months I recovered my investment."</span>
+          <span class="lang-es">"El precio es justo y los resultados son reales. En dos meses recuperé la inversión."</span>
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AL</div>
+          <div>
+            <p class="author-name">Ana L.</p>
+            <p class="author-title">Remodeling Company · Houston, TX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <span class="placeholder-note">
+        ⚠️ <span class="lang-en">Replace with real client testimonials once first contracts are signed.</span>
+        <span class="lang-es">Reemplazar con testimonios reales al cerrar primeros contratos.</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CTA FINAL ════════════════════ -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <div class="cta-scarcity">
+        <span class="lang-en">Only 5 new clients per month · Spots fill up fast</span>
+        <span class="lang-es">Solo 5 nuevos clientes por mes · Las fechas se llenan rápido</span>
+      </div>
+      <h2 class="cta-title">
+        <span class="lang-en">Ready for your business<br>to <span class="teal">work for you?</span></span>
+        <span class="lang-es">¿Listo para que tu negocio<br><span class="teal">trabaje para ti?</span></span>
+      </h2>
+      <p class="cta-body">
+        <span class="lang-en">Book a free 20-minute call. No cost, no commitment. We'll show you exactly how to rank on Google, never miss a call, and get more customers — starting this week.</span>
+        <span class="lang-es">Agenda una llamada de 20 minutos. Sin costo, sin compromiso. Te mostramos exactamente cómo aparecer en Google, nunca perder una llamada, y conseguir más clientes — esta semana.</span>
+      </p>
+      <a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj" class="btn btn-primary btn-lg">
+        📅 <span class="lang-en">Schedule Your Free Call</span><span class="lang-es">Agenda tu llamada gratis</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+              <polygon points="19,4 34,30 4,30" fill="#F47B20" opacity=".9"/>
+              <polygon points="19,12 29,28 9,28" fill="#1A9E8F"/>
+            </svg>
+          </div>
+          <div>
+            <div class="logo-text"><span class="logo-multi">Multi</span><span class="logo-venza">Venza</span></div>
+            <div class="logo-sub">Digital</div>
+          </div>
+        </div>
+        <p>
+          <span class="lang-en">Intelligent automation systems for Latino contractors and Hispanic businesses across the USA.</span>
+          <span class="lang-es">Sistemas de automatización inteligente para contratistas latinos y negocios hispanos en USA.</span>
+        </p>
+        <p style="margin-top:10px;font-size:.82rem;color:var(--text-muted)">
+          MultiVenza LLC &nbsp;·&nbsp;
+          <span class="lang-en">Mon–Fri 8am–6pm CST</span>
+          <span class="lang-es">Lunes–Viernes 8am–6pm CST</span>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4><span class="lang-en">Services</span><span class="lang-es">Servicios</span></h4>
+        <ul>
+          <li><span class="lang-en">Digital Presence</span><span class="lang-es">Presencia Digital</span> — <span class="teal">$300/<span class="lang-en">mo</span><span class="lang-es">mes</span></span></li>
+          <li>AI Receptionist — <span class="orange">$500/<span class="lang-en">mo</span><span class="lang-es">mes</span></span></li>
+          <li><span class="lang-en">Full AI + SEO</span><span class="lang-es">IA Completo + SEO</span> — <span class="teal">$800/<span class="lang-en">mo</span><span class="lang-es">mes</span></span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
+        <ul>
+          <li><a href="https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj">📅 <span class="lang-en">Book a call</span><span class="lang-es">Agenda una llamada</span></a></li>
+          <li><a href="mailto:hello@multivenzadigital.com">✉️ hello@multivenzadigital.com</a></li>
+          <li><a href="#"><span class="lang-en">Privacy Policy</span><span class="lang-es">Política de privacidad</span></a></li>
+          <li><a href="#"><span class="lang-en">Terms of Service</span><span class="lang-es">Términos de servicio</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 MultiVenza LLC. <span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span></p>
+      <p style="color:var(--teal);font-size:.82rem">
+        <span class="lang-en">Powered by Intelligent Automation</span>
+        <span class="lang-es">Powered by Automatización Inteligente</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════ JS ════════════════════════════ -->
+<script>
+  // ── Language switcher ─────────────────────────────────────
+  function setLang(lang) {
+    document.body.className = lang;
+    document.getElementById('html-root').lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    localStorage.setItem('mvd-lang', lang);
+  }
+
+  // Restore saved preference, default EN
+  const savedLang = localStorage.getItem('mvd-lang') || 'en';
+  setLang(savedLang);
+
+  // ── Scroll animations ─────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Mobile nav ────────────────────────────────────────────
+  function toggleNav() { document.getElementById('navbar').classList.toggle('nav-open'); }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => document.getElementById('navbar').classList.remove('nav-open'));
+  });
+
+  // ── Nav shadow on scroll ──────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 20 ? '0 4px 30px rgba(0,0,0,.4)' : 'none';
+  });
+</script>
+</body>
+</html>

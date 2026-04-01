@@ -1,0 +1,12 @@
+2026-03-24 15:01:55,662  INFO      CSV cargado: 4007 leads totales
+2026-03-24 15:01:55,682  INFO      Leads pendientes: 10
+2026-03-24 15:01:55,683  INFO        [DRY RUN] Brothers Heating & Cooling Inc. & Brothers Perfect Construction LLC | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] Hermanos HVAC | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] CENTRO TECNICO LATINO USA | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] Latino's Ready Mix Concrete, LLC | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] ENCUENTRO HISPANO | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] Remodelaciones Pintura Exterior Interior Dayron Miami | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] Home Remodeling Services/ Servicios de Remodelacion | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] Clases de Aire Acondicionado y Electricidad en Miami/ Fundación Latina USA/H.V.A.C | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,684  INFO        [DRY RUN] LATINO HOME IMPROVEMENST LLC | Tags: ['roofing', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead
+2026-03-24 15:01:55,695  INFO        [DRY RUN] Thomas Brothers Remodeling | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español'] | Pipeline: Contratistas Latinos/Nuevo Lead

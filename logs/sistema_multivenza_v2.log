@@ -1,0 +1,43 @@
+============================================================
+  Sistema MultiVenza 2.0 — Log de Activación
+  2026-03-27
+============================================================
+
+✅ Formulario Web (multivenza-v3.html)
+   - CTA único: "Solicitar mi Sistema Ahora" en todos los puntos de contacto
+   - Formulario: nombre + teléfono → POST /web-lead-trigger
+   - Precios actualizados: $1,499 setup + $499/mes
+   - Copy "cena de equipo" agregado al producto único
+   - Botones tap-friendly: min-height 56px
+
+✅ Calificación IA (Retell AI — retell-system-prompt.md)
+   - Paso 2 ahora califica ANTES de proponer:
+     "¿Cuántos proyectos maneja al mes?"
+   - Lead califica si: 3+ proyectos/mes, o dolor claro (tiempo/leads)
+   - Script de precio si cliente pregunta: $1,499 setup + $499/mes
+   - Bilingual: mismo flujo en ES y EN
+
+✅ Etiquetado GHL (webhook_server.py)
+   - score-alto    → volumen 5+ proyectos o presupuesto confirmado
+   - score-medio   → 3-4 proyectos o quiere crecer
+   - score-bajo    → no interesado / sentimiento negativo
+   - Interesado_Sistema_Completo → todos los web leads
+   - Cita_Confirmada_IA → keyword detection en resumen
+
+✅ Calendario Keyner (demo de 15 min)
+   - Leads llegan pre-calificados por la IA
+   - Resumen de llamada disponible en GHL antes de la demo
+   - Guion de cierre listo: templates/guion_cierre_demo.md
+
+------------------------------------------------------------
+FLUJO COMPLETO VERIFICADO:
+
+  [Web Form] → /web-lead-trigger
+    → Retell AI llama en 30 seg
+      → Califica (proyectos/mes + dolor)
+        → Si califica: agenda demo con Keyner
+          → GHL: score-tag + Cita_Confirmada_IA
+            → Keyner cierra con guion_cierre_demo.md
+
+  STATUS: Sistema MultiVenza 2.0 LISTO ✅
+============================================================

@@ -1,0 +1,20 @@
+fecha,nombre,email,telefono,nicho,ciudad,resultado,email_enviado,ghl_contact_id,pipeline,error
+2026-03-29 23:40:10,The Dental Emergency Room,su.re-latned%40ofni,(612) 800-8008,,,OK,NO,dry-run,,
+2026-03-29 23:40:10,Star Bar & Bistro,starbar@glmghotels.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:10,Honeycomb Salon,honeycombmpls@gmail.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:10,Head To Toe,headtotoe.spa@gmail.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:10,Paper Salon,laura@paperhairsalon.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,The Dental Emergency Room,su.re-latned%40ofni,(612) 800-8008,,,OK,NO,dry-run,,
+2026-03-29 23:40:23,Star Bar & Bistro,starbar@glmghotels.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Honeycomb Salon,honeycombmpls@gmail.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Head To Toe,headtotoe.spa@gmail.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Paper Salon,laura@paperhairsalon.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Two Mixed Up,hello.twomixedup@gmail.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,"Aaron's Green Cleaning Service, Inc",info@aaronsgreencleaning.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,MG Construction Services,info@mountaingroupcc.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Landscape Love,hello@landscapelovegardens.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Austin Housh Real Estate LLC,hello@drgmpls.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,North Loop Fitness,contact@northloopfitness.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Hale Family Dental,%69n%66o@%68al%65family%64enta%6c.com,(612) 721-6233,,,OK,NO,dry-run,,
+2026-03-29 23:40:23,Anthem,anthemhaircompany@gmail.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono
+2026-03-29 23:40:23,Mycelium Salon,danielle@myceliumsalon.com,nan,,,SKIP/ERROR: sin teléfono,NO,,,sin teléfono

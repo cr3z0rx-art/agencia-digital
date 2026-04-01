@@ -1,0 +1,17 @@
+2026-03-29 01:06:42,576  INFO      GHL conectado: MultiVenza Digital
+2026-03-29 01:06:43,011  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-29 01:06:43,014  INFO      CSV cargado: 12 leads totales
+2026-03-29 01:06:43,016  INFO      Leads pendientes: 12
+2026-03-29 01:06:43,017  INFO      Leads pendientes: 12 | Con email: 0
+2026-03-29 01:06:43,373  ERROR       ERROR creando contacto 'Blaylock Plumbing Co.': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"1c68a381-bf1b-4ea3-b67d-4836a3e0b692"}
+2026-03-29 01:06:43,765  ERROR       ERROR creando contacto 'Shelton Painting Inc.': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"dc14395d-c2bf-4ccf-b59d-6ee422229a6c"}
+2026-03-29 01:06:44,155  ERROR       ERROR creando contacto 'Remi Mowing': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"1184a48d-563a-45ab-9399-25a4cff6f103"}
+2026-03-29 01:06:44,531  ERROR       ERROR creando contacto 'Clean Right Services LLC': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"f19fbacc-f9fe-449e-97b8-b84066688fd0"}
+2026-03-29 01:06:44,895  ERROR       ERROR creando contacto 'Baquero Law Office': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"4101a031-68fd-45a7-bd0c-0323a7115dc0"}
+2026-03-29 01:06:45,272  ERROR       ERROR creando contacto 'Abogada Alexandra': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"fbb34cc1-865c-4fc6-9fa7-681f85a2e494"}
+2026-03-29 01:06:45,665  ERROR       ERROR creando contacto 'Raul Sanchez': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"660bfefb-bbcf-4ed1-acb7-d549a2d73fbf"}
+2026-03-29 01:06:46,042  ERROR       ERROR creando contacto 'Artemisa Boston': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"91c7a1b5-503d-43a0-8003-68383af0d1b7"}
+2026-03-29 01:06:46,414  ERROR       ERROR creando contacto 'Gerardo Becerra Benitez': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"f6fa088f-316c-4b22-8dc7-0a0c53321dae"}
+2026-03-29 01:06:46,781  ERROR       ERROR creando contacto 'Quintin Jacobson': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"51460b5a-36d1-4328-bd28-fc741e9f865e"}
+2026-03-29 01:06:47,163  ERROR       ERROR creando contacto 'Veronica Suarez': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"f503f23c-918a-4233-ba2b-7c7a74394091"}
+2026-03-29 01:06:47,569  ERROR       ERROR creando contacto 'La Vaquita': 422 — {"message":["email must be an email"],"error":"Unprocessable Entity","statusCode":422,"traceId":"72cbb539-46ec-46dc-bbe9-092fb198ed6a"}

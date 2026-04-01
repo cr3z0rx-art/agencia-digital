@@ -1,0 +1,5 @@
+2026-03-25 18:53:19,940  INFO      CSV cargado: 5 leads totales
+2026-03-25 18:53:19,949  INFO      Leads pendientes: 2
+2026-03-25 18:53:19,949  INFO      Leads pendientes: 2 | Con email: 2
+2026-03-25 18:53:19,949  INFO        [DRY RUN] Liberte Construction | email: admin@liberteconstruction.com | Tags: ['hot', 'servicio-ia']
+2026-03-25 18:53:19,954  INFO        [DRY RUN] Sela Roofing & Remodeling | email: info@selaroofing.com | Tags: ['hot', 'servicio-ia']

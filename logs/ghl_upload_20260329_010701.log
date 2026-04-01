@@ -1,0 +1,39 @@
+2026-03-29 01:07:02,095  INFO      GHL conectado: MultiVenza Digital
+2026-03-29 01:07:02,497  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-29 01:07:02,497  INFO      CSV cargado: 12 leads totales
+2026-03-29 01:07:02,497  INFO      Leads pendientes: 12
+2026-03-29 01:07:02,497  INFO      Leads pendientes: 12 | Con email: 0
+2026-03-29 01:07:02,948  INFO        Duplicado — reusando contactId: hVnVPwZli6tx3fyIROef
+2026-03-29 01:07:03,847  INFO        Pipeline OK (oportunidad ya existe) | deal_value: $1500
+2026-03-29 01:07:03,847  INFO        OK [DUPLICADO]  Blaylock Plumbing Co. | ID: hVnVPwZli6tx3fyIROef | email_sent: False
+2026-03-29 01:07:05,979  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:05,979  INFO        OK  Shelton Painting Inc. | ID: Eqx4QpT3rj3WXxQr3HRN | email_sent: False
+2026-03-29 01:07:07,826  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:07,826  INFO        OK  Remi Mowing | ID: P3iE4LJxIv7kgx2qAwPG | email_sent: False
+2026-03-29 01:07:09,790  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:09,790  INFO        OK  Clean Right Services LLC | ID: MYIzt0MVUI2ETbp2dcfO | email_sent: False
+2026-03-29 01:07:12,218  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:12,218  INFO        OK  Baquero Law Office | ID: 6oU2Qq3XkrqpPMu2xb2m | email_sent: False
+2026-03-29 01:07:14,048  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:14,050  INFO        OK  Abogada Alexandra | ID: PccIqzWoQuMwwY9UC5ib | email_sent: False
+2026-03-29 01:07:16,229  INFO      SMTP OK → hello@multivenzadigital.com
+2026-03-29 01:07:16,273  INFO        NOTIF enviada a hello@multivenzadigital.com — Latino HOT: Raul Sanchez
+2026-03-29 01:07:16,988  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:16,989  INFO        OK  Raul Sanchez | ID: 7HMrEZSkYy8757ZW5K8F | email_sent: False
+2026-03-29 01:07:18,811  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:18,811  INFO        OK  Artemisa Boston | ID: Qh43QEJezrcEmkfVkIxW | email_sent: False
+2026-03-29 01:07:20,830  INFO      SMTP OK → hello@multivenzadigital.com
+2026-03-29 01:07:20,874  INFO        NOTIF enviada a hello@multivenzadigital.com — Latino HOT: Gerardo Becerra Benitez
+2026-03-29 01:07:21,400  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:21,401  INFO        OK  Gerardo Becerra Benitez | ID: qzWmUr18vnKebPPKHgI6 | email_sent: False
+2026-03-29 01:07:23,154  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:23,154  INFO        OK  Quintin Jacobson | ID: 0zDLEwxvcrSgf9DBhTON | email_sent: False
+2026-03-29 01:07:25,481  INFO      SMTP OK → hello@multivenzadigital.com
+2026-03-29 01:07:25,524  INFO        NOTIF enviada a hello@multivenzadigital.com — Latino HOT: Veronica Suarez
+2026-03-29 01:07:26,302  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:26,302  INFO        OK  Veronica Suarez | ID: WUYHPFo88LpLYMvTC5XY | email_sent: False
+2026-03-29 01:07:28,544  INFO      SMTP OK → hello@multivenzadigital.com
+2026-03-29 01:07:28,597  INFO        NOTIF enviada a hello@multivenzadigital.com — Latino HOT: La Vaquita
+2026-03-29 01:07:29,099  INFO        Pipeline OK | deal_value: $1500
+2026-03-29 01:07:29,099  INFO        OK  La Vaquita | ID: oaz9sVUJvGmRtC0m1889 | email_sent: False
+2026-03-29 01:07:29,112  INFO      CSV actualizado: 12 marcados ghl_uploaded=YES

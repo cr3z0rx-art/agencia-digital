@@ -1,0 +1,6 @@
+2026-03-26 17:15:22,516  INFO      CSV cargado: 904 leads totales
+2026-03-26 17:15:22,525  INFO      Leads pendientes: 3 (limit=3)
+2026-03-26 17:15:22,526  INFO      Leads pendientes: 3 | Con email: 3
+2026-03-26 17:15:22,527  INFO        [DRY RUN] Liberte Construction | email: admin@liberteconstruction.com | Tags: ['hot', 'servicio-ia']
+2026-03-26 17:15:22,530  INFO        [DRY RUN] Sela Roofing & Remodeling | email: info@selaroofing.com | Tags: ['hot', 'servicio-ia']
+2026-03-26 17:15:22,531  INFO        [DRY RUN] R & R Roofing Inc. | email: rrroofing77@gmail.com | Tags: ['hot', 'servicio-ia']

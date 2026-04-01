@@ -1,0 +1,36 @@
+2026-03-25 22:43:18,743  INFO      GHL conectado: MultiVenza Digital
+2026-03-25 22:43:19,165  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-25 22:43:19,185  INFO      CSV cargado: 92 leads totales
+2026-03-25 22:43:19,189  INFO      Leads pendientes: 5 (limit=5)
+2026-03-25 22:43:19,189  INFO      Leads pendientes: 5 | Con email: 5
+2026-03-25 22:43:19,608  INFO        Duplicado — reusando contactId: YZ5PtRZ7Lo2p3ohETVIr
+2026-03-25 22:43:21,030  WARNING     Pipeline fallido para Liberte Construction: 400 Client Error: Bad Request for url: https://services.leadconnectorhq.com/opportunities/
+2026-03-25 22:43:24,733  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:43:25,781  INFO      SMTP OK → admin@liberteconstruction.com
+2026-03-25 22:43:25,814  INFO        EMAIL enviado → admin@liberteconstruction.com
+2026-03-25 22:43:25,814  INFO        OK (sin pipeline) [DUPLICADO]  Liberte Construction | ID: YZ5PtRZ7Lo2p3ohETVIr | email_sent: True
+2026-03-25 22:43:26,244  INFO        Duplicado — reusando contactId: 8uentsgLrmfB5gM8bqVv
+2026-03-25 22:43:27,518  WARNING     Pipeline fallido para Sela Roofing & Remodeling: 400 Client Error: Bad Request for url: https://services.leadconnectorhq.com/opportunities/
+2026-03-25 22:43:30,362  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:43:31,328  INFO      SMTP OK → info@selaroofing.com
+2026-03-25 22:43:31,375  INFO        EMAIL enviado → info@selaroofing.com
+2026-03-25 22:43:31,376  INFO        OK (sin pipeline) [DUPLICADO]  Sela Roofing & Remodeling | ID: 8uentsgLrmfB5gM8bqVv | email_sent: True
+2026-03-25 22:43:31,845  INFO        Duplicado — reusando contactId: tlUBHbqdn6G98I8tAEKj
+2026-03-25 22:43:32,859  WARNING     Pipeline fallido para R & R Roofing Inc.: 400 Client Error: Bad Request for url: https://services.leadconnectorhq.com/opportunities/
+2026-03-25 22:43:35,308  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:43:36,417  INFO      SMTP OK → rrroofing77@gmail.com
+2026-03-25 22:43:36,463  INFO        EMAIL enviado → rrroofing77@gmail.com
+2026-03-25 22:43:36,464  INFO        OK (sin pipeline) [DUPLICADO]  R & R Roofing Inc. | ID: tlUBHbqdn6G98I8tAEKj | email_sent: True
+2026-03-25 22:43:36,876  INFO        Duplicado — reusando contactId: nDHVrSn0iAd2D8f4HKL9
+2026-03-25 22:43:38,015  WARNING     Pipeline fallido para Kaufman Roofing: 400 Client Error: Bad Request for url: https://services.leadconnectorhq.com/opportunities/
+2026-03-25 22:43:40,581  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:43:41,615  INFO      SMTP OK → info@kaufmanroofing.com
+2026-03-25 22:43:41,653  INFO        EMAIL enviado → info@kaufmanroofing.com
+2026-03-25 22:43:41,653  INFO        OK (sin pipeline) [DUPLICADO]  Kaufman Roofing | ID: nDHVrSn0iAd2D8f4HKL9 | email_sent: True
+2026-03-25 22:43:42,318  INFO        Duplicado — reusando contactId: 1H3Aa93F1DdAcHYdJv7z
+2026-03-25 22:43:43,650  WARNING     Pipeline fallido para Bayport Roofing and Siding: 400 Client Error: Bad Request for url: https://services.leadconnectorhq.com/opportunities/
+2026-03-25 22:43:46,358  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:43:47,288  INFO      SMTP OK → info@bayportroofing.com
+2026-03-25 22:43:47,340  INFO        EMAIL enviado → info@bayportroofing.com
+2026-03-25 22:43:47,341  INFO        OK (sin pipeline) [DUPLICADO]  Bayport Roofing and Siding | ID: 1H3Aa93F1DdAcHYdJv7z | email_sent: True
+2026-03-25 22:43:47,344  INFO      CSV actualizado: 5 marcados ghl_uploaded=YES

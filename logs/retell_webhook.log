@@ -1,0 +1,210 @@
+2026-03-27 15:27:14,163  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-27 15:27:14,164  INFO        POST /retell-webhook     ← eventos de llamada de Retell AI
+2026-03-27 15:27:14,164  INFO        POST /web-lead-trigger   ← dispara llamada desde formulario web GHL
+2026-03-27 15:27:14,165  INFO        Pipeline: Contratistas Latinos → 'HOT Lead' (sentimiento positivo)
+2026-03-27 15:27:14,231  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-27 15:27:14,231  INFO      [33mPress CTRL+C to quit[0m
+2026-03-27 15:34:53,110  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-27 15:34:53,110  INFO        POST /retell-webhook     ← eventos de llamada de Retell AI
+2026-03-27 15:34:53,110  INFO        POST /web-lead-trigger   ← dispara llamada desde formulario web GHL
+2026-03-27 15:34:53,111  INFO        Pipeline: Contratistas Latinos → 'HOT Lead' (sentimiento positivo)
+2026-03-27 15:34:53,128  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-27 15:34:53,128  INFO      [33mPress CTRL+C to quit[0m
+2026-03-27 15:41:25,617  INFO      web-lead-trigger: llamando a Keyner (+19522371297) | idioma: es
+2026-03-27 15:41:26,290  INFO      web-lead-trigger: llamada iniciada — call_id: call_ab1f6e706e33e512a5de928e79b
+2026-03-27 15:41:26,292  INFO      127.0.0.1 - - [27/Mar/2026 15:41:26] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:08:49,696  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 16:08:49,697  INFO        POST /retell-webhook     ← eventos de llamada de Retell AI
+2026-03-29 16:08:49,701  INFO        POST /web-lead-trigger   ← dispara llamada desde formulario web GHL
+2026-03-29 16:08:49,702  INFO        Pipeline: Contratistas Latinos → 'HOT Lead' (sentimiento positivo)
+2026-03-29 16:08:49,736  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 16:08:49,736  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 16:09:17,800  INFO      127.0.0.1 - - [29/Mar/2026 16:09:17] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:09:55,861  INFO      127.0.0.1 - - [29/Mar/2026 16:09:55] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:10:11,336  INFO      127.0.0.1 - - [29/Mar/2026 16:10:11] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:10:20,270  INFO      127.0.0.1 - - [29/Mar/2026 16:10:20] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:10:29,828  INFO      127.0.0.1 - - [29/Mar/2026 16:10:29] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:13:57,448  INFO      127.0.0.1 - - [29/Mar/2026 16:13:57] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:15:28,067  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 16:15:28,067  INFO        POST /retell-webhook     ← eventos de llamada de Retell AI
+2026-03-29 16:15:28,069  INFO        POST /web-lead-trigger   ← dispara llamada desde formulario web GHL
+2026-03-29 16:15:28,069  INFO        Pipeline: Contratistas Latinos → 'HOT Lead' (sentimiento positivo)
+2026-03-29 16:15:28,094  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 16:15:28,094  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 16:15:32,936  INFO      127.0.0.1 - - [29/Mar/2026 16:15:32] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:15:38,673  INFO      web-lead-trigger: llamando a jose key (+16125996825) | idioma: en
+2026-03-29 16:15:39,307  INFO      web-lead-trigger: llamada iniciada — call_id: call_c36fdc2b7a1f6530b07e87a31af
+2026-03-29 16:15:39,308  INFO      127.0.0.1 - - [29/Mar/2026 16:15:39] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:15:50,438  INFO      127.0.0.1 - - [29/Mar/2026 16:15:50] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:18:25,131  INFO      127.0.0.1 - - [29/Mar/2026 16:18:25] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:18:56,110  INFO      127.0.0.1 - - [29/Mar/2026 16:18:56] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:22:45,714  INFO      127.0.0.1 - - [29/Mar/2026 16:22:45] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:23:22,048  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 16:23:22,049  INFO        POST /retell-webhook     ← eventos de llamada de Retell AI
+2026-03-29 16:23:22,051  INFO        POST /web-lead-trigger   ← dispara llamada desde formulario web GHL
+2026-03-29 16:23:22,052  INFO        Pipeline: Contratistas Latinos → 'HOT Lead' (sentimiento positivo)
+2026-03-29 16:23:22,067  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 16:23:22,067  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 16:23:27,212  INFO      127.0.0.1 - - [29/Mar/2026 16:23:27] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:23:38,694  INFO      127.0.0.1 - - [29/Mar/2026 16:23:38] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:31:54,740  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 16:31:54,741  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 16:31:54,741  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 16:31:54,741  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 16:31:54,755  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 16:31:54,757  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 16:32:00,825  INFO      127.0.0.1 - - [29/Mar/2026 16:32:00] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:46:39,986  INFO      web-lead-trigger: llamando a Test Lead (+16125550001) | idioma: es
+2026-03-29 16:46:40,621  INFO      web-lead-trigger: llamada iniciada — call_id: call_d9bf303c1760814547a332e818e
+2026-03-29 16:46:40,622  INFO      127.0.0.1 - - [29/Mar/2026 16:46:40] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:47:10,517  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 16:47:10,517  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 16:47:10,517  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 16:47:10,517  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 16:47:10,534  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 16:47:10,535  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 16:47:14,757  INFO      127.0.0.1 - - [29/Mar/2026 16:47:14] "GET /health HTTP/1.1" 200 -
+2026-03-29 16:47:15,024  INFO      127.0.0.1 - - [29/Mar/2026 16:47:15] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 16:48:20,708  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 16:48:20,708  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 16:48:20,708  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 16:48:20,708  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 16:48:20,722  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 16:48:20,722  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 16:48:28,938  INFO      127.0.0.1 - - [29/Mar/2026 16:48:28] "GET /health HTTP/1.1" 200 -
+2026-03-29 17:01:01,757  INFO      127.0.0.1 - - [29/Mar/2026 17:01:01] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:02:43,242  INFO      127.0.0.1 - - [29/Mar/2026 17:02:43] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:04:07,092  INFO      127.0.0.1 - - [29/Mar/2026 17:04:07] "GET /health HTTP/1.1" 200 -
+2026-03-29 17:04:07,327  INFO      127.0.0.1 - - [29/Mar/2026 17:04:07] "GET /health HTTP/1.1" 200 -
+2026-03-29 17:07:19,522  INFO      127.0.0.1 - - [29/Mar/2026 17:07:19] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:08:09,344  INFO      127.0.0.1 - - [29/Mar/2026 17:08:09] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:11:52,644  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 17:11:52,644  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 17:11:52,644  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 17:11:52,644  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 17:11:52,670  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 17:11:52,670  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 17:15:28,781  INFO      127.0.0.1 - - [29/Mar/2026 17:15:28] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:16:10,023  INFO      127.0.0.1 - - [29/Mar/2026 17:16:10] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:16:36,215  INFO      127.0.0.1 - - [29/Mar/2026 17:16:36] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:17:34,779  INFO      127.0.0.1 - - [29/Mar/2026 17:17:34] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:17:59,890  INFO      web-lead-trigger: llamando a amigo (+16125996825) | idioma: es
+2026-03-29 17:18:00,444  INFO      web-lead-trigger: llamada iniciada — call_id: call_63558a25285a715fcf053e58dad
+2026-03-29 17:18:00,453  INFO      127.0.0.1 - - [29/Mar/2026 17:18:00] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:18:14,966  INFO      web-lead-trigger: llamando a amigo (+16125996825) | idioma: es
+2026-03-29 17:18:15,524  INFO      web-lead-trigger: llamada iniciada — call_id: call_8c9a02579b64c5848ea882fd64d
+2026-03-29 17:18:15,524  INFO      127.0.0.1 - - [29/Mar/2026 17:18:15] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:18:44,328  INFO      127.0.0.1 - - [29/Mar/2026 17:18:44] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:18:48,016  INFO      127.0.0.1 - - [29/Mar/2026 17:18:48] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:19:23,395  INFO      127.0.0.1 - - [29/Mar/2026 17:19:23] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:20:22,622  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 17:20:22,622  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 17:20:22,622  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 17:20:22,622  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 17:20:22,644  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 17:20:22,644  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 17:21:40,241  INFO      127.0.0.1 - - [29/Mar/2026 17:21:40] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:24:19,678  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 17:24:19,678  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 17:24:19,678  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 17:24:19,678  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 17:24:19,694  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 17:24:19,694  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 17:25:04,313  INFO      127.0.0.1 - - [29/Mar/2026 17:25:04] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:25:13,169  INFO      127.0.0.1 - - [29/Mar/2026 17:25:13] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:25:57,594  INFO      127.0.0.1 - - [29/Mar/2026 17:25:57] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:26:10,813  INFO      web-lead-trigger: llamando a amigo (+16125996825) | idioma: es
+2026-03-29 17:26:11,412  INFO      web-lead-trigger: llamada iniciada — call_id: call_ec85fcb647cf3fe0c2ddb4ba82a
+2026-03-29 17:26:11,412  INFO      127.0.0.1 - - [29/Mar/2026 17:26:11] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:30:02,690  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 17:30:02,690  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 17:30:02,690  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 17:30:02,690  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 17:30:02,707  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 17:30:02,707  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 17:30:37,855  INFO      127.0.0.1 - - [29/Mar/2026 17:30:37] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:32:47,628  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-29 17:32:47,628  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-29 17:32:47,628  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-29 17:32:47,628  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-29 17:32:47,644  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-29 17:32:47,644  INFO      [33mPress CTRL+C to quit[0m
+2026-03-29 17:33:05,691  INFO      127.0.0.1 - - [29/Mar/2026 17:33:05] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:33:57,036  INFO      127.0.0.1 - - [29/Mar/2026 17:33:57] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:33:57,101  INFO      web-lead-trigger: llamando a Jose Gonzalez (+16125996825) | idioma: en
+2026-03-29 17:33:57,638  INFO      web-lead-trigger: llamada iniciada — call_id: call_bd427c25f583b337a11d0bd307f
+2026-03-29 17:33:57,638  INFO      127.0.0.1 - - [29/Mar/2026 17:33:57] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:37:44,141  INFO      127.0.0.1 - - [29/Mar/2026 17:37:44] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 17:37:44,215  INFO      web-lead-trigger: llamando a Jose Guerrero (+16125996825) | idioma: en
+2026-03-29 17:37:44,766  INFO      web-lead-trigger: llamada iniciada — call_id: call_61ea7b689845dc77d9a12477127
+2026-03-29 17:37:44,766  INFO      127.0.0.1 - - [29/Mar/2026 17:37:44] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 19:17:18,087  INFO      127.0.0.1 - - [29/Mar/2026 19:17:18] "OPTIONS /web-lead-trigger HTTP/1.1" 200 -
+2026-03-29 19:17:18,167  INFO      web-lead-trigger: llamando a Jose (+16122370215) | idioma: en
+2026-03-29 19:17:18,720  INFO      web-lead-trigger: llamada iniciada — call_id: call_8d693a568ce85cadeb7ddd92a11
+2026-03-29 19:17:18,720  INFO      127.0.0.1 - - [29/Mar/2026 19:17:18] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-30 17:33:50,417  INFO      127.0.0.1 - - [30/Mar/2026 17:33:50] "GET /health HTTP/1.1" 200 -
+2026-03-30 17:34:12,147  INFO      127.0.0.1 - - [30/Mar/2026 17:34:12] "[31m[1mPOST /health HTTP/1.1[0m" 405 -
+2026-03-30 17:34:15,093  INFO      127.0.0.1 - - [30/Mar/2026 17:34:15] "GET /health HTTP/1.1" 200 -
+2026-03-30 17:36:29,633  INFO      Retell Webhook Server iniciando en http://0.0.0.0:5050
+2026-03-30 17:36:29,633  INFO        POST /retell-webhook     <- eventos de llamada de Retell AI
+2026-03-30 17:36:29,633  INFO        POST /web-lead-trigger   <- dispara llamada desde formulario web GHL
+2026-03-30 17:36:29,633  INFO        Pipeline: Contratistas Latinos -> 'HOT Lead' (sentimiento positivo)
+2026-03-30 17:36:29,664  INFO      [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.0.0.107:5050
+2026-03-30 17:36:29,664  INFO      [33mPress CTRL+C to quit[0m
+2026-03-30 17:42:41,994  INFO      127.0.0.1 - - [30/Mar/2026 17:42:41] "[31m[1mPOST /web-lead-trigger HTTP/1.1[0m" 400 -
+2026-03-30 17:42:50,226  INFO      web-lead-trigger: llamando a Keyner Guerrero (+16125996825) | idioma: en
+2026-03-30 17:42:50,798  INFO      web-lead-trigger: llamada iniciada — call_id: call_36552bd23160346a151be76ce22
+2026-03-30 17:42:50,798  INFO      127.0.0.1 - - [30/Mar/2026 17:42:50] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-30 17:58:16,012  INFO      127.0.0.1 - - [30/Mar/2026 17:58:16] "[31m[1mPOST /web-lead-trigger HTTP/1.1[0m" 400 -
+2026-03-30 17:59:08,203  INFO      web-lead-trigger: llamando a Keyner Guerrero (+16125996825) | idioma: en
+2026-03-30 17:59:08,894  INFO      web-lead-trigger: llamada iniciada — call_id: call_be5bbc59dec79f8bc8399da0feb
+2026-03-30 17:59:08,895  INFO      127.0.0.1 - - [30/Mar/2026 17:59:08] "POST /web-lead-trigger HTTP/1.1" 200 -
+2026-03-30 18:10:31,941  WARNING   Firma inválida — request rechazado | sig: v=1774912225554,d=c5...
+2026-03-30 18:10:31,942  INFO      127.0.0.1 - - [30/Mar/2026 18:10:31] "[31m[1mPOST /retell-webhook HTTP/1.1[0m" 401 -
+2026-03-30 18:10:32,305  WARNING   Firma inválida — request rechazado | sig: v=1774912225554,d=c5...
+2026-03-30 18:10:32,305  INFO      127.0.0.1 - - [30/Mar/2026 18:10:32] "[31m[1mPOST /retell-webhook HTTP/1.1[0m" 401 -
+2026-03-30 18:10:32,924  WARNING   Firma inválida — request rechazado | sig: v=1774912225554,d=c5...
+2026-03-30 18:10:32,924  INFO      127.0.0.1 - - [30/Mar/2026 18:10:32] "[31m[1mPOST /retell-webhook HTTP/1.1[0m" 401 -
+2026-03-30 18:25:32,720  INFO      127.0.0.1 - - [30/Mar/2026 18:25:32] "GET /health HTTP/1.1" 200 -

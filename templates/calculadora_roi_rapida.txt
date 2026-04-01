@@ -1,0 +1,72 @@
+============================================================
+  CALCULADORA ROI RÁPIDA — MultiVenza Digital
+  Usar durante la llamada de ventas para cerrar objeciones de precio
+============================================================
+
+FÓRMULA BASE:
+  Contratos rescatados/mes  ×  Ticket promedio  =  Ingreso extra
+  Ingreso extra  ÷  $499/mes  =  ROI (multiplicador)
+
+------------------------------------------------------------
+
+EJEMPLOS LISTOS PARA USAR EN LLAMADA:
+
+  Roofing (ticket promedio $5,000)
+  ─────────────────────────────────
+  1 contrato/mes rescatado → $5,000 extra
+  ROI: $5,000 ÷ $499 = 10x lo que pagas al mes
+  "Con UN techo recuperado, el sistema se pagó 10 veces."
+
+  HVAC / emergencias (ticket promedio $1,500)
+  ─────────────────────────────────────────────
+  2 llamadas/mes rescatadas → $3,000 extra
+  ROI: $3,000 ÷ $499 = 6x
+  "Dos llamadas de HVAC en un mes y ya tienes 6 veces el retorno."
+
+  Remodeling (ticket promedio $12,000)
+  ──────────────────────────────────────
+  1 contrato cada 2 meses → $6,000/mes promedio
+  ROI: $6,000 ÷ $499 = 12x
+  "Un solo proyecto de remodelación y el sistema se paga 12 meses."
+
+  Plomería (ticket promedio $800)
+  ─────────────────────────────────
+  4 trabajos/mes rescatados → $3,200 extra
+  ROI: $3,200 ÷ $499 = 6.4x
+  "Cuatro plomería al mes que de otra forma iban a la competencia."
+
+------------------------------------------------------------
+
+SCRIPT PARA USAR EN LLAMADA:
+
+  "Hagamos un número rápido juntos.
+   ¿Cuál es tu ticket promedio por trabajo? [espera respuesta]
+   ¿Y cuántas llamadas crees que pierdes al mes cuando estás en obra? [espera]
+
+   Bien — eso es [TICKET × LLAMADAS] de ingresos que se van cada mes
+   porque nadie contestó a tiempo.
+
+   El sistema cuesta $499/mes.
+   ¿Vale la pena pagar $499 para recuperar $[NÚMERO]?"
+
+------------------------------------------------------------
+
+TABLA DE REFERENCIA RÁPIDA:
+
+  Ticket    | 1 contrato/mes | 2 contratos/mes | 3 contratos/mes
+  ──────────┼────────────────┼─────────────────┼────────────────
+  $800      |   1.6x ROI     |    3.2x ROI     |    4.8x ROI
+  $1,500    |   3x ROI       |    6x ROI       |    9x ROI
+  $3,000    |   6x ROI       |   12x ROI       |   18x ROI
+  $5,000    |  10x ROI       |   20x ROI       |   30x ROI
+  $10,000   |  20x ROI       |   40x ROI       |   60x ROI
+  $15,000   |  30x ROI       |   60x ROI       |   90x ROI
+
+------------------------------------------------------------
+
+NOTA CLAVE:
+  No es cuánto cuesta el sistema.
+  Es cuánto cuesta NO tenerlo.
+  Cada semana sin el sistema = [TICKET × LLAMADAS PERDIDAS/4] dejado ir.
+
+============================================================

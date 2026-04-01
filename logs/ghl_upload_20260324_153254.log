@@ -1,0 +1,23 @@
+2026-03-24 15:32:54,653  INFO      GHL conectado: Keyner Guerrero
+2026-03-24 15:32:55,066  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-24 15:32:55,091  INFO      CSV cargado: 4007 leads totales
+2026-03-24 15:32:55,091  INFO      Leads pendientes: 10
+2026-03-24 15:32:55,466  WARNING     No se pudo verificar duplicado para Brothers Heating & Cooling Inc. & Brothers Perfect Construction LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17733877394
+2026-03-24 15:32:59,249  INFO        OK  Brothers Heating & Cooling Inc. & Brothers Perfect Construction LLC | ID: S1WjsRbXOUIlcMqjphYy | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:32:59,616  WARNING     No se pudo verificar duplicado para Hermanos HVAC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17733680896
+2026-03-24 15:33:02,418  INFO        OK  Hermanos HVAC | ID: smmaRVbAkCVg4VTVwEgi | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:02,881  WARNING     No se pudo verificar duplicado para CENTRO TECNICO LATINO USA: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B18328979711
+2026-03-24 15:33:05,533  INFO        OK  CENTRO TECNICO LATINO USA | ID: 2XpkCoycGSqbTIEf9m3s | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:05,969  WARNING     No se pudo verificar duplicado para Latino's Ready Mix Concrete, LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B12147528553
+2026-03-24 15:33:08,854  INFO        OK  Latino's Ready Mix Concrete, LLC | ID: u80itIHMWde0fi6DKElw | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:09,322  WARNING     No se pudo verificar duplicado para ENCUENTRO HISPANO: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B12139098095
+2026-03-24 15:33:11,475  INFO        OK  ENCUENTRO HISPANO | ID: kQcHAhTqouoGIQpcg0iT | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:12,056  WARNING     No se pudo verificar duplicado para Remodelaciones Pintura Exterior Interior Dayron Miami: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17864319974
+2026-03-24 15:33:14,110  INFO        OK  Remodelaciones Pintura Exterior Interior Dayron Miami | ID: 3lho0YXd49swb3CwRxSc | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:14,547  WARNING     No se pudo verificar duplicado para Home Remodeling Services/ Servicios de Remodelacion: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17865682007
+2026-03-24 15:33:16,693  INFO        OK  Home Remodeling Services/ Servicios de Remodelacion | ID: iY91AtP8rfk5jrUMxcIL | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:17,052  WARNING     No se pudo verificar duplicado para Clases de Aire Acondicionado y Electricidad en Miami/ Fundación Latina USA/H.V.A.C: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17866506600
+2026-03-24 15:33:19,353  INFO        OK  Clases de Aire Acondicionado y Electricidad en Miami/ Fundación Latina USA/H.V.A.C | ID: Yc2zjN5DqOhD2WPqcIVX | Tags: ['hvac', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:19,754  WARNING     No se pudo verificar duplicado para Thomas Brothers Remodeling: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17197455100
+2026-03-24 15:33:21,768  INFO        OK  Thomas Brothers Remodeling | ID: lRfIcTw7Yah5GF8TNKIS | Tags: ['remodeling', 'latino', 'hot', 'servicio-web', 'idioma-español']
+2026-03-24 15:33:21,819  INFO      CSV actualizado: 9 marcados ghl_uploaded=YES

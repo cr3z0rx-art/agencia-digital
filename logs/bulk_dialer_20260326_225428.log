@@ -1,0 +1,21 @@
+2026-03-26 22:54:28,375  INFO      CSV: 4007 total | 5 seleccionados para esta tanda
+2026-03-26 22:54:28,377  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:28,771  WARNING     lookup_contact_id(+17733877394): 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17733877394
+2026-03-26 22:54:28,773  WARNING     No se encontro el contacto en GHL — llamando sin contact_id
+2026-03-26 22:54:28,773  INFO        [DRY RUN] Llamaria a: Brothers Heating & Cooling Inc. & Brothers Perfect Construction LLC | Chicago, IL | +17733877394 | id: (buscando en vivo)
+2026-03-26 22:54:28,774  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:29,238  WARNING     lookup_contact_id(+17733680896): 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17733680896
+2026-03-26 22:54:29,239  WARNING     No se encontro el contacto en GHL — llamando sin contact_id
+2026-03-26 22:54:29,240  INFO        [DRY RUN] Llamaria a: Hermanos HVAC | Chicago, IL | +17733680896 | id: (buscando en vivo)
+2026-03-26 22:54:29,240  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:29,619  WARNING     lookup_contact_id(+18328979711): 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B18328979711
+2026-03-26 22:54:29,621  WARNING     No se encontro el contacto en GHL — llamando sin contact_id
+2026-03-26 22:54:29,621  INFO        [DRY RUN] Llamaria a: CENTRO TECNICO LATINO USA | Houston, TX | +18328979711 | id: (buscando en vivo)
+2026-03-26 22:54:29,621  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:30,001  WARNING     lookup_contact_id(+12147528553): 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B12147528553
+2026-03-26 22:54:30,003  WARNING     No se encontro el contacto en GHL — llamando sin contact_id
+2026-03-26 22:54:30,003  INFO        [DRY RUN] Llamaria a: Latino's Ready Mix Concrete, LLC | Dallas, TX | +12147528553 | id: (buscando en vivo)
+2026-03-26 22:54:30,004  INFO        Buscando contact_id en GHL por telefono...
+2026-03-26 22:54:30,378  WARNING     lookup_contact_id(+12139098095): 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B12139098095
+2026-03-26 22:54:30,381  WARNING     No se encontro el contacto en GHL — llamando sin contact_id
+2026-03-26 22:54:30,381  INFO        [DRY RUN] Llamaria a: ENCUENTRO HISPANO | Los Angeles, CA | +12139098095 | id: (buscando en vivo)

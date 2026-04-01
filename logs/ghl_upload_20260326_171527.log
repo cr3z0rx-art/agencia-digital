@@ -1,0 +1,12 @@
+2026-03-26 17:15:27,604  INFO      GHL conectado: MultiVenza Digital
+2026-03-26 17:15:27,999  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-26 17:15:28,010  INFO      CSV cargado: 904 leads totales
+2026-03-26 17:15:28,015  INFO      Leads pendientes: 2 (limit=2)
+2026-03-26 17:15:28,015  INFO      Leads pendientes: 2 | Con email: 2
+2026-03-26 17:15:28,517  INFO        Duplicado — reusando contactId: YZ5PtRZ7Lo2p3ohETVIr
+2026-03-26 17:15:29,567  INFO        Pipeline OK (oportunidad ya existe) | deal_value: $1000
+2026-03-26 17:15:29,567  INFO        OK [DUPLICADO]  Liberte Construction | ID: YZ5PtRZ7Lo2p3ohETVIr | email_sent: False
+2026-03-26 17:15:30,011  INFO        Duplicado — reusando contactId: 8uentsgLrmfB5gM8bqVv
+2026-03-26 17:15:30,948  INFO        Pipeline OK (oportunidad ya existe) | deal_value: $1000
+2026-03-26 17:15:30,948  INFO        OK [DUPLICADO]  Sela Roofing & Remodeling | ID: 8uentsgLrmfB5gM8bqVv | email_sent: False
+2026-03-26 17:15:30,978  INFO      CSV actualizado: 2 marcados ghl_uploaded=YES

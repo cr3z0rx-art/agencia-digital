@@ -1,0 +1,5 @@
+2026-03-29 23:40:10,045  INFO      Log CSV recreado con headers actualizados (backup: ghl_upload_log.old.csv)
+2026-03-29 23:40:10,057  INFO      CSV cargado: 904 leads totales
+2026-03-29 23:40:10,065  INFO      Leads pendientes: 5 (limit=5)
+2026-03-29 23:40:10,065  INFO      Leads pendientes: 5 | Con email: 5
+2026-03-29 23:40:10,065  INFO        [DRY RUN] The Dental Emergency Room | email: su.re-latned%40ofni | Tags: ['hot', 'servicio-ia']

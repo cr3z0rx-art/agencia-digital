@@ -1,0 +1,94 @@
+2026-03-26 17:25:31,124  INFO      GHL conectado: MultiVenza Digital
+2026-03-26 17:25:31,530  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-26 17:25:31,567  INFO      CSV cargado: 4007 leads totales
+2026-03-26 17:25:31,567  INFO      Leads pendientes: 50 (limit=50)
+2026-03-26 17:25:31,567  INFO      Leads pendientes: 50 | Con email: 0
+2026-03-26 17:25:33,561  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:33,561  INFO        OK  Avila General Construction | ID: Cem5Ny3ua2PHtO6v3qez | email_sent: False
+2026-03-26 17:25:35,420  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:35,420  INFO        OK  Landa’s L. Construcción | ID: 1C81sLf9L1mvrj9zD24K | email_sent: False
+2026-03-26 17:25:37,429  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:37,429  INFO        OK  Mateo construcción | ID: 5sDi4TAnfB2HL5s8paQt | email_sent: False
+2026-03-26 17:25:40,187  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:40,187  INFO        OK  Hernandez painting and remodeling | ID: DSy06WQjgzKQtB75VinK | email_sent: False
+2026-03-26 17:25:42,320  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:42,320  INFO        OK  Remodelación General | ID: Lm4asCQpZ0APrSHiNXMr | email_sent: False
+2026-03-26 17:25:44,440  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:44,440  INFO        OK  Sanchez General Construction and Remodeling | ID: LTTUQTXFeUqhMJzUqaFN | email_sent: False
+2026-03-26 17:25:46,495  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:46,495  INFO        OK  Rodríguez Construction | ID: T6RaLXOJyVKtEsIERDYQ | email_sent: False
+2026-03-26 17:25:48,631  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:48,631  INFO        OK  Remod.y Renovación y Reparaciones | ID: TNgxpk7eb4oxnjHYorOy | email_sent: False
+2026-03-26 17:25:50,523  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:50,523  INFO        OK  Saul Ramirez Heating & A/C | ID: wNuztXW1L4ZYDbpyzfBI | email_sent: False
+2026-03-26 17:25:53,091  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:53,091  INFO        OK  Martinez construction company | ID: iggewzbe0ZSKhc8hLnJZ | email_sent: False
+2026-03-26 17:25:55,869  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:55,869  INFO        OK  Gonzalez Construction | ID: TnnUL1Orw4JJ2glVzh5M | email_sent: False
+2026-03-26 17:25:58,275  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:25:58,276  INFO        OK  Marc lopez construction | ID: AJqbstycUdSpejXyPz3x | email_sent: False
+2026-03-26 17:26:00,262  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:00,262  INFO        OK  Ortega's Quality Construction | ID: W9Y1yVbhZ7shvN1suSdf | email_sent: False
+2026-03-26 17:26:02,850  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:02,850  INFO        OK  General construcción | ID: BHno3VnkAiGzUifegqzG | email_sent: False
+2026-03-26 17:26:05,283  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:05,283  INFO        OK  Morales Roofing Company | ID: XgWYRSQYTzcLLLmqK41R | email_sent: False
+2026-03-26 17:26:07,379  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:07,379  INFO        OK  Chavez Construction | ID: sbrqTMHeRhTR9PkvQ2VI | email_sent: False
+2026-03-26 17:26:09,276  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:09,277  INFO        OK  Corazon Air - Aire Acondicionado y Calefacción | ID: lvAGRKjGwAuAungt0I4n | email_sent: False
+2026-03-26 17:26:11,135  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:11,135  INFO        OK  Emanuels construcción and finshing | ID: UiDwIqbxfwcbil9g0UXE | email_sent: False
+2026-03-26 17:26:13,092  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:13,093  INFO        OK  Antonio home services | ID: gXNNV5bVi1eWKcuvHdp3 | email_sent: False
+2026-03-26 17:26:15,828  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:15,828  INFO        OK  Alvarez & Sons Construction INC | ID: W18FRoj7B50xvGTbBFL3 | email_sent: False
+2026-03-26 17:26:17,724  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:17,724  INFO        OK  D&E construcción | ID: RgDg30FUl8ssJkqfEzBT | email_sent: False
+2026-03-26 17:26:19,643  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:19,644  INFO        OK  Castro Electrical & HVAC Services | ID: jZ7HLiD4cCGvt8iF4X9Q | email_sent: False
+2026-03-26 17:26:21,599  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:21,600  INFO        OK  Maple Grove Roofing Co | ID: fdym6skAASQRIqjlLX8u | email_sent: False
+2026-03-26 17:26:23,756  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:23,756  INFO        OK  Minneapolis Roofing Repair | ID: AJ7n73NtPaye74dIRITu | email_sent: False
+2026-03-26 17:26:25,712  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:25,712  INFO        OK  Minneapolis Roofing Repairs | ID: wpfx60xgTwFFnyDq9kWa | email_sent: False
+2026-03-26 17:26:27,649  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:27,649  INFO        OK  Snappy Construction, Inc. | ID: AET7B5k8UXTCUdZKTkQ4 | email_sent: False
+2026-03-26 17:26:29,571  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:29,571  INFO        OK  G&S ROOFING LLC | ID: K5yMTH7Eyy62AiQSzVk8 | email_sent: False
+2026-03-26 17:26:31,474  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:31,474  INFO        OK  Minneapolis Roofing Repairs | ID: 5BiV2DEz9RmPpaLfydX4 | email_sent: False
+2026-03-26 17:26:34,039  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:34,040  INFO        OK  Best Home Remodeling MN | ID: xgHdGE54mZLDQjeJ63vb | email_sent: False
+2026-03-26 17:26:36,458  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:36,458  INFO        OK  Universal Construction | ID: RqZHgLLkWhkokvDMybcz | email_sent: False
+2026-03-26 17:26:38,347  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:38,347  INFO        OK  BUDGET CONSTRUCTION LLC | ID: rOfzrVyi1zdQHF649nFx | email_sent: False
+2026-03-26 17:26:40,289  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:40,289  INFO        OK  Construction | ID: KNN46cYhdS53lLdXmoSn | email_sent: False
+2026-03-26 17:26:42,091  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:42,091  INFO        OK  Colossal Construction | ID: tUnlTi9IxybVGc39Hiql | email_sent: False
+2026-03-26 17:26:43,857  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:43,858  INFO        OK  Minneapolis Heating & Air Conditioning Masters | ID: dme7wr4vcloQ0b63WFGe | email_sent: False
+2026-03-26 17:26:45,707  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:45,707  INFO        OK  Minneapolis Local Furnace Masters | ID: I7nP92PSRsxbjg6u9qIq | email_sent: False
+2026-03-26 17:26:47,585  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:47,585  INFO        OK  Minneapolis Heating & Air Conditioning | ID: Vqq3IN5oI5WBVGna05iS | email_sent: False
+2026-03-26 17:26:50,391  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:50,391  INFO        OK  Refrigeration, Heating & Air Conditioning Minneapolis | ID: eVHMXtYb0BEXgdBP54Zt | email_sent: False
+2026-03-26 17:26:52,299  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:52,299  INFO        OK  Minneapolis Heating & Cooling | ID: vqHxxVtN6gsIr13BTkjh | email_sent: False
+2026-03-26 17:26:53,941  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:53,941  INFO        OK  Minneapolis Heating and Cooling Service | ID: GxO7gpkHAunIQgFCZy93 | email_sent: False
+2026-03-26 17:26:55,719  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:55,719  INFO        OK  Heating and Cooling Minneapolis | ID: rV4TnLxJNYC9JGebxARS | email_sent: False
+2026-03-26 17:26:57,548  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:57,548  INFO        OK  Minneapolis Heating & Cooling | ID: Nt2pcayUD3O3Ni1iYH2L | email_sent: False
+2026-03-26 17:26:59,700  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:26:59,700  INFO        OK  Minneapolis Heating Cooling & Refrigeration | ID: RGc4scEjgg0zfkMNnPOJ | email_sent: False
+2026-03-26 17:27:01,906  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:27:01,906  INFO        OK  Minneapolis Heating And Air Conditioning Services | ID: qsssCubgxaZh9NzXLxLi | email_sent: False
+2026-03-26 17:27:03,747  INFO        Pipeline OK | deal_value: $1000
+2026-03-26 17:27:03,748  INFO        OK  Minneapolis Heating and Air Conditioning | ID: 80NGvODOa5NojCbEhtLs | email_sent: False
+2026-03-26 17:27:03,796  INFO      CSV actualizado: 44 marcados ghl_uploaded=YES

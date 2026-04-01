@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Widget Preview — MultiVenza Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Page background (simulates landing page) ── */
+    :root {
+      --teal:#1A9E8F; --teal-dark:#0D7A6E; --orange:#F47B20; --orange-dark:#C9620F;
+      --bg:#0A0F14; --bg2:#111820; --bg3:#161E28;
+      --text:#F0F0F0; --text-muted:#8A9BAE;
+      --border:rgba(26,158,143,.25); --card-bg:rgba(17,24,32,.95);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;
+         display:flex;align-items:center;justify-content:center;flex-direction:column;gap:32px;padding:40px 24px}
+    h1{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal);text-align:center}
+    .note{font-size:.82rem;color:var(--text-muted);text-align:center;max-width:440px}
+
+    /* ═══════════════════════════════════════════════
+       CHAT WIDGET — FLOATING BUTTON
+    ═══════════════════════════════════════════════ */
+    #mv-chat-btn {
+      position:fixed; bottom:24px; right:24px; z-index:9998;
+      width:60px; height:60px; border-radius:50%;
+      background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);
+      border:none; cursor:pointer;
+      box-shadow:0 6px 24px rgba(26,158,143,.5), 0 2px 8px rgba(0,0,0,.4);
+      display:flex; align-items:center; justify-content:center;
+      transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s;
+      outline:none;
+    }
+    #mv-chat-btn:hover {
+      transform:scale(1.08) translateY(-2px);
+      box-shadow:0 10px 32px rgba(26,158,143,.65), 0 4px 12px rgba(0,0,0,.4);
+    }
+    #mv-chat-btn:active { transform:scale(.96) }
+
+    /* Chat icon SVG inside button */
+    #mv-chat-btn svg { width:27px; height:27px; flex-shrink:0 }
+
+    /* Orange badge — notification dot */
+    #mv-chat-btn::after {
+      content:"";
+      position:absolute; top:4px; right:4px;
+      width:14px; height:14px;
+      background:var(--orange);
+      border-radius:50%;
+      border:2.5px solid var(--bg);
+      animation:mv-pulse-dot 2.5s infinite;
+    }
+    @keyframes mv-pulse-dot {
+      0%,100%{transform:scale(1);opacity:1}
+      50%{transform:scale(1.2);opacity:.75}
+    }
+
+    /* ═══════════════════════════════════════════════
+       CHAT WINDOW
+    ═══════════════════════════════════════════════ */
+    #mv-chat-window {
+      position:fixed; bottom:96px; right:24px; z-index:9999;
+      width:360px; max-width:calc(100vw - 32px);
+      height:520px; max-height:calc(100vh - 120px);
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(26,158,143,.15);
+      display:flex; flex-direction:column;
+      overflow:hidden;
+      transform-origin:bottom right;
+      transform:scale(.85) translateY(12px);
+      opacity:0;
+      pointer-events:none;
+      transition:transform .28s cubic-bezier(.4,0,.2,1), opacity .28s;
+      backdrop-filter:blur(16px);
+    }
+    #mv-chat-window.open {
+      transform:scale(1) translateY(0);
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    /* ── Header ── */
+    .mv-header {
+      background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal) 60%, #22c5b0 100%);
+      padding:16px 18px;
+      display:flex; align-items:center; gap:12px;
+      position:relative; flex-shrink:0;
+    }
+    .mv-header::after {
+      content:"";
+      position:absolute; bottom:0; left:0; right:0; height:1px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+    }
+    .mv-avatar {
+      width:40px; height:40px; border-radius:50%;
+      background:rgba(255,255,255,.15);
+      border:2px solid rgba(255,255,255,.3);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.1rem; flex-shrink:0;
+    }
+    .mv-header-info { flex:1; min-width:0 }
+    .mv-header-name {
+      font-family:'Syne',sans-serif; font-size:.95rem; font-weight:700;
+      color:#fff; line-height:1.2;
+    }
+    .mv-header-status {
+      font-size:.73rem; color:rgba(255,255,255,.75);
+      display:flex; align-items:center; gap:5px; margin-top:2px;
+    }
+    .mv-status-dot {
+      width:6px; height:6px; border-radius:50%;
+      background:#4fffcc;
+      box-shadow:0 0 6px #4fffcc;
+      animation:mv-status-blink 3s infinite;
+    }
+    @keyframes mv-status-blink{0%,100%{opacity:1}50%{opacity:.5}}
+    /* ── Lang toggle inside header ── */
+    .mv-lang-toggle {
+      display:flex; align-items:center;
+      background:rgba(0,0,0,.2); border-radius:99px; padding:2px; gap:1px;
+      margin-right:6px;
+    }
+    .mv-lang-btn {
+      background:none; border:none; cursor:pointer;
+      font-family:'DM Sans',sans-serif; font-size:.72rem; font-weight:700;
+      padding:3px 9px; border-radius:99px;
+      color:rgba(255,255,255,.6);
+      transition:background .18s, color .18s;
+    }
+    .mv-lang-btn.active { background:rgba(255,255,255,.22); color:#fff }
+
+    .mv-close {
+      width:28px; height:28px; border-radius:50%;
+      background:rgba(255,255,255,.12); border:none; cursor:pointer;
+      color:rgba(255,255,255,.8); font-size:1rem;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s;
+    }
+    .mv-close:hover { background:rgba(255,255,255,.22) }
+
+    /* ── Messages area ── */
+    .mv-messages {
+      flex:1; overflow-y:auto; padding:16px 14px;
+      display:flex; flex-direction:column; gap:12px;
+      scrollbar-width:thin; scrollbar-color:var(--border) transparent;
+    }
+    .mv-messages::-webkit-scrollbar{width:4px}
+    .mv-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+    /* Bot message */
+    .mv-msg {
+      display:flex; gap:8px; max-width:88%; align-self:flex-start;
+    }
+    .mv-msg-avatar {
+      width:28px; height:28px; border-radius:50%;
+      background:linear-gradient(135deg,var(--teal-dark),var(--teal));
+      display:flex; align-items:center; justify-content:center;
+      font-size:.75rem; flex-shrink:0; margin-top:2px;
+    }
+    .mv-bubble {
+      background:var(--bg3);
+      border:1px solid var(--border);
+      border-radius:16px 16px 16px 4px;
+      padding:10px 14px;
+      font-size:.86rem; line-height:1.55; color:var(--text);
+    }
+    .mv-bubble strong { color:var(--teal) }
+    .mv-bubble a { color:var(--orange); text-decoration:underline; font-weight:500 }
+    .mv-bubble .mv-plan-box {
+      background:rgba(26,158,143,.08);
+      border:1px solid rgba(26,158,143,.2);
+      border-radius:10px; padding:10px 12px; margin:8px 0;
+    }
+    .mv-bubble .mv-plan-name { font-weight:600; color:var(--teal); font-size:.84rem }
+    .mv-bubble .mv-plan-price { color:var(--orange); font-weight:700; font-size:.9rem }
+    .mv-bubble .mv-plan-detail { color:var(--text-muted); font-size:.78rem; margin-top:2px }
+
+    /* User message */
+    .mv-msg-user {
+      align-self:flex-end; flex-direction:row-reverse;
+    }
+    .mv-msg-user .mv-bubble {
+      background:linear-gradient(135deg,rgba(244,123,32,.18),rgba(244,123,32,.1));
+      border-color:rgba(244,123,32,.3);
+      border-radius:16px 16px 4px 16px;
+      color:var(--text);
+    }
+
+    /* Typing indicator */
+    .mv-typing .mv-bubble {
+      padding:12px 16px;
+      display:flex; gap:5px; align-items:center;
+    }
+    .mv-typing-dot {
+      width:7px; height:7px; border-radius:50%;
+      background:var(--teal); opacity:.5;
+      animation:mv-typing-anim 1.2s infinite;
+    }
+    .mv-typing-dot:nth-child(2){animation-delay:.2s}
+    .mv-typing-dot:nth-child(3){animation-delay:.4s}
+    @keyframes mv-typing-anim{0%,80%,100%{transform:scale(1);opacity:.4}40%{transform:scale(1.3);opacity:1}}
+
+    /* ── Quick replies ── */
+    .mv-quick-replies {
+      padding:0 14px 10px; display:flex; flex-wrap:wrap; gap:7px; flex-shrink:0;
+    }
+    .mv-chip {
+      background:rgba(26,158,143,.08); border:1px solid rgba(26,158,143,.25);
+      color:var(--teal); border-radius:99px; padding:6px 13px;
+      font-size:.77rem; font-weight:500; cursor:pointer;
+      transition:background .2s, transform .15s;
+      font-family:'DM Sans',sans-serif;
+    }
+    .mv-chip:hover {
+      background:rgba(26,158,143,.18); transform:translateY(-1px);
+    }
+
+    /* ── Separator ── */
+    .mv-separator {
+      height:1px; background:var(--border); flex-shrink:0; margin:0 14px;
+    }
+
+    /* ── Input area ── */
+    .mv-input-row {
+      padding:12px 14px; display:flex; gap:9px; align-items:flex-end; flex-shrink:0;
+      background:rgba(10,15,20,.5);
+    }
+    .mv-input {
+      flex:1; background:var(--bg3); border:1px solid var(--border);
+      border-radius:22px; padding:10px 16px;
+      color:var(--text); font-family:'DM Sans',sans-serif; font-size:.85rem;
+      resize:none; outline:none; line-height:1.4; max-height:100px;
+      transition:border-color .2s;
+    }
+    .mv-input::placeholder { color:var(--text-muted) }
+    .mv-input:focus { border-color:var(--teal) }
+    .mv-send {
+      width:38px; height:38px; border-radius:50%; flex-shrink:0;
+      background:var(--teal); border:none; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s, transform .15s;
+    }
+    .mv-send:hover { background:var(--teal-dark); transform:scale(1.08) }
+    .mv-send:disabled { background:rgba(26,158,143,.3); cursor:not-allowed; transform:none }
+    .mv-send svg { width:17px; height:17px }
+
+    /* ── Branding footer ── */
+    .mv-footer {
+      text-align:center; padding:6px 0 10px;
+      font-size:.68rem; color:rgba(138,155,174,.45); flex-shrink:0;
+    }
+
+    /* ═══════════════════════════════════════════════
+       PREVIEW PAGE NOTE
+    ═══════════════════════════════════════════════ */
+    .preview-card {
+      background:var(--bg2); border:1px solid var(--border);
+      border-radius:14px; padding:24px 28px; max-width:420px;
+      text-align:center;
+    }
+    .preview-card h2 {font-family:'Syne',sans-serif;font-size:1.1rem;color:var(--teal);margin-bottom:8px}
+    .preview-card p { font-size:.85rem; color:var(--text-muted); line-height:1.6 }
+    .preview-card .arrow {
+      font-size:2rem; color:var(--orange); display:block;
+      animation:bounce-right 1.5s infinite;
+    }
+    @keyframes bounce-right {
+      0%,100%{transform:translateX(0)} 50%{transform:translateX(8px)}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chat Widget Preview — MultiVenza Digital</h1>
+  <p class="note">Este es el preview del chat widget. Haz clic en el botón teal abajo a la derecha para probarlo. Las respuestas son simuladas — la versión final usa Claude API via proxy.</p>
+
+  <div class="preview-card">
+    <h2>Prueba el widget →</h2>
+    <p>Clic en el botón flotante abajo a la derecha.<br>Usa los chips rápidos o escribe tu propia pregunta.</p>
+    <span class="arrow">→</span>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CHAT BUTTON
+  ══════════════════════════════════════ -->
+  <button id="mv-chat-btn" aria-label="Abrir chat" onclick="mvToggle()">
+    <!-- Chat bubble icon -->
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="white"/>
+      <circle cx="8" cy="11" r="1.2" fill="#1A9E8F"/>
+      <circle cx="12" cy="11" r="1.2" fill="#1A9E8F"/>
+      <circle cx="16" cy="11" r="1.2" fill="#1A9E8F"/>
+    </svg>
+  </button>
+
+  <!-- ══════════════════════════════════════
+       CHAT WINDOW
+  ══════════════════════════════════════ -->
+  <div id="mv-chat-window" role="dialog" aria-label="MultiVenza AI Chat">
+
+    <!-- Header -->
+    <div class="mv-header">
+      <div class="mv-avatar">🤖</div>
+      <div class="mv-header-info">
+        <div class="mv-header-name">MultiVenza AI</div>
+        <div class="mv-header-status">
+          <span class="mv-status-dot"></span>
+          <span id="mv-lang-status">Online — Ask me anything</span>
+        </div>
+      </div>
+      <div class="mv-lang-toggle">
+        <button class="mv-lang-btn" id="mv-btn-en" onclick="mvSetLang('en')">EN</button>
+        <button class="mv-lang-btn" id="mv-btn-es" onclick="mvSetLang('es')">ES</button>
+      </div>
+      <button class="mv-close" onclick="mvToggle()" aria-label="Close">✕</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="mv-messages" id="mv-messages"></div>
+
+    <!-- Quick replies -->
+    <div class="mv-quick-replies" id="mv-chips"></div>
+
+    <div class="mv-separator"></div>
+
+    <!-- Input -->
+    <div class="mv-input-row">
+      <textarea
+        class="mv-input"
+        id="mv-input"
+        placeholder="Ask me anything..."
+        rows="1"
+        onkeydown="mvKeydown(event)"
+        oninput="mvResize(this)"
+      ></textarea>
+      <button class="mv-send" id="mv-send-btn" onclick="mvSend()" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22 2L11 13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mv-footer">Powered by MultiVenza Digital · AI by Claude</div>
+  </div>
+
+  <script>
+  /* ══════════════════════════════════════════════════
+     CONFIG
+  ══════════════════════════════════════════════════ */
+  const CALENDAR_URL = "https://api.leadconnectorhq.com/widget/booking/AyyxvGu2X1mfbhS4OlXj";
+
+  const PLANS = {
+    ai_receptionist: {
+      name: "AI Receptionist",
+      setup: "$1,000",
+      monthly: "$500/mo",
+      desc: "AI answers calls, texts & books appointments 24/7"
+    },
+    full_ai: {
+      name: "Full AI Employee + SEO",
+      setup: "$1,500",
+      monthly: "$800/mo",
+      desc: "Everything in AI Receptionist + local SEO domination"
+    },
+    lead_gen: {
+      name: "Lead Generation",
+      setup: "No setup fee",
+      monthly: "from $300/mo",
+      desc: "Add-on: targeted outreach to bring new customers to you"
+    }
+  };
+
+  /* ══════════════════════════════════════════════════
+     LANGUAGE DETECTION + TOGGLE
+  ══════════════════════════════════════════════════ */
+  let mvLang = "en";
+
+  function mvSetLang(lang) {
+    mvLang = lang;
+    const statusEl = document.getElementById("mv-lang-status");
+    const inputEl  = document.getElementById("mv-input");
+    if (lang === "es") {
+      statusEl.textContent = "En línea — Pregúntame cualquier cosa";
+      inputEl.placeholder  = "Escribe tu pregunta...";
+    } else {
+      statusEl.textContent = "Online — Ask me anything";
+      inputEl.placeholder  = "Ask me anything...";
+    }
+    // Update toggle button states
+    document.getElementById("mv-btn-en").classList.toggle("active", lang === "en");
+    document.getElementById("mv-btn-es").classList.toggle("active", lang === "es");
+  }
+
+  function detectLang() {
+    // 1. Check if landing page is already in Spanish (body.classList has "es")
+    if (document.body.classList.contains("es")) {
+      mvSetLang("es"); return;
+    }
+    // 2. Check HTML lang attribute
+    const htmlLang = document.documentElement.lang || "";
+    if (htmlLang.startsWith("es")) { mvSetLang("es"); return; }
+    // 3. Fall back to browser language
+    const nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+    mvSetLang(nav.startsWith("es") ? "es" : "en");
+  }
+  detectLang();
+
+  // When the landing page's own EN/ES toggle changes, sync the chat widget
+  new MutationObserver(() => {
+    const newLang = document.body.classList.contains("es") ? "es" : "en";
+    if (newLang !== mvLang) mvSetLang(newLang);
+  }).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+  /* ══════════════════════════════════════════════════
+     OPEN / CLOSE
+  ══════════════════════════════════════════════════ */
+  let mvOpen = false;
+  let mvGreeted = false;
+
+  function mvToggle() {
+    mvOpen = !mvOpen;
+    const win = document.getElementById("mv-chat-window");
+    win.classList.toggle("open", mvOpen);
+    if (mvOpen && !mvGreeted) {
+      mvGreeted = true;
+      setTimeout(() => mvGreet(), 350);
+    }
+    if (mvOpen) setTimeout(() => document.getElementById("mv-input").focus(), 320);
+  }
+
+  /* ══════════════════════════════════════════════════
+     GREETING
+  ══════════════════════════════════════════════════ */
+  function mvGreet() {
+    const msg = mvLang === "es"
+      ? `¡Hola! 👋 Soy el asistente de <strong>MultiVenza Digital</strong>.<br><br>Ayudo a contratistas y negocios latinos en USA a conseguir más clientes con automatización con IA.<br><br>¿En qué te puedo ayudar?`
+      : `Hi! 👋 I'm <strong>MultiVenza Digital's</strong> AI assistant.<br><br>I help Latino contractors and local businesses across the USA get more clients with AI automation.<br><br>What can I help you with?`;
+    mvAddBot(msg);
+    setTimeout(() => mvShowChips(), 600);
+  }
+
+  /* ══════════════════════════════════════════════════
+     QUICK REPLY CHIPS
+  ══════════════════════════════════════════════════ */
+  const CHIPS_EN = [
+    { label:"💰 Pricing & Plans", action:"pricing" },
+    { label:"🤖 AI Receptionist", action:"ai_receptionist" },
+    { label:"📈 Full AI + SEO", action:"full_ai" },
+    { label:"🎯 Lead Generation", action:"lead_gen" },
+    { label:"📅 Book a Call", action:"book" },
+  ];
+  const CHIPS_ES = [
+    { label:"💰 Precios y Planes", action:"pricing" },
+    { label:"🤖 AI Receptionist", action:"ai_receptionist" },
+    { label:"📈 IA Completa + SEO", action:"full_ai" },
+    { label:"🎯 Generación de Leads", action:"lead_gen" },
+    { label:"📅 Agendar Llamada", action:"book" },
+  ];
+
+  function mvShowChips() {
+    const chips = mvLang === "es" ? CHIPS_ES : CHIPS_EN;
+    const container = document.getElementById("mv-chips");
+    container.innerHTML = "";
+    chips.forEach(c => {
+      const btn = document.createElement("button");
+      btn.className = "mv-chip";
+      btn.textContent = c.label;
+      btn.onclick = () => mvHandleChip(c.action, c.label);
+      container.appendChild(btn);
+    });
+  }
+
+  function mvHandleChip(action, label) {
+    document.getElementById("mv-chips").innerHTML = "";
+    mvAddUser(label);
+    mvShowTyping();
+    setTimeout(() => {
+      mvRemoveTyping();
+      mvRespond(action);
+    }, 900);
+  }
+
+  /* ══════════════════════════════════════════════════
+     RESPONSES (mock — same logic as real Claude prompt)
+  ══════════════════════════════════════════════════ */
+  function mvRespond(action, userText) {
+    let html = "";
+    const p = PLANS;
+
+    if (action === "pricing" || (userText && /price|precio|cost|costo|plan|cuanto|how much/i.test(userText))) {
+      if (mvLang === "es") {
+        html = `Tenemos <strong>2 planes principales</strong> y un add-on:<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🤖 ${p.ai_receptionist.name}</div>
+            <div class="mv-plan-price">${p.ai_receptionist.setup} setup + ${p.ai_receptionist.monthly}</div>
+            <div class="mv-plan-detail">${p.ai_receptionist.desc}</div>
+          </div>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🚀 ${p.full_ai.name}</div>
+            <div class="mv-plan-price">${p.full_ai.setup} setup + ${p.full_ai.monthly}</div>
+            <div class="mv-plan-detail">${p.full_ai.desc}</div>
+          </div>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🎯 ${p.lead_gen.name}</div>
+            <div class="mv-plan-price">${p.lead_gen.monthly}</div>
+            <div class="mv-plan-detail">${p.lead_gen.desc}</div>
+          </div>
+          ¿Tienes 15 minutos esta semana? <a href="${CALENDAR_URL}" target="_blank">Agenda una llamada gratis →</a>`;
+      } else {
+        html = `We have <strong>2 main plans</strong> + an add-on:<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🤖 ${p.ai_receptionist.name}</div>
+            <div class="mv-plan-price">${p.ai_receptionist.setup} setup + ${p.ai_receptionist.monthly}</div>
+            <div class="mv-plan-detail">${p.ai_receptionist.desc}</div>
+          </div>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🚀 ${p.full_ai.name}</div>
+            <div class="mv-plan-price">${p.full_ai.setup} setup + ${p.full_ai.monthly}</div>
+            <div class="mv-plan-detail">${p.full_ai.desc}</div>
+          </div>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🎯 ${p.lead_gen.name}</div>
+            <div class="mv-plan-price">${p.lead_gen.monthly}</div>
+            <div class="mv-plan-detail">${p.lead_gen.desc}</div>
+          </div>
+          Worth 15 minutes this week? <a href="${CALENDAR_URL}" target="_blank">Book a free call →</a>`;
+      }
+    }
+    else if (action === "ai_receptionist" || (userText && /receptionist|recepci|missed call|llamad/i.test(userText))) {
+      if (mvLang === "es") {
+        html = `El <strong>AI Receptionist</strong> responde llamadas, textos y mensajes de WhatsApp 24/7 — como tener un empleado que nunca duerme.<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🤖 AI Receptionist</div>
+            <div class="mv-plan-price">$1,000 setup + $500/mes</div>
+            <div class="mv-plan-detail">✔ Responde en 30 seg · ✔ Agenda citas · ✔ Follow-ups automáticos</div>
+          </div>
+          ¿Cuántas llamadas pierdes al día? <a href="${CALENDAR_URL}" target="_blank">Agenda una demo gratis →</a>`;
+      } else {
+        html = `The <strong>AI Receptionist</strong> answers calls, texts & WhatsApp 24/7 — like having an employee who never sleeps.<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🤖 AI Receptionist</div>
+            <div class="mv-plan-price">$1,000 setup + $500/mo</div>
+            <div class="mv-plan-detail">✔ Responds in 30 sec · ✔ Books appointments · ✔ Automatic follow-ups</div>
+          </div>
+          How many calls do you miss daily? <a href="${CALENDAR_URL}" target="_blank">Book a free demo →</a>`;
+      }
+    }
+    else if (action === "full_ai" || (userText && /seo|full ai|completo|google|rank|posicion/i.test(userText))) {
+      if (mvLang === "es") {
+        html = `<strong>Full AI Employee + SEO</strong> es nuestro plan más completo.<br><br>
+          Incluye todo el AI Receptionist <strong>más</strong> posicionamiento en Google Maps para que los clientes te encuentren antes que a tus competidores.<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🚀 Full AI Employee + SEO</div>
+            <div class="mv-plan-price">$1,500 setup + $800/mes</div>
+            <div class="mv-plan-detail">✔ AI 24/7 · ✔ SEO local · ✔ Más leads de Google</div>
+          </div>
+          <a href="${CALENDAR_URL}" target="_blank">¿Tiene 15 minutos? Agenda aquí →</a>`;
+      } else {
+        html = `<strong>Full AI Employee + SEO</strong> is our most complete plan.<br><br>
+          Includes everything in AI Receptionist <strong>plus</strong> Google Maps ranking so customers find you before your competitors.<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🚀 Full AI Employee + SEO</div>
+            <div class="mv-plan-price">$1,500 setup + $800/mo</div>
+            <div class="mv-plan-detail">✔ AI 24/7 · ✔ Local SEO · ✔ More Google leads</div>
+          </div>
+          <a href="${CALENDAR_URL}" target="_blank">Worth 15 minutes? Book here →</a>`;
+      }
+    }
+    else if (action === "lead_gen" || (userText && /lead|cliente|customer|generat/i.test(userText))) {
+      if (mvLang === "es") {
+        html = `<strong>Lead Generation</strong> es un add-on que agregamos a cualquier plan.<br><br>
+          Buscamos activamente negocios locales que necesitan tus servicios y los convertimos en leads calificados para ti.<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🎯 Lead Generation Add-on</div>
+            <div class="mv-plan-price">Desde $300/mes</div>
+            <div class="mv-plan-detail">✔ Sin contrato largo · ✔ Leads calificados · ✔ ROI medible</div>
+          </div>
+          <a href="${CALENDAR_URL}" target="_blank">Agenda una llamada gratis →</a>`;
+      } else {
+        html = `<strong>Lead Generation</strong> is an add-on you can pair with any plan.<br><br>
+          We actively find local businesses that need your services and turn them into qualified leads for you.<br><br>
+          <div class="mv-plan-box">
+            <div class="mv-plan-name">🎯 Lead Generation Add-on</div>
+            <div class="mv-plan-price">from $300/mo</div>
+            <div class="mv-plan-detail">✔ No long-term contract · ✔ Qualified leads · ✔ Measurable ROI</div>
+          </div>
+          <a href="${CALENDAR_URL}" target="_blank">Book a free call →</a>`;
+      }
+    }
+    else if (action === "book" || (userText && /book|agendar|call|llamada|demo|schedule/i.test(userText))) {
+      if (mvLang === "es") {
+        html = `¡Perfecto! Agenda una llamada de <strong>15 minutos gratis</strong> con Keyner para ver qué plan se ajusta mejor a tu negocio.<br><br>
+          <a href="${CALENDAR_URL}" target="_blank">📅 Agendar llamada gratis →</a>`;
+      } else {
+        html = `Great! Book a free <strong>15-minute call</strong> with Keyner to see which plan fits your business best.<br><br>
+          <a href="${CALENDAR_URL}" target="_blank">📅 Book your free call →</a>`;
+      }
+    }
+    else {
+      // Generic fallback
+      if (mvLang === "es") {
+        html = `Buena pregunta. Para darte la mejor respuesta, te recomiendo agendar una llamada gratis con nuestro equipo — te explicamos todo en 15 minutos.<br><br>
+          <a href="${CALENDAR_URL}" target="_blank">📅 Agenda una llamada gratis →</a>`;
+      } else {
+        html = `Good question. To give you the best answer, I'd recommend booking a free call with our team — we'll explain everything in 15 minutes.<br><br>
+          <a href="${CALENDAR_URL}" target="_blank">📅 Book a free call →</a>`;
+      }
+    }
+
+    mvAddBot(html);
+  }
+
+  /* ══════════════════════════════════════════════════
+     DOM HELPERS
+  ══════════════════════════════════════════════════ */
+  function mvAddBot(html) {
+    const msgs = document.getElementById("mv-messages");
+    const wrap = document.createElement("div");
+    wrap.className = "mv-msg";
+    wrap.innerHTML = `
+      <div class="mv-msg-avatar">⚡</div>
+      <div class="mv-bubble">${html}</div>`;
+    msgs.appendChild(wrap);
+    mvScroll();
+  }
+
+  function mvAddUser(text) {
+    const msgs = document.getElementById("mv-messages");
+    const wrap = document.createElement("div");
+    wrap.className = "mv-msg mv-msg-user";
+    wrap.innerHTML = `<div class="mv-bubble">${mvEscape(text)}</div>`;
+    msgs.appendChild(wrap);
+    mvScroll();
+  }
+
+  let mvTypingEl = null;
+  function mvShowTyping() {
+    const msgs = document.getElementById("mv-messages");
+    mvTypingEl = document.createElement("div");
+    mvTypingEl.className = "mv-msg mv-typing";
+    mvTypingEl.innerHTML = `
+      <div class="mv-msg-avatar">⚡</div>
+      <div class="mv-bubble">
+        <span class="mv-typing-dot"></span>
+        <span class="mv-typing-dot"></span>
+        <span class="mv-typing-dot"></span>
+      </div>`;
+    msgs.appendChild(mvTypingEl);
+    mvScroll();
+  }
+
+  function mvRemoveTyping() {
+    if (mvTypingEl) { mvTypingEl.remove(); mvTypingEl = null; }
+  }
+
+  function mvScroll() {
+    const msgs = document.getElementById("mv-messages");
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function mvEscape(s) {
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  /* ══════════════════════════════════════════════════
+     SEND MESSAGE
+  ══════════════════════════════════════════════════ */
+  function mvSend() {
+    const input = document.getElementById("mv-input");
+    const text  = input.value.trim();
+    if (!text) return;
+
+    document.getElementById("mv-chips").innerHTML = "";
+    mvAddUser(text);
+    input.value = "";
+    input.style.height = "";
+
+    mvShowTyping();
+    setTimeout(() => {
+      mvRemoveTyping();
+      mvRespond(null, text);
+    }, 800 + Math.random() * 600);
+  }
+
+  function mvKeydown(e) {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); mvSend(); }
+  }
+
+  function mvResize(el) {
+    el.style.height = "auto";
+    el.style.height = Math.min(el.scrollHeight, 100) + "px";
+  }
+  </script>
+</body>
+</html>

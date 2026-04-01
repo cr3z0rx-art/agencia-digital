@@ -1,0 +1,4 @@
+2026-03-26 17:24:53,135  INFO      CSV cargado: 904 leads totales
+2026-03-26 17:24:53,135  INFO      Leads pendientes: 1 (limit=1)
+2026-03-26 17:24:53,135  INFO      Leads pendientes: 1 | Con email: 1
+2026-03-26 17:24:53,135  INFO        [DRY RUN] R & R Roofing Inc. | email: rrroofing77@gmail.com | Tags: ['hot', 'servicio-ia']

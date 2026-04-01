@@ -1,0 +1,453 @@
+2026-03-25 21:53:25,532  INFO      GHL conectado: MultiVenza Digital
+2026-03-25 21:53:25,923  INFO      Pipeline encontrado: 'Contratistas Latinos' / 'Nuevo Lead'
+2026-03-25 21:53:25,939  INFO      CSV cargado: 92 leads totales
+2026-03-25 21:53:25,939  INFO      Leads pendientes: 92
+2026-03-25 21:53:25,939  INFO      Leads pendientes: 92 | Con email: 92
+2026-03-25 21:53:26,351  WARNING     No se pudo verificar duplicado para Liberte Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16127126420
+2026-03-25 21:53:33,066  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:53:34,232  INFO      SMTP OK → admin@liberteconstruction.com
+2026-03-25 21:53:34,284  INFO        EMAIL enviado → admin@liberteconstruction.com
+2026-03-25 21:53:34,284  INFO        OK  Liberte Construction | ID: YZ5PtRZ7Lo2p3ohETVIr | email_sent: True
+2026-03-25 21:53:34,662  WARNING     No se pudo verificar duplicado para Sela Roofing & Remodeling: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124828213
+2026-03-25 21:53:40,023  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:53:41,003  INFO      SMTP OK → info@selaroofing.com
+2026-03-25 21:53:41,040  INFO        EMAIL enviado → info@selaroofing.com
+2026-03-25 21:53:41,040  INFO        OK  Sela Roofing & Remodeling | ID: 8uentsgLrmfB5gM8bqVv | email_sent: True
+2026-03-25 21:53:41,439  WARNING     No se pudo verificar duplicado para R & R Roofing Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19522104988
+2026-03-25 21:53:46,539  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:53:47,643  INFO      SMTP OK → rrroofing77@gmail.com
+2026-03-25 21:53:47,688  INFO        EMAIL enviado → rrroofing77@gmail.com
+2026-03-25 21:53:47,689  INFO        OK  R & R Roofing Inc. | ID: tlUBHbqdn6G98I8tAEKj | email_sent: True
+2026-03-25 21:53:48,073  WARNING     No se pudo verificar duplicado para Kaufman Roofing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16127220965
+2026-03-25 21:53:53,520  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:53:54,522  INFO      SMTP OK → info@kaufmanroofing.com
+2026-03-25 21:53:54,559  INFO        EMAIL enviado → info@kaufmanroofing.com
+2026-03-25 21:53:54,570  INFO        OK  Kaufman Roofing | ID: nDHVrSn0iAd2D8f4HKL9 | email_sent: True
+2026-03-25 21:53:55,055  WARNING     No se pudo verificar duplicado para Bayport Roofing and Siding: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122357663
+2026-03-25 21:54:00,424  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:01,523  INFO      SMTP OK → info@bayportroofing.com
+2026-03-25 21:54:01,565  INFO        EMAIL enviado → info@bayportroofing.com
+2026-03-25 21:54:01,565  INFO        OK  Bayport Roofing and Siding | ID: 1H3Aa93F1DdAcHYdJv7z | email_sent: True
+2026-03-25 21:54:02,049  WARNING     No se pudo verificar duplicado para eRoof: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123544490
+2026-03-25 21:54:07,438  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:08,511  INFO      SMTP OK → quote@eroofquote.com
+2026-03-25 21:54:08,553  INFO        EMAIL enviado → quote@eroofquote.com
+2026-03-25 21:54:08,553  INFO        OK  eRoof | ID: HfOODvLpoCf9LaZihLRs | email_sent: True
+2026-03-25 21:54:08,954  WARNING     No se pudo verificar duplicado para All Ears Roofing - Minnesota: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16513647250
+2026-03-25 21:54:14,148  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:15,169  INFO      SMTP OK → info@allearsroofing.com
+2026-03-25 21:54:15,216  INFO        EMAIL enviado → info@allearsroofing.com
+2026-03-25 21:54:15,217  INFO        OK  All Ears Roofing - Minnesota | ID: M5GKtqml9kC1ZuRUvg55 | email_sent: True
+2026-03-25 21:54:15,681  WARNING     No se pudo verificar duplicado para Twin City Roofing Construction Specialists, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16513714117
+2026-03-25 21:54:20,713  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:21,869  INFO      SMTP OK → support@twincityroofing.com
+2026-03-25 21:54:21,921  INFO        EMAIL enviado → support@twincityroofing.com
+2026-03-25 21:54:21,922  INFO        OK  Twin City Roofing Construction Specialists, Inc. | ID: YNPrREsouBTNqnZRLz2g | email_sent: True
+2026-03-25 21:54:22,317  WARNING     No se pudo verificar duplicado para Anchor Roofing & Exteriors: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123637443
+2026-03-25 21:54:28,023  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:28,995  INFO      SMTP OK → stu@anchorroofingmn.com
+2026-03-25 21:54:29,025  INFO        EMAIL enviado → stu@anchorroofingmn.com
+2026-03-25 21:54:29,041  INFO        OK  Anchor Roofing & Exteriors | ID: 3SC8VKHFJKsPnNkKyAF9 | email_sent: True
+2026-03-25 21:54:29,426  WARNING     No se pudo verificar duplicado para Viking Contractors, LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16125675522
+2026-03-25 21:54:34,580  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:35,610  INFO      SMTP OK → info@vikingcontractorsllc.com
+2026-03-25 21:54:35,662  INFO        EMAIL enviado → info@vikingcontractorsllc.com
+2026-03-25 21:54:35,663  INFO        OK  Viking Contractors, LLC | ID: fOsXN6TzgZVTrFd4bC8r | email_sent: True
+2026-03-25 21:54:36,118  WARNING     No se pudo verificar duplicado para 22nd Century Roofing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122451801
+2026-03-25 21:54:41,633  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:42,727  INFO      SMTP OK → main@22ndcenturyroofing.com
+2026-03-25 21:54:42,773  INFO        EMAIL enviado → main@22ndcenturyroofing.com
+2026-03-25 21:54:42,774  INFO        OK  22nd Century Roofing | ID: TblpKlsf7CfFVP3I3vHH | email_sent: True
+2026-03-25 21:54:43,182  WARNING     No se pudo verificar duplicado para Craftsmen Home Improvements, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19529303777
+2026-03-25 21:54:48,336  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:49,671  INFO      SMTP OK → contact@chi-service.com
+2026-03-25 21:54:49,718  INFO        EMAIL enviado → contact@chi-service.com
+2026-03-25 21:54:49,719  INFO        OK  Craftsmen Home Improvements, Inc. | ID: w0HvWchKbMTXi9w83kdU | email_sent: True
+2026-03-25 21:54:50,155  WARNING     No se pudo verificar duplicado para Shelter Construction, LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17633633448
+2026-03-25 21:54:55,231  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:54:56,561  INFO      SMTP OK → info@shelter-usa.com
+2026-03-25 21:54:56,606  INFO        EMAIL enviado → info@shelter-usa.com
+2026-03-25 21:54:56,607  INFO        OK  Shelter Construction, LLC | ID: y1seY1lkMtvowJXo6hFD | email_sent: True
+2026-03-25 21:54:56,988  WARNING     No se pudo verificar duplicado para New Life Contracting, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16516611323
+2026-03-25 21:55:02,298  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:03,286  INFO      SMTP OK → hello@newlifecontracting.com
+2026-03-25 21:55:03,337  INFO        EMAIL enviado → hello@newlifecontracting.com
+2026-03-25 21:55:03,338  INFO        OK  New Life Contracting, Inc. | ID: yc85hVHDee6boa2L3l2i | email_sent: True
+2026-03-25 21:55:03,762  WARNING     No se pudo verificar duplicado para Soderlin Plumbing, Heating & Air Conditioning: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124097388
+2026-03-25 21:55:09,480  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:10,465  INFO      SMTP OK → info@soderlin.com
+2026-03-25 21:55:10,514  INFO        EMAIL enviado → info@soderlin.com
+2026-03-25 21:55:10,514  INFO        OK  Soderlin Plumbing, Heating & Air Conditioning | ID: kj5k83Ygj0EjHau4GKHV | email_sent: True
+2026-03-25 21:55:10,902  WARNING     No se pudo verificar duplicado para Ron the Sewer Rat: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123899669
+2026-03-25 21:55:17,229  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:18,432  INFO      SMTP OK → info@ronthesewerrat.com
+2026-03-25 21:55:18,479  INFO        EMAIL enviado → info@ronthesewerrat.com
+2026-03-25 21:55:18,480  INFO        OK  Ron the Sewer Rat | ID: HoJKlBVf5RtzhPkjf9pD | email_sent: True
+2026-03-25 21:55:18,897  WARNING     No se pudo verificar duplicado para Bedrock Plumbing & Drain Cleaning: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19529003807
+2026-03-25 21:55:25,266  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:26,298  INFO      SMTP OK → service@bedrockplumbers.com
+2026-03-25 21:55:26,354  INFO        EMAIL enviado → service@bedrockplumbers.com
+2026-03-25 21:55:26,355  INFO        OK  Bedrock Plumbing & Drain Cleaning | ID: XL4bdRNviXNWCijzl753 | email_sent: True
+2026-03-25 21:55:26,737  WARNING     No se pudo verificar duplicado para Blue Yeti HVAC & Plumbing Services: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19522097360
+2026-03-25 21:55:32,275  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:33,391  INFO      SMTP OK → support@blueyetiservices.com
+2026-03-25 21:55:33,439  INFO        EMAIL enviado → support@blueyetiservices.com
+2026-03-25 21:55:33,439  INFO        OK  Blue Yeti HVAC & Plumbing Services | ID: x2DtOb0JwpkYLExYxWRF | email_sent: True
+2026-03-25 21:55:33,828  WARNING     No se pudo verificar duplicado para Sabastian and Sons Plumbing Service LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17636579821
+2026-03-25 21:55:39,432  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:40,534  INFO      SMTP OK → snsplumbing.net@gmail.com
+2026-03-25 21:55:40,582  INFO        EMAIL enviado → snsplumbing.net@gmail.com
+2026-03-25 21:55:40,582  INFO        OK  Sabastian and Sons Plumbing Service LLC | ID: ywCpi0HGYDS0tQ9yd83G | email_sent: True
+2026-03-25 21:55:40,950  WARNING     No se pudo verificar duplicado para MN Plumbing & Home Services: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19525222231
+2026-03-25 21:55:46,558  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:47,566  INFO      SMTP OK → info@mnplumbing.com
+2026-03-25 21:55:47,612  INFO        EMAIL enviado → info@mnplumbing.com
+2026-03-25 21:55:47,613  INFO        OK  MN Plumbing & Home Services | ID: Cr4g6Rq8mUJbseaKRYcf | email_sent: True
+2026-03-25 21:55:48,004  WARNING     No se pudo verificar duplicado para Water Heaters Now!: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124008073
+2026-03-25 21:55:53,020  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:55:54,015  INFO      SMTP OK → solutions@waterheatersnow.com
+2026-03-25 21:55:54,065  INFO        EMAIL enviado → solutions@waterheatersnow.com
+2026-03-25 21:55:54,065  INFO        OK  Water Heaters Now! | ID: 7S6Jm1grP6Wj7sDaSTzn | email_sent: True
+2026-03-25 21:55:54,449  WARNING     No se pudo verificar duplicado para Mark's Plumbing Service & Repair: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17633542800
+2026-03-25 21:55:59,854  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:00,907  INFO      SMTP OK → info@marksplumbingservice.com
+2026-03-25 21:56:00,940  INFO        EMAIL enviado → info@marksplumbingservice.com
+2026-03-25 21:56:00,940  INFO        OK  Mark's Plumbing Service & Repair | ID: T1YPV5vyFTr31YG9lnfS | email_sent: True
+2026-03-25 21:56:01,355  WARNING     No se pudo verificar duplicado para Norblom Plumbing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128274033
+2026-03-25 21:56:06,930  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:07,880  INFO      SMTP OK → service@norblomplumbing.com
+2026-03-25 21:56:07,919  INFO        EMAIL enviado → service@norblomplumbing.com
+2026-03-25 21:56:07,928  INFO        OK  Norblom Plumbing | ID: q1ZLrHkrgLxCoAMSXKbP | email_sent: True
+2026-03-25 21:56:08,311  WARNING     No se pudo verificar duplicado para Service Star Plumbing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17637609165
+2026-03-25 21:56:14,210  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:15,264  INFO      SMTP OK → contactservicestar@gmail.com
+2026-03-25 21:56:15,309  INFO        EMAIL enviado → contactservicestar@gmail.com
+2026-03-25 21:56:15,310  INFO        OK  Service Star Plumbing | ID: quSAI9NXkDr8DH8kvWu8 | email_sent: True
+2026-03-25 21:56:15,695  WARNING     No se pudo verificar duplicado para Varsity Painters: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19529383886
+2026-03-25 21:56:20,867  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:21,993  INFO      SMTP OK → info@varsitypainters.com
+2026-03-25 21:56:22,037  INFO        EMAIL enviado → info@varsitypainters.com
+2026-03-25 21:56:22,038  INFO        OK  Varsity Painters | ID: sttn55sSeg7hPkJa5Iv3 | email_sent: True
+2026-03-25 21:56:22,425  WARNING     No se pudo verificar duplicado para Headwaters Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122086383
+2026-03-25 21:56:27,632  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:28,549  INFO      SMTP OK → hello@headwaterspainting.com
+2026-03-25 21:56:28,593  INFO        EMAIL enviado → hello@headwaterspainting.com
+2026-03-25 21:56:28,594  INFO        OK  Headwaters Painting | ID: WXJinQn8rXs0JHMRbvJu | email_sent: True
+2026-03-25 21:56:28,991  WARNING     No se pudo verificar duplicado para On A Roll LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122311234
+2026-03-25 21:56:34,658  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:35,730  INFO      SMTP OK → damon@onarollmn.com
+2026-03-25 21:56:35,775  INFO        EMAIL enviado → damon@onarollmn.com
+2026-03-25 21:56:35,776  INFO        OK  On A Roll LLC | ID: yLhSengVwIu7O4gS6hMh | email_sent: True
+2026-03-25 21:56:36,160  WARNING     No se pudo verificar duplicado para Home Drywall & Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128165333
+2026-03-25 21:56:41,447  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:42,584  INFO      SMTP OK → info@homempls.com
+2026-03-25 21:56:42,635  INFO        EMAIL enviado → info@homempls.com
+2026-03-25 21:56:42,635  INFO        OK  Home Drywall & Painting | ID: YU4qjINYWhdLd3mjhIhu | email_sent: True
+2026-03-25 21:56:43,041  WARNING     No se pudo verificar duplicado para M. Carlson Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19529339968
+2026-03-25 21:56:48,991  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:50,108  INFO      SMTP OK → info@mcarlsonpainting.com
+2026-03-25 21:56:50,154  INFO        EMAIL enviado → info@mcarlsonpainting.com
+2026-03-25 21:56:50,156  INFO        OK  M. Carlson Painting | ID: A4Iewggo1GWpmXIQwoPC | email_sent: True
+2026-03-25 21:56:50,595  WARNING     No se pudo verificar duplicado para Durahome Painting Plus: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124008864
+2026-03-25 21:56:56,047  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:56:57,093  INFO      SMTP OK → info@my-domain.com
+2026-03-25 21:56:57,140  INFO        EMAIL enviado → info@my-domain.com
+2026-03-25 21:56:57,141  INFO        OK  Durahome Painting Plus | ID: en5v9jOymIind3OfcmNs | email_sent: True
+2026-03-25 21:56:57,556  WARNING     No se pudo verificar duplicado para OKeefe Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122982244
+2026-03-25 21:57:03,154  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:04,074  INFO      SMTP OK → conor@okeefepainting.com
+2026-03-25 21:57:04,122  INFO        EMAIL enviado → conor@okeefepainting.com
+2026-03-25 21:57:04,122  INFO        OK  OKeefe Painting | ID: TlW7VV3fT0PEQQ6BRHod | email_sent: True
+2026-03-25 21:57:04,507  WARNING     No se pudo verificar duplicado para BLUE Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19523956009
+2026-03-25 21:57:09,740  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:10,862  INFO      SMTP OK → hello@bluepainting.com
+2026-03-25 21:57:10,915  INFO        EMAIL enviado → hello@bluepainting.com
+2026-03-25 21:57:10,915  INFO        OK  BLUE Painting | ID: xrukg6kj9CYVURr3QhWH | email_sent: True
+2026-03-25 21:57:11,305  WARNING     No se pudo verificar duplicado para Top-Tier Professional Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124297944
+2026-03-25 21:57:16,218  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:17,370  INFO      SMTP OK → toptierpropainting@gmail.com
+2026-03-25 21:57:17,418  INFO        EMAIL enviado → toptierpropainting@gmail.com
+2026-03-25 21:57:17,419  INFO        OK  Top-Tier Professional Painting | ID: gUMmUVbQi8db1NHxdE5o | email_sent: True
+2026-03-25 21:57:17,803  WARNING     No se pudo verificar duplicado para Flannery Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123516023
+2026-03-25 21:57:23,658  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:24,830  INFO      SMTP OK → johnflannery@comcast.net
+2026-03-25 21:57:24,880  INFO        EMAIL enviado → johnflannery@comcast.net
+2026-03-25 21:57:24,880  INFO        OK  Flannery Painting | ID: SOSd1sMjwpaRRM7GLVgf | email_sent: True
+2026-03-25 21:57:25,273  WARNING     No se pudo verificar duplicado para Ojeda Drywall & Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16514439632
+2026-03-25 21:57:31,069  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:32,100  INFO      SMTP OK → info@ojedadrywall.com
+2026-03-25 21:57:32,136  INFO        EMAIL enviado → info@ojedadrywall.com
+2026-03-25 21:57:32,136  INFO        OK  Ojeda Drywall & Painting | ID: RMqZ4DBZMuwFNNjyFdgE | email_sent: True
+2026-03-25 21:57:32,519  WARNING     No se pudo verificar duplicado para M P Johnson Construction, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123393733
+2026-03-25 21:57:37,641  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:38,594  INFO      SMTP OK → info@mpjohnson.com
+2026-03-25 21:57:38,651  INFO        EMAIL enviado → info@mpjohnson.com
+2026-03-25 21:57:38,652  INFO        OK  M P Johnson Construction, Inc. | ID: mVsz05kffl288jgMavK7 | email_sent: True
+2026-03-25 21:57:39,026  WARNING     No se pudo verificar duplicado para Nordic Construction Llc: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19524846065
+2026-03-25 21:57:44,735  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:45,665  INFO      SMTP OK → ryan@nordicconstructionllc.com
+2026-03-25 21:57:45,719  INFO        EMAIL enviado → ryan@nordicconstructionllc.com
+2026-03-25 21:57:45,719  INFO        OK  Nordic Construction Llc | ID: a8OICfa6lvfd3IiGwnUs | email_sent: True
+2026-03-25 21:57:46,100  WARNING     No se pudo verificar duplicado para Kenzo Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17638434485
+2026-03-25 21:57:51,389  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:52,305  INFO      SMTP OK → dylan@kenzoconstruction.com
+2026-03-25 21:57:52,340  INFO        EMAIL enviado → dylan@kenzoconstruction.com
+2026-03-25 21:57:52,340  INFO        OK  Kenzo Construction | ID: 3SbtJ7XqSr9REI9ao5HM | email_sent: True
+2026-03-25 21:57:52,706  WARNING     No se pudo verificar duplicado para Priority Roofing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16129164157
+2026-03-25 21:57:58,816  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:57:59,733  INFO      SMTP OK → minneapolis@priorityroofs.com
+2026-03-25 21:57:59,781  INFO        EMAIL enviado → minneapolis@priorityroofs.com
+2026-03-25 21:57:59,781  INFO        OK  Priority Roofing | ID: iHOLxJCayr7FXEOPdK7b | email_sent: True
+2026-03-25 21:58:00,164  WARNING     No se pudo verificar duplicado para Exceptional Exteriors | Roofing Contractors | MINNESOTA: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122300167
+2026-03-25 21:58:05,665  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:06,680  INFO      SMTP OK → admin@exceptionalexil.com
+2026-03-25 21:58:06,724  INFO        EMAIL enviado → admin@exceptionalexil.com
+2026-03-25 21:58:06,724  INFO        OK  Exceptional Exteriors | Roofing Contractors | MINNESOTA | ID: SXqc1ELbnl58eZmTGYHh | email_sent: True
+2026-03-25 21:58:07,109  WARNING     No se pudo verificar duplicado para Classic Concepts Painting and Renovations: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16513546617
+2026-03-25 21:58:13,280  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:14,230  INFO      SMTP OK → cc.classicconcepts@gmail.com
+2026-03-25 21:58:14,265  INFO        EMAIL enviado → cc.classicconcepts@gmail.com
+2026-03-25 21:58:14,265  INFO        OK  Classic Concepts Painting and Renovations | ID: f9U7Ffa34z7SNiwoUxq1 | email_sent: True
+2026-03-25 21:58:14,665  WARNING     No se pudo verificar duplicado para Ring Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16512800927
+2026-03-25 21:58:20,842  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:21,820  INFO      SMTP OK → joe@justaringaway.com
+2026-03-25 21:58:21,856  INFO        EMAIL enviado → joe@justaringaway.com
+2026-03-25 21:58:21,856  INFO        OK  Ring Construction | ID: j1QIIeYMdLNaKdKWI0jt | email_sent: True
+2026-03-25 21:58:22,258  WARNING     No se pudo verificar duplicado para Complete Construction of Mpls: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17637773901
+2026-03-25 21:58:27,225  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:28,174  INFO      SMTP OK → contact@ccmpls.com
+2026-03-25 21:58:28,212  INFO        EMAIL enviado → contact@ccmpls.com
+2026-03-25 21:58:28,212  INFO        OK  Complete Construction of Mpls | ID: yV4Imc9gFFrJ5m6vwAvF | email_sent: True
+2026-03-25 21:58:28,601  WARNING     No se pudo verificar duplicado para Grizzly Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124441133
+2026-03-25 21:58:34,578  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:35,500  INFO      SMTP OK → hello@grizzlyconstructionmn.com
+2026-03-25 21:58:35,545  INFO        EMAIL enviado → hello@grizzlyconstructionmn.com
+2026-03-25 21:58:35,546  INFO        OK  Grizzly Construction | ID: ktj4RP3nynLlrKYguxM3 | email_sent: True
+2026-03-25 21:58:35,965  WARNING     No se pudo verificar duplicado para Muse Remodeling: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17638076928
+2026-03-25 21:58:41,001  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:41,901  INFO      SMTP OK → museremodeling@gmail.com
+2026-03-25 21:58:41,947  INFO        EMAIL enviado → museremodeling@gmail.com
+2026-03-25 21:58:41,948  INFO        OK  Muse Remodeling | ID: YHrGkrvgJhev9Mj6D3Vr | email_sent: True
+2026-03-25 21:58:42,338  WARNING     No se pudo verificar duplicado para Elysian Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19524676874
+2026-03-25 21:58:47,254  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:48,323  INFO      SMTP OK → info@elysianbuilt.com
+2026-03-25 21:58:48,369  INFO        EMAIL enviado → info@elysianbuilt.com
+2026-03-25 21:58:48,369  INFO        OK  Elysian Construction | ID: N6cOF026bH5fDceqwBft | email_sent: True
+2026-03-25 21:58:48,766  WARNING     No se pudo verificar duplicado para Urban Renovations LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16126957680
+2026-03-25 21:58:54,010  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:58:54,925  INFO      SMTP OK → ur@urbanrenovationsmn.com
+2026-03-25 21:58:54,976  INFO        EMAIL enviado → ur@urbanrenovationsmn.com
+2026-03-25 21:58:54,977  INFO        OK  Urban Renovations LLC | ID: ckJsNl0SLWmM5kbjsXg3 | email_sent: True
+2026-03-25 21:58:55,372  WARNING     No se pudo verificar duplicado para Simon Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128617000
+2026-03-25 21:59:00,931  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:01,893  INFO      SMTP OK → info@simonconstruction.com
+2026-03-25 21:59:01,939  INFO        EMAIL enviado → info@simonconstruction.com
+2026-03-25 21:59:01,941  INFO        OK  Simon Construction | ID: x0y10k9FmjITo1ka6ztA | email_sent: True
+2026-03-25 21:59:02,318  WARNING     No se pudo verificar duplicado para Tusk Builders: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122341531
+2026-03-25 21:59:07,458  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:08,369  INFO      SMTP OK → hello@tuskbuilders.com
+2026-03-25 21:59:08,404  INFO        EMAIL enviado → hello@tuskbuilders.com
+2026-03-25 21:59:08,404  INFO        OK  Tusk Builders | ID: Z3OF42I062hWaSt49Lij | email_sent: True
+2026-03-25 21:59:08,799  WARNING     No se pudo verificar duplicado para JoNick Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16125456622
+2026-03-25 21:59:14,793  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:15,887  INFO      SMTP OK → info@jonickconstruction.com
+2026-03-25 21:59:15,933  INFO        EMAIL enviado → info@jonickconstruction.com
+2026-03-25 21:59:15,934  INFO        OK  JoNick Construction | ID: nyLSlDlZqUQVz8EUoi0j | email_sent: True
+2026-03-25 21:59:16,314  WARNING     No se pudo verificar duplicado para Prima Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128885959
+2026-03-25 21:59:21,540  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:22,466  INFO      SMTP OK → info@prima-construction.com
+2026-03-25 21:59:22,514  INFO        EMAIL enviado → info@prima-construction.com
+2026-03-25 21:59:22,514  INFO        OK  Prima Construction | ID: GLbo2ngjb531a1IpTaRC | email_sent: True
+2026-03-25 21:59:23,053  WARNING     No se pudo verificar duplicado para Red Fox Remodeling: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122082794
+2026-03-25 21:59:28,014  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:29,139  INFO      SMTP OK → info@redfoxremodeling.com
+2026-03-25 21:59:29,184  INFO        EMAIL enviado → info@redfoxremodeling.com
+2026-03-25 21:59:29,185  INFO        OK  Red Fox Remodeling | ID: 7LirykLtdcSIDIdXIMqg | email_sent: True
+2026-03-25 21:59:29,576  WARNING     No se pudo verificar duplicado para Wonderwoman Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122109220
+2026-03-25 21:59:35,802  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:36,913  INFO      SMTP OK → info@wonderwomanconstruction.com
+2026-03-25 21:59:36,958  INFO        EMAIL enviado → info@wonderwomanconstruction.com
+2026-03-25 21:59:36,958  INFO        OK  Wonderwoman Construction | ID: jYCcdChdaCj06xQQiNTS | email_sent: True
+2026-03-25 21:59:37,359  WARNING     No se pudo verificar duplicado para M General Contractors: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122172334
+2026-03-25 21:59:42,474  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:43,396  INFO      SMTP OK → info@mgencon.com
+2026-03-25 21:59:43,441  INFO        EMAIL enviado → info@mgencon.com
+2026-03-25 21:59:43,443  INFO        OK  M General Contractors | ID: mjGE1kxhCl2dDqPnGJYu | email_sent: True
+2026-03-25 21:59:43,828  WARNING     No se pudo verificar duplicado para Mn Construction & Remodeling INC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16126702739
+2026-03-25 21:59:49,110  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:50,167  INFO      SMTP OK → minnesotaalltiling@gmail.com
+2026-03-25 21:59:50,228  INFO        EMAIL enviado → minnesotaalltiling@gmail.com
+2026-03-25 21:59:50,229  INFO        OK  Mn Construction & Remodeling INC | ID: IesOov2OMMzG4M1oGsM2 | email_sent: True
+2026-03-25 21:59:50,591  WARNING     No se pudo verificar duplicado para Sylvestre Remodeling & Design: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128610188
+2026-03-25 21:59:56,125  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 21:59:57,192  INFO      SMTP OK → info@sylvestreconstruction.com
+2026-03-25 21:59:57,225  INFO        EMAIL enviado → info@sylvestreconstruction.com
+2026-03-25 21:59:57,225  INFO        OK  Sylvestre Remodeling & Design | ID: WG8I7v9AYpePLcP67CV9 | email_sent: True
+2026-03-25 21:59:57,609  WARNING     No se pudo verificar duplicado para Perry & Horton Construction INC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124407794
+2026-03-25 22:00:02,997  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:03,999  INFO      SMTP OK → info@phmnconstruction.com
+2026-03-25 22:00:04,049  INFO        EMAIL enviado → info@phmnconstruction.com
+2026-03-25 22:00:04,050  INFO        OK  Perry & Horton Construction INC | ID: oUZk5mXT7rlFgRU15CaK | email_sent: True
+2026-03-25 22:00:04,484  WARNING     No se pudo verificar duplicado para D.S. Bahr Construction, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16127221448
+2026-03-25 22:00:10,670  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:11,704  INFO      SMTP OK → dsbahr@citlink.net
+2026-03-25 22:00:11,741  INFO        EMAIL enviado → dsbahr@citlink.net
+2026-03-25 22:00:11,741  INFO        OK  D.S. Bahr Construction, Inc. | ID: A7GrNsTVFo3ECL46ietR | email_sent: True
+2026-03-25 22:00:12,121  WARNING     No se pudo verificar duplicado para A. DeTomaso Construction: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16517893100
+2026-03-25 22:00:17,795  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:20,550  INFO      SMTP OK → farrah@adcmn.com
+2026-03-25 22:00:20,584  INFO        EMAIL enviado → farrah@adcmn.com
+2026-03-25 22:00:20,598  INFO        OK  A. DeTomaso Construction | ID: PloVs2QjNmXVIYIYPtuO | email_sent: True
+2026-03-25 22:00:21,000  WARNING     No se pudo verificar duplicado para Avalon Construction Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122396505
+2026-03-25 22:00:26,527  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:27,481  INFO      SMTP OK → alex@avalon-construction.net
+2026-03-25 22:00:27,527  INFO        EMAIL enviado → alex@avalon-construction.net
+2026-03-25 22:00:27,528  INFO        OK  Avalon Construction Inc. | ID: GPZ7Gei2UaVPgWeHVRDV | email_sent: True
+2026-03-25 22:00:27,915  WARNING     No se pudo verificar duplicado para Central Roofing Company: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17635720660
+2026-03-25 22:00:32,932  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:33,995  INFO      SMTP OK → info@centralroofing.com
+2026-03-25 22:00:34,040  INFO        EMAIL enviado → info@centralroofing.com
+2026-03-25 22:00:34,041  INFO        OK  Central Roofing Company | ID: CW2EjubuQoisJiYMIP9z | email_sent: True
+2026-03-25 22:00:34,545  WARNING     No se pudo verificar duplicado para Midwest Roof & Solar: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16125549372
+2026-03-25 22:00:40,421  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:41,571  INFO      SMTP OK → info@midwestroofandsolar.com
+2026-03-25 22:00:41,618  INFO        EMAIL enviado → info@midwestroofandsolar.com
+2026-03-25 22:00:41,628  INFO        OK  Midwest Roof & Solar | ID: 9PhAM8CyU5nnDDJGsysw | email_sent: True
+2026-03-25 22:00:42,018  WARNING     No se pudo verificar duplicado para Roof Repair PHD: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16124184240
+2026-03-25 22:00:46,344  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:47,328  INFO      SMTP OK → roofrepairphd@gmail.com
+2026-03-25 22:00:47,384  INFO        EMAIL enviado → roofrepairphd@gmail.com
+2026-03-25 22:00:47,386  INFO        OK  Roof Repair PHD | ID: JriPSh1MwOoraF1fTJjm | email_sent: True
+2026-03-25 22:00:48,152  WARNING     No se pudo verificar duplicado para Crown Roofing & Restoration: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16517249747
+2026-03-25 22:00:53,869  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:00:54,919  INFO      SMTP OK → info@buildthecrown.com
+2026-03-25 22:00:54,953  INFO        EMAIL enviado → info@buildthecrown.com
+2026-03-25 22:00:54,953  INFO        OK  Crown Roofing & Restoration | ID: hgvsLI3Jmmr3o6BGjjTk | email_sent: True
+2026-03-25 22:00:55,362  WARNING     No se pudo verificar duplicado para First Choice Builds: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16513699003
+2026-03-25 22:01:01,343  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:02,376  INFO      SMTP OK → info@firstchoicebuilds.com
+2026-03-25 22:01:02,421  INFO        EMAIL enviado → info@firstchoicebuilds.com
+2026-03-25 22:01:02,422  INFO        OK  First Choice Builds | ID: V7hra9GAJgxuJld1I4Jj | email_sent: True
+2026-03-25 22:01:02,852  WARNING     No se pudo verificar duplicado para Action Roofing & Siding LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16513000049
+2026-03-25 22:01:08,556  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:09,542  INFO      SMTP OK → action@actionroofing.net
+2026-03-25 22:01:09,586  INFO        EMAIL enviado → action@actionroofing.net
+2026-03-25 22:01:09,587  INFO        OK  Action Roofing & Siding LLC | ID: BFV8WdD23rVlwgowHz6c | email_sent: True
+2026-03-25 22:01:10,225  WARNING     No se pudo verificar duplicado para Best Choice Roofing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19525926757
+2026-03-25 22:01:15,585  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:16,541  INFO      SMTP OK → yournewroof@bestchoiceroofing.com
+2026-03-25 22:01:16,576  INFO        EMAIL enviado → yournewroof@bestchoiceroofing.com
+2026-03-25 22:01:16,576  INFO        OK  Best Choice Roofing | ID: AINWdqNzYgHxqPlE3QEE | email_sent: True
+2026-03-25 22:01:17,059  WARNING     No se pudo verificar duplicado para Pro Exteriors LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19524260447
+2026-03-25 22:01:22,749  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:23,921  INFO      SMTP OK → steve@proexteriorsmn.com
+2026-03-25 22:01:23,966  INFO        EMAIL enviado → steve@proexteriorsmn.com
+2026-03-25 22:01:23,968  INFO        OK  Pro Exteriors LLC | ID: GciD3BnPgiybWWXTghu9 | email_sent: True
+2026-03-25 22:01:24,351  WARNING     No se pudo verificar duplicado para Roofers of Minnesota Company: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16126626226
+2026-03-25 22:01:29,446  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:30,513  INFO      SMTP OK → rick@roofersofminnesota.com
+2026-03-25 22:01:30,558  INFO        EMAIL enviado → rick@roofersofminnesota.com
+2026-03-25 22:01:30,559  INFO        OK  Roofers of Minnesota Company | ID: 85cwzUsvXpK5rOr8mnM5 | email_sent: True
+2026-03-25 22:01:30,956  WARNING     No se pudo verificar duplicado para Midwest Building Exteriors: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16127506051
+2026-03-25 22:01:35,924  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:36,850  INFO      SMTP OK → office@mnmbe.com
+2026-03-25 22:01:36,881  INFO        EMAIL enviado → office@mnmbe.com
+2026-03-25 22:01:36,896  INFO        OK  Midwest Building Exteriors | ID: U3ftGPVbEBNBGe4nRd06 | email_sent: True
+2026-03-25 22:01:37,302  WARNING     No se pudo verificar duplicado para Alpha Plumbing.Heating.Cooling: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122740277
+2026-03-25 22:01:42,332  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:43,543  INFO      SMTP OK → customersupport@callalphamn.com
+2026-03-25 22:01:43,589  INFO        EMAIL enviado → customersupport@callalphamn.com
+2026-03-25 22:01:43,590  INFO        OK  Alpha Plumbing.Heating.Cooling | ID: Do3DJo4HIFwe0xd5H4b5 | email_sent: True
+2026-03-25 22:01:44,015  WARNING     No se pudo verificar duplicado para Voda Plumbing Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122829036
+2026-03-25 22:01:51,533  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:52,484  INFO      SMTP OK → vodaplumbing@gmail.com
+2026-03-25 22:01:52,530  INFO        EMAIL enviado → vodaplumbing@gmail.com
+2026-03-25 22:01:52,532  INFO        OK  Voda Plumbing Inc. | ID: hxNlQZ8UOQt6D05EkCaK | email_sent: True
+2026-03-25 22:01:52,965  WARNING     No se pudo verificar duplicado para Blaylock Plumbing Co: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128697531
+2026-03-25 22:01:58,592  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:01:59,686  INFO      SMTP OK → info@blaylockplumbing.com
+2026-03-25 22:01:59,731  INFO        EMAIL enviado → info@blaylockplumbing.com
+2026-03-25 22:01:59,732  INFO        OK  Blaylock Plumbing Co | ID: hVnVPwZli6tx3fyIROef | email_sent: True
+2026-03-25 22:02:00,143  WARNING     No se pudo verificar duplicado para Southtown Plumbing inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128663057
+2026-03-25 22:02:06,084  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:07,198  INFO      SMTP OK → plumber@southtownplumbing.com
+2026-03-25 22:02:07,243  INFO        EMAIL enviado → plumber@southtownplumbing.com
+2026-03-25 22:02:07,245  INFO        OK  Southtown Plumbing inc. | ID: y78swAhYi2QReNMyY9Wx | email_sent: True
+2026-03-25 22:02:07,668  WARNING     No se pudo verificar duplicado para Peterson Plumbing: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16126554022
+2026-03-25 22:02:12,843  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:13,875  INFO      SMTP OK → alexp@petersonplumbingllc.com
+2026-03-25 22:02:13,919  INFO        EMAIL enviado → alexp@petersonplumbingllc.com
+2026-03-25 22:02:13,920  INFO        OK  Peterson Plumbing | ID: XsMd2uYSUEeNnc1CoFA2 | email_sent: True
+2026-03-25 22:02:14,334  WARNING     No se pudo verificar duplicado para Modern Plumbing & Heating: 429 Client Error: Too Many Requests for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17636391632
+2026-03-25 22:02:14,739  WARNING   Rate limit GHL — esperando 2s (intento 1)
+2026-03-25 22:02:21,803  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:22,966  INFO      SMTP OK → customerservice@modernplumb.com
+2026-03-25 22:02:23,010  INFO        EMAIL enviado → customerservice@modernplumb.com
+2026-03-25 22:02:23,011  INFO        OK  Modern Plumbing & Heating | ID: XxkkbNpiJOJxMoNkGsFr | email_sent: True
+2026-03-25 22:02:23,453  WARNING     No se pudo verificar duplicado para Brennan Heikes Professional Painting LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16127434458
+2026-03-25 22:02:29,130  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:30,204  INFO      SMTP OK → brennan@brennanheikespainting.com
+2026-03-25 22:02:30,252  INFO        EMAIL enviado → brennan@brennanheikespainting.com
+2026-03-25 22:02:30,252  INFO        OK  Brennan Heikes Professional Painting LLC | ID: lzdUhwQWVHOH9VCe1VvG | email_sent: True
+2026-03-25 22:02:30,658  WARNING     No se pudo verificar duplicado para Edina Painting Company: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16129874010
+2026-03-25 22:02:35,865  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:36,730  INFO      SMTP OK → gf@edinapainting.com
+2026-03-25 22:02:36,775  INFO        EMAIL enviado → gf@edinapainting.com
+2026-03-25 22:02:36,777  INFO        OK  Edina Painting Company | ID: NaqO9NazRGMa6qCb3Fsz | email_sent: True
+2026-03-25 22:02:37,195  WARNING     No se pudo verificar duplicado para FoxFire Painting LLC: 429 Client Error: Too Many Requests for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19524600123
+2026-03-25 22:02:37,580  WARNING   Rate limit GHL — esperando 2s (intento 1)
+2026-03-25 22:02:44,872  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:45,832  INFO      SMTP OK → foxfirepainting@gmail.com
+2026-03-25 22:02:45,876  INFO        EMAIL enviado → foxfirepainting@gmail.com
+2026-03-25 22:02:45,877  INFO        OK  FoxFire Painting LLC | ID: 3cPUUGvUMOUayn5M44vz | email_sent: True
+2026-03-25 22:02:46,305  WARNING     No se pudo verificar duplicado para Cesar's Painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16516504747
+2026-03-25 22:02:48,121  WARNING     Pipeline fallido para Cesar's Painting: 429 Client Error: Too Many Requests for url: https://services.leadconnectorhq.com/opportunities/
+2026-03-25 22:02:51,286  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:52,226  INFO      SMTP OK → info@cesarspaintingllc.com
+2026-03-25 22:02:52,281  INFO        EMAIL enviado → info@cesarspaintingllc.com
+2026-03-25 22:02:52,282  INFO        OK (sin pipeline)  Cesar's Painting | ID: Atqk6900ZXEJ47xbi8aI | email_sent: True
+2026-03-25 22:02:52,694  WARNING     No se pudo verificar duplicado para Rowland Paint LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19525673900
+2026-03-25 22:02:58,610  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:02:59,909  INFO      SMTP OK → info@rowlandpaint.com
+2026-03-25 22:02:59,966  INFO        EMAIL enviado → info@rowlandpaint.com
+2026-03-25 22:02:59,967  INFO        OK  Rowland Paint LLC | ID: UXICNlSD2RKbzyR6nj3K | email_sent: True
+2026-03-25 22:03:00,369  WARNING     No se pudo verificar duplicado para Stone Valley Contractors: 429 Client Error: Too Many Requests for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B17632698700
+2026-03-25 22:03:00,766  WARNING   Rate limit GHL — esperando 2s (intento 1)
+2026-03-25 22:03:08,017  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:03:08,964  INFO      SMTP OK → info@stonevalleypainting.com
+2026-03-25 22:03:09,009  INFO        EMAIL enviado → info@stonevalleypainting.com
+2026-03-25 22:03:09,010  INFO        OK  Stone Valley Contractors | ID: KCB258rIqzlhJumZYznP | email_sent: True
+2026-03-25 22:03:09,810  WARNING     No se pudo verificar duplicado para Brushed Monkey, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128031356
+2026-03-25 22:03:14,816  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:03:15,754  INFO      SMTP OK → interiorarts@brushedmonkey.com
+2026-03-25 22:03:15,799  INFO        EMAIL enviado → interiorarts@brushedmonkey.com
+2026-03-25 22:03:15,799  INFO        OK  Brushed Monkey, Inc. | ID: FgXQYgq64dia9mO7ES3Z | email_sent: True
+2026-03-25 22:03:16,236  WARNING     No se pudo verificar duplicado para Three Guys LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19524849104
+2026-03-25 22:03:21,754  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:03:22,828  INFO      SMTP OK → info@three-guys.net
+2026-03-25 22:03:22,872  INFO        EMAIL enviado → info@three-guys.net
+2026-03-25 22:03:22,875  INFO        OK  Three Guys LLC | ID: 5ZDxu2j9e4GIJmyTpppi | email_sent: True
+2026-03-25 22:03:23,269  WARNING     No se pudo verificar duplicado para H B Painting Co.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128678493
+2026-03-25 22:03:23,803  ERROR       ERROR creando contacto 'H B Painting Co.': 400 — {"statusCode":400,"message":"This location does not allow duplicated contacts.","meta":{"contactName":"H B Painting Co.","contactId":"9W2fs6myysksRMDRtz4I","matchingField":"email"},"traceId":"1b67b3c8-93d2-4a14-9479-544fc0142203"}
+2026-03-25 22:03:24,226  WARNING     No se pudo verificar duplicado para Pro City Painters: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128525119
+2026-03-25 22:03:29,583  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:03:30,621  INFO      SMTP OK → cole@procitypainters.com
+2026-03-25 22:03:30,670  INFO        EMAIL enviado → cole@procitypainters.com
+2026-03-25 22:03:30,670  INFO        OK  Pro City Painters | ID: 2owGJoN4cEZB7vzqEUNI | email_sent: True
+2026-03-25 22:03:31,071  WARNING     No se pudo verificar duplicado para All Star Painters: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123286418
+2026-03-25 22:03:31,513  ERROR       ERROR creando contacto 'All Star Painters': 400 — {"statusCode":400,"message":"This location does not allow duplicated contacts.","meta":{"contactName":"All Star Painters","contactId":"I3MpaMMbDPowA9T8FDTH","matchingField":"email"},"traceId":"33c2eaed-1e20-4367-a1fc-3a7f4a443c93"}
+2026-03-25 22:03:31,945  WARNING     No se pudo verificar duplicado para Woodland Painting, Inc.: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B19524764030
+2026-03-25 22:03:37,160  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:03:38,159  INFO      SMTP OK → todd@woodlandpainting.com
+2026-03-25 22:03:38,203  INFO        EMAIL enviado → todd@woodlandpainting.com
+2026-03-25 22:03:38,204  INFO        OK  Woodland Painting, Inc. | ID: 8jlIU34mZnDFYfAsJ60w | email_sent: True
+2026-03-25 22:03:38,872  WARNING     No se pudo verificar duplicado para Affordable painting: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16128162380
+2026-03-25 22:03:39,311  ERROR       ERROR creando contacto 'Affordable painting': 400 — {"statusCode":400,"message":"This location does not allow duplicated contacts.","meta":{"contactName":"Affordable Painting","contactId":"YAcb0OAFoyeSf28IfeI7","matchingField":"email"},"traceId":"345b5fd9-7b32-4cd4-a305-068db6379fda"}
+2026-03-25 22:03:39,762  WARNING     No se pudo verificar duplicado para Allens Perfect Painting LLC: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16123882884
+2026-03-25 22:03:45,500  INFO      HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-03-25 22:03:46,655  INFO      SMTP OK → allensperfectpainting@gmail.com
+2026-03-25 22:03:46,701  INFO        EMAIL enviado → allensperfectpainting@gmail.com
+2026-03-25 22:03:46,702  INFO        OK  Allens Perfect Painting LLC | ID: b0Y7Nn92I3bDTqhbdEkH | email_sent: True
+2026-03-25 22:03:47,120  WARNING     No se pudo verificar duplicado para JW Landscaping and Remodeling: 422 Client Error: Unprocessable Entity for url: https://services.leadconnectorhq.com/contacts/search/duplicate?locationId=Ad97JtummurPW7lyvKSz&phone=%2B16122212902
+2026-03-25 22:03:47,608  ERROR       ERROR creando contacto 'JW Landscaping and Remodeling': 400 — {"statusCode":400,"message":"This location does not allow duplicated contacts.","meta":{"contactName":"JW Landscaping And Remodeling","contactId":"YEd1NDV4wd9l7aZ2mZJG","matchingField":"email"},"traceId":"96934e0a-6d58-44b7-9917-8e8c88031b47"}
+2026-03-25 22:03:47,644  INFO      CSV actualizado: 87 marcados ghl_uploaded=YES
