@@ -32,7 +32,10 @@ import sys
 import hmac
 import hashlib
 import logging
+import smtplib
 import requests as req
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 
 from flask import Flask, request, jsonify
@@ -70,6 +73,12 @@ PIPELINE_NAME       = "Contratistas Latinos"
 NEW_LEAD_STAGE_NAME = os.getenv("GHL_NEW_LEAD_STAGE", "Nuevo Lead")
 
 RETELL_BASE_URL = "https://api.retellai.com"
+
+SMTP_HOST    = os.getenv("SMTP_HOST", "smtp.gmail.com")
+SMTP_PORT    = int(os.getenv("SMTP_PORT", "587"))
+SMTP_EMAIL   = os.getenv("SMTP_EMAIL", "")
+SMTP_PASSWORD= os.getenv("SMTP_PASSWORD", "")
+KEYNER_EMAIL = os.getenv("SMTP_EMAIL", "")   # Notificaciones van al mismo correo
 
 APPT_KEYWORDS_ES = ["cita confirmada", "confirmada", "confirmado", "agendado", "agendada"]
 APPT_KEYWORDS_EN = ["appointment confirmed", "confirmed", "booked", "scheduled"]
@@ -313,6 +322,89 @@ def _move_to_hot_lead(contact_id: str) -> bool:
     return False
 
 
+# ── Emails de confirmación de cita ─────────────────────────
+
+def _send_appointment_emails(lead_email: str, nombre: str, ciudad: str,
+                              phone: str, summary: str, language: str) -> None:
+    """
+    Envía dos emails cuando Layla confirma una cita:
+      1. Al lead  — confirmación de la demo (ES o EN según idioma)
+      2. A Keyner — notificación con datos del lead y resumen de llamada
+    """
+    if not SMTP_EMAIL or not SMTP_PASSWORD:
+        logging.warning("_send_appointment_emails: SMTP no configurado en .env")
+        return
+
+    def _send(to: str, subject: str, html: str) -> None:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"]    = f"MultiVenza Digital <{SMTP_EMAIL}>"
+        msg["To"]      = to
+        msg.attach(MIMEText(html, "html", "utf-8"))
+        try:
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+                server.ehlo()
+                server.starttls()
+                server.login(SMTP_EMAIL, SMTP_PASSWORD)
+                server.sendmail(SMTP_EMAIL, to, msg.as_string())
+            logging.info(f"Email enviado → {to} | {subject}")
+        except Exception as e:
+            logging.warning(f"Error enviando email a {to}: {e}")
+
+    # ── 1. Email al lead ──────────────────────────────────────
+    if lead_email:
+        if language == "en":
+            subj_lead = "Your demo is confirmed! | MultiVenza Digital"
+            body_lead = f"""
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#222;">
+  <h2 style="color:#1a73e8;">Your demo appointment is confirmed ✅</h2>
+  <p>Hi {nombre},</p>
+  <p>Our team will reach out shortly with the calendar invite for your <strong>free 15-minute demo</strong>.</p>
+  <p><strong>What to expect:</strong></p>
+  <ul>
+    <li>We show you the system live — website, AI receptionist, and CRM</li>
+    <li>No commitment, no pressure — just a quick look at how it works for your business</li>
+    <li>Duration: 15 minutes</li>
+  </ul>
+  <p>Questions? Reply to this email or text us at <strong>+1 (612) 688-5066</strong>.</p>
+  <p>Talk soon,<br><strong>Keyner Guerrero</strong><br>MultiVenza Digital — Minnesota</p>
+</div>"""
+        else:
+            subj_lead = "¡Tu cita está confirmada! | MultiVenza Digital"
+            body_lead = f"""
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#222;">
+  <h2 style="color:#1a73e8;">Tu cita de demo está confirmada ✅</h2>
+  <p>Hola {nombre},</p>
+  <p>Nuestro equipo te enviará en breve la invitación al calendario para tu <strong>demo gratuita de 15 minutos</strong>.</p>
+  <p><strong>Qué esperar:</strong></p>
+  <ul>
+    <li>Te mostramos el sistema en vivo — página web, IA receptionist y CRM</li>
+    <li>Sin compromiso, sin presión — solo una mirada rápida a cómo funciona para tu negocio</li>
+    <li>Duración: 15 minutos</li>
+  </ul>
+  <p>¿Preguntas? Responde a este correo o escríbenos al <strong>+1 (612) 688-5066</strong>.</p>
+  <p>¡Hasta pronto!<br><strong>Keyner Guerrero</strong><br>MultiVenza Digital — Minnesota</p>
+</div>"""
+        _send(lead_email, subj_lead, body_lead)
+
+    # ── 2. Notificación a Keyner ──────────────────────────────
+    body_keyner = f"""
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#222;">
+  <h2 style="color:#0d9e6e;">🎯 Nueva cita confirmada por Layla</h2>
+  <table style="border-collapse:collapse;width:100%;">
+    <tr><td style="padding:6px;font-weight:bold;">Negocio:</td><td style="padding:6px;">{nombre}</td></tr>
+    <tr><td style="padding:6px;font-weight:bold;">Ciudad:</td><td style="padding:6px;">{ciudad}</td></tr>
+    <tr><td style="padding:6px;font-weight:bold;">Teléfono:</td><td style="padding:6px;">{phone}</td></tr>
+    <tr><td style="padding:6px;font-weight:bold;">Email:</td><td style="padding:6px;">{lead_email or '—'}</td></tr>
+    <tr><td style="padding:6px;font-weight:bold;">Idioma:</td><td style="padding:6px;">{'Español' if language == 'es' else 'English'}</td></tr>
+  </table>
+  <h3 style="margin-top:20px;">Resumen de la llamada</h3>
+  <p style="background:#f5f5f5;padding:12px;border-radius:4px;">{summary}</p>
+  <p style="color:#888;font-size:12px;">MultiVenza Digital — Sistema automático</p>
+</div>"""
+    _send(KEYNER_EMAIL, f"🎯 Cita confirmada — {nombre} ({ciudad})", body_keyner)
+
+
 # ── Procesador de eventos ───────────────────────────────────
 
 def _process_call_ended(payload: dict) -> dict:
@@ -407,17 +499,29 @@ def _process_call_ended(payload: dict) -> dict:
     except Exception as e:
         logging.warning(f"Error agregando score tag: {e}")
 
-    # 4. Detectar cita confirmada → tag Cita_Confirmada_IA
+    # 4. Detectar cita confirmada → tag + emails
     appt_confirmed = _appointment_confirmed(summary, language)
     if appt_confirmed:
         try:
             r2 = req.get(f"{BASE_URL}/contacts/{contact_id}", headers=_headers())
-            current_tags2 = r2.json().get("contact", {}).get("tags", []) if r2.ok else []
+            contact_data  = r2.json().get("contact", {}) if r2.ok else {}
+            current_tags2 = contact_data.get("tags", [])
+            lead_email    = contact_data.get("email", "")
+            lead_phone    = contact_data.get("phone", metadata.get("phone", ""))
             if "Cita_Confirmada_IA" not in current_tags2:
                 update_contact_tags(contact_id, list(set(current_tags2 + ["Cita_Confirmada_IA"])))
                 logging.info(f"Tag 'Cita_Confirmada_IA' agregado a {contact_id}")
+                # Enviar email de confirmación al lead + notificación a Keyner
+                _send_appointment_emails(
+                    lead_email = lead_email,
+                    nombre     = nombre,
+                    ciudad     = ciudad,
+                    phone      = lead_phone,
+                    summary    = summary,
+                    language   = language,
+                )
         except Exception as e:
-            logging.warning(f"Error agregando tag Cita_Confirmada_IA: {e}")
+            logging.warning(f"Error en bloque Cita_Confirmada_IA: {e}")
 
     # 4. Si sentimiento positivo → mover a HOT Lead
     moved = False
