@@ -494,6 +494,12 @@ def web_lead_trigger():
     ciudad   = data.get("ciudad", "").strip()
     language = data.get("language", "es").strip().lower()
 
+    # Descomponer nombre en partes para dynamic variables de Retell
+    _parts     = nombre.split(" ", 1)
+    first_name = _parts[0]
+    last_name  = _parts[1] if len(_parts) > 1 else ""
+    full_name  = nombre
+
     if not phone:
         return _cors(jsonify({"error": "phone es requerido"}))
 
