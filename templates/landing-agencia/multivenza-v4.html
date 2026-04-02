@@ -7,6 +7,19 @@
   <meta name="description" content="Stop losing customers because no one answered the phone. MultiVenza Digital installs AI that answers, qualifies, and books appointments 24/7." />
   <link rel="canonical" href="https://www.multivenzadigital.com/" />
 
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.multivenzadigital.com/" />
+  <meta property="og:title"       content="MultiVenza Digital — AI Automation for Latino Contractors" />
+  <meta property="og:description" content="Bilingual AI system that answers calls, books appointments, and grows your contracting business 24/7." />
+  <meta property="og:image"       content="https://www.multivenzadigital.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="MultiVenza Digital — AI Automation for Latino Contractors" />
+  <meta name="twitter:description" content="Bilingual AI system that answers calls, books appointments, and grows your contracting business 24/7." />
+  <meta name="twitter:image"       content="https://www.multivenzadigital.com/og-image.png" />
+
   <!-- Favicon inline SVG — rayo MultiVenza -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230D1420'/%3E%3Cpolygon points='18,4 10,18 16,18 14,28 22,14 16,14' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300D4E8'/%3E%3Cstop offset='100%25' stop-color='%232563EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" />
 
@@ -723,6 +736,8 @@
           <input id="mv-nombre" type="text" required
                  class="input-glass w-full px-4 py-3.5 rounded-xl text-sm"
                  placeholder="John Smith / Juan García" />
+          <p id="mv-nombre-err" class="hidden text-red-400 text-xs mt-1 en">Please enter your name.</p>
+          <p id="mv-nombre-err-es" class="hidden text-red-400 text-xs mt-1 es">Por favor ingresa tu nombre.</p>
         </div>
 
         <div>
@@ -731,6 +746,8 @@
           <input id="mv-phone" type="tel" required
                  class="input-glass w-full px-4 py-3.5 rounded-xl text-sm"
                  placeholder="+1 (612) 555-0000" />
+          <p id="mv-phone-err" class="hidden text-red-400 text-xs mt-1 en">Enter a valid US phone number (+1 XXX XXX XXXX).</p>
+          <p id="mv-phone-err-es" class="hidden text-red-400 text-xs mt-1 es">Ingresa un número válido de EE.UU. (+1 XXX XXX XXXX).</p>
         </div>
 
         <div>
@@ -1063,32 +1080,75 @@
   const WEBHOOK_URL = "https://agencia-digital.onrender.com/web-lead-trigger";
 
   function mvNormalizePhone(raw) {
-    let digits = raw.replace(/[^\d]/g, "");
+    const digits = raw.replace(/[^\d]/g, "");
     if (digits.length === 10) return "+1" + digits;
     if (digits.length === 11 && digits[0] === "1") return "+" + digits;
-    if (raw.trim().startsWith("+")) return "+" + digits;
     return "+" + digits;
   }
 
+  function mvIsValidPhone(raw) {
+    const digits = raw.replace(/[^\d]/g, "");
+    // Accept 10 digits (US) or 11 digits starting with 1
+    return digits.length === 10 || (digits.length === 11 && digits[0] === "1");
+  }
+
+  function mvClearErrors() {
+    ["mv-nombre-err","mv-nombre-err-es","mv-phone-err","mv-phone-err-es"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add("hidden");
+    });
+    document.getElementById("mv-error").classList.add("hidden");
+  }
+
+  const BTN_INNER_EN = '<span class="en">Get My Free Demo Call</span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  const BTN_INNER_ES = '<span class="es">Quiero Mi Demo Gratis</span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+
   async function mvSubmitLead(e) {
     e.preventDefault();
-    const btn    = document.getElementById("mv-submit-btn");
-    const nombre = document.getElementById("mv-nombre").value.trim();
-    const phone  = mvNormalizePhone(document.getElementById("mv-phone").value.trim());
-    const email  = document.getElementById("mv-email").value.trim();
-    const lang   = document.body.classList.contains("lang-es") ? "es" : "en";
+    mvClearErrors();
 
+    const lang    = document.body.classList.contains("lang-es") ? "es" : "en";
+    const btn     = document.getElementById("mv-submit-btn");
+    const nombre  = document.getElementById("mv-nombre").value.trim();
+    const rawPhone = document.getElementById("mv-phone").value.trim();
+    const email   = document.getElementById("mv-email").value.trim();
+
+    // — Field validation —
+    let valid = true;
+
+    if (!nombre) {
+      document.getElementById(lang === "es" ? "mv-nombre-err-es" : "mv-nombre-err").classList.remove("hidden");
+      valid = false;
+    }
+
+    if (!mvIsValidPhone(rawPhone)) {
+      document.getElementById(lang === "es" ? "mv-phone-err-es" : "mv-phone-err").classList.remove("hidden");
+      document.getElementById("mv-phone").focus();
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    const phone = mvNormalizePhone(rawPhone);
+
+    // — Disable button —
     btn.disabled = true;
     btn.innerHTML = lang === "es"
       ? '<span>⏳ Conectando con la IA...</span>'
       : '<span>⏳ Connecting to AI...</span>';
+
+    // — 15-second timeout —
+    const controller = new AbortController();
+    const timeoutId  = setTimeout(() => controller.abort(), 15000);
 
     try {
       const resp = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nombre, phone, email, language: lang }),
+        signal: controller.signal,
       });
+      clearTimeout(timeoutId);
 
       if (resp.ok) {
         document.getElementById("mv-form").style.display = "none";
@@ -1097,10 +1157,10 @@
         throw new Error("Server error");
       }
     } catch {
+      clearTimeout(timeoutId);
+      // — Restore button so user can retry —
       btn.disabled = false;
-      btn.innerHTML = lang === "es"
-        ? '<span class="es">Quiero Mi Demo Gratis</span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
-        : '<span class="en">Get My Free Demo Call</span><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      btn.innerHTML = lang === "es" ? BTN_INNER_ES : BTN_INNER_EN;
       document.getElementById("mv-error").classList.remove("hidden");
     }
   }
