@@ -575,6 +575,14 @@ def health():
     return jsonify({"status": "ok", "service": "retell-webhook"}), 200
 
 
+@app.route("/static/<path:filename>", methods=["GET"])
+def static_files(filename):
+    """Sirve archivos estáticos (imágenes, etc.) desde ghl-integration/static/"""
+    from flask import send_from_directory
+    static_dir = Path(__file__).resolve().parent / "static"
+    return send_from_directory(static_dir, filename)
+
+
 # ── Entry point ─────────────────────────────────────────────
 
 if __name__ == "__main__":
