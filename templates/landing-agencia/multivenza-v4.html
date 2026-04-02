@@ -75,6 +75,19 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #080D14; color: #F0F4FF; overflow-x: hidden; }
 
+    /* ── Full-bleed GHL fix ─────────────────────────────────
+       Rompe el contenedor de GHL Sites usando 100vw + márgenes negativos.
+       No toca ningún elemento de GHL — solo extiende el wrapper propio.
+    ────────────────────────────────────────────────────── */
+    #mv-root {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      overflow-x: hidden;
+      background: #080D14;
+    }
+
 
     /* Language toggle */
     .lang-es .en { display: none !important; }
@@ -196,6 +209,7 @@
 </head>
 
 <body class="lang-en">
+<div id="mv-root">
 
 <!-- ═══════════════════════════════════════════════════════
      NAVBAR
@@ -1167,5 +1181,6 @@
   }
 </script>
 
+</div><!-- /mv-root -->
 </body>
 </html>
