@@ -75,6 +75,30 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #080D14; color: #F0F4FF; overflow-x: hidden; }
 
+    /* ── GHL container override ─────────────────────────────
+       GHL Sites envuelve el HTML en divs con max-width y padding.
+       Estos estilos los neutralizan para que la landing ocupe
+       el 100% del viewport exactamente igual que en local.
+    ─────────────────────────────────────────────────────── */
+    body > div:not(#mv-root),
+    .page-container, #page-container,
+    .site-container, #site-container,
+    .page-wrap,      #page-wrap,
+    .container,      .wrapper,
+    [data-page-id],  [data-section-id] {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    /* Fuerza fondo oscuro en cualquier wrapper de GHL */
+    body, html {
+      background-color: #080D14 !important;
+    }
+
     /* Language toggle */
     .lang-es .en { display: none !important; }
     .lang-en .es { display: none !important; }
@@ -1022,8 +1046,32 @@
 ═══════════════════════════════════════════════════════ -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  // ── GHL wrapper fix — corre antes de pintar ───────────
+  (function() {
+    // Neutraliza cualquier div wrapper que GHL inyecte
+    const strip = ['max-width','padding-left','padding-right','margin-left','margin-right'];
+    document.querySelectorAll('body > div').forEach(function(el) {
+      if (el.id === 'mv-root' || el.tagName === 'NAV') return;
+      strip.forEach(function(prop) { el.style.setProperty(prop, '100%' === prop.includes('width') ? '100%' : '0', 'important'); });
+      el.style.setProperty('max-width',     '100%', 'important');
+      el.style.setProperty('padding-left',  '0',    'important');
+      el.style.setProperty('padding-right', '0',    'important');
+      el.style.setProperty('margin-left',   '0',    'important');
+      el.style.setProperty('margin-right',  '0',    'important');
+      el.style.setProperty('width',         '100%', 'important');
+    });
+    // Fuerza fondo oscuro por si GHL inyecta uno blanco
+    document.documentElement.style.setProperty('background-color', '#080D14', 'important');
+    document.body.style.setProperty('background-color', '#080D14', 'important');
+  })();
+
   // ── AOS init ──────────────────────────────────────────
   AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+  // ── Re-trigger AOS por si GHL retrasa el render ───────
+  window.addEventListener('load', function() {
+    setTimeout(function() { AOS.refresh(); }, 400);
+  });
 
   // ── Setup price reveal ────────────────────────────────
   function revealSetup() {
